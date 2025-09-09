@@ -1,0 +1,850 @@
+Delivered-To: mrinix02@gmail.com
+Received: by 2002:ac8:5854:0:b0:4b0:8b25:add9 with SMTP id h20csp1501426qth;
+        Mon, 8 Sep 2025 16:57:35 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEBENPyvpfkKVKIP5N5GQPXr1hQkq6RGfbORBuiTHIZTAJndLGhWEncYCnUBPamFAY2LyWi
+X-Received: by 2002:a05:6214:c22:b0:718:4128:b6a1 with SMTP id 6a1803df08f44-7394267bbb5mr109045216d6.56.1757375854681;
+        Mon, 08 Sep 2025 16:57:34 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1757375854; cv=none;
+        d=google.com; s=arc-20240605;
+        b=MLdj9Dii8Xe1bK96vGkX77Ln1wTuxYjE4QHNI/hwreuD5/XCQn1BVSh94K9obVohlN
+         6Cw3/boP5BhxLDy6XQH4yQ49h+QfffuTtbdlk0ALfykin0+KmZnrXwSiqI8KRJBprL8u
+         HusAEFOoe/e1NHrT9WXiuK3lSKSfOoRi7646J0vd8jj+FxjW22A7GuIvca8IUE3jXXRS
+         3PqPjch3SCgIwiOsx04NHqg6kPibanX3dv61HAZAkCB7Bc+hqrg+MWppf3fpHY8UTMdz
+         p8Vn+KBLfQ01mb/oGNZd2gjynIU3vxZ4Rc+NSUaTRaliTfOdvblZwBTK79wIlBYaix2T
+         qeGQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:message-id:reply-to:mime-version:list-unsubscribe-post
+         :list-unsubscribe:date:subject:to:from:dkim-signature:dkim-signature;
+        bh=nn/1y8ADyy0FQPLA5855dMlgzfrSjuabBFJgJN7lYrA=;
+        fh=cgnxUiwXlD85rbpCsNEx8aNhWFg79oTMNH3UYMD414M=;
+        b=lqSVawMJW13tKqHadYmWLryAhm0Evn+K+3P2VeLLT5ed2pEdMrR0UUGnqfryAVKkOT
+         xmENL3l6FwymLVjALQdUzhYBzMcdVNm2DxG1axPUsIWXLVVXyl6+XVBr2dRtCNMTEPZJ
+         1Xpezrl7Xx5mjGlMsVITFy+fOVGeb97JsijVZf4IDpkcGxhFuYZnfthDJnW1PmYJKYFB
+         gFUCIfdaVdt02Q2eePUXmiyI5EavTROfr8juyRAek1355Se4AN7wSVeyQ39H1x0gdmx/
+         dLtUVcDXUzq/7AnLEvg5O+ecn0DpXLEhN4Ob3XSODfo4yxLHAmK5yh0dj/K/Sj7dRIww
+         1wjg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@messages.webmd.com header.s=200608 header.b="n86PY8/9";
+       dkim=pass header.i=@s6.y.mc.salesforce.com header.s=fbldkim6 header.b=yQ0ku36m;
+       spf=pass (google.com: domain of bounce-58_html-199103972-7702824-7000612-23013@bounce.messages.webmd.com designates 199.122.125.81 as permitted sender) smtp.mailfrom=bounce-58_HTML-199103972-7702824-7000612-23013@bounce.messages.webmd.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=messages.webmd.com
+Return-Path: <bounce-58_HTML-199103972-7702824-7000612-23013@bounce.messages.webmd.com>
+Received: from mta4.messages.webmd.com (mta4.messages.webmd.com. [199.122.125.81])
+        by mx.google.com with ESMTPS id 6a1803df08f44-72fa0be7dafsi33741256d6.339.2025.09.08.16.57.34
+        for <mrinix02@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 08 Sep 2025 16:57:34 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-58_html-199103972-7702824-7000612-23013@bounce.messages.webmd.com designates 199.122.125.81 as permitted sender) client-ip=199.122.125.81;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@messages.webmd.com header.s=200608 header.b="n86PY8/9";
+       dkim=pass header.i=@s6.y.mc.salesforce.com header.s=fbldkim6 header.b=yQ0ku36m;
+       spf=pass (google.com: domain of bounce-58_html-199103972-7702824-7000612-23013@bounce.messages.webmd.com designates 199.122.125.81 as permitted sender) smtp.mailfrom=bounce-58_HTML-199103972-7702824-7000612-23013@bounce.messages.webmd.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=messages.webmd.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=200608; d=messages.webmd.com;
+ h=From:To:Subject:Date:List-Unsubscribe:List-Unsubscribe-Post:MIME-Version:
+ Reply-To:Message-ID:Content-Type; i=health@messages.webmd.com;
+ bh=nn/1y8ADyy0FQPLA5855dMlgzfrSjuabBFJgJN7lYrA=;
+ b=n86PY8/90WnP1bD6pkB2NvwHy5ygconWZ7jlFtjicwu+gvn2uYbYj0u5PcLK6OUhpeFnWDCIOro4
+   TEhtmDJcg87ZQS272r0zGNHoA5Op17kvrIRu4WJSkjyGvU0WZxtczKk5HmyhZLHjk9IXZRBVAeY3
+   d78uBoJuVos3zf5m4o4=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=fbldkim6; d=s6.y.mc.salesforce.com;
+ h=From:To:Subject:Date:List-Unsubscribe:MIME-Version:Reply-To:Message-ID:
+ Content-Type;
+ bh=nn/1y8ADyy0FQPLA5855dMlgzfrSjuabBFJgJN7lYrA=;
+ b=yQ0ku36m9JP/q2FykDf377gwvdM57w99eGKjJE0ZikEoi1HYLnj1/y87h0yV9wArfmwsNzAMexG8
+   GR/u7NnamOwyuc+GFtrcHyps99AOzB0FZnd7rC+c+GHkKe6BytZ7NPzeaUTNrfnKwK4vz4AZQY0U
+   JC11rHrRcsMzItrYLaf9sVXtOMfXbG/M3xiRpImDvPeyGlv53ZrKM4Ah5QVIWUjjb1bpaWFFZndL
+   j+4R2HUVihU9ugC70BjH0N6i90AW7zygBIMxyUn+X4llU17Z9j7HLv12PD9n9/zkUc3o26HN8MH7
+   /etSipAh0aprIGPYrkw9NVnCPLACw3BD7PcAog==
+Received: by mta4.messages.webmd.com id hntmms2fmd4l for <mrinix02@gmail.com>; Mon, 8 Sep 2025 23:57:08 +0000 (envelope-from <bounce-58_HTML-199103972-7702824-7000612-23013@bounce.messages.webmd.com>)
+From: "Good Health From WebMD" <health@messages.webmd.com>
+To: <mrinix02@gmail.com>
+Subject: Tips to Keep Your Mind Sharp and Focused
+Date: Mon, 08 Sep 2025 17:57:08 -0600
+List-Unsubscribe: <https://click.messages.webmd.com/subscription_center.aspx?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWQiOiI3MDAwNjEyIiwicyI6IjE5OTEwMzk3MiIsImxpZCI6IjU4IiwiaiI6Ijc3MDI4MjQiLCJqYiI6IjIzMDEzIiwiZCI6IjYwMjQ5In0.SWHaQBenfwPkRRB-0kupTXORCoTjsagqPydywXuLuSo>, <mailto:leave-fd7e11781a3c402029-fe2615797c65047e7c1372-fe91137775660c7f71-fe9f13707564027c77-ff061673756507@leave.messages.webmd.com>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+MIME-Version: 1.0
+Reply-To: "WebMD" <reply-fe91137775660c7f71-58_HTML-199103972-7000612-23013@messages.webmd.com>
+X-SFMC-Stack: 6
+x-job: 7000612_7702824
+Message-ID: <59d46ebb-7ce3-45cb-bb85-bce81e103f9e@ind1s06mta1183.xt.local>
+Feedback-ID: 7000612:7702824:199.122.125.81:sfmktgcld
+Content-Type: multipart/alternative;
+	boundary="XYvlR54P23Hz=_?:"
+
+This is a multi-part message in MIME format.
+
+--XYvlR54P23Hz=_?:
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+
+
+--XYvlR54P23Hz=_?:
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html> 
+<html> 
+ <head> 
+  <meta charset="UTF-8"> 
+   <meta name="viewport" content="width=device-width, initialscale=1.0"> 
+    <meta property="og:image" content="https://img.webmd.com/dtmcms/live/webmd/" /> 
+    <meta https-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+    <title>WebMD Newsletters</title> 
+    
+<style type="text/css"> body{background-color:#f6f9fa;} .ReadMsgBody{width: 100%;} /* Forces Hotmail to display emails at full width */ .ExternalClass {width: 100%;} /*Hotmail table centering fix*/ .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;} /* Forces Hotmail to display normal line spacing*/ p {margin: 1em 0;} /*Yahoo paragraph fix*/ table td {border-collapse: collapse;} /*This resolves the Outlook 07, 10, and Gmail td padding issue fix*/ /*This resolves the issue when iphone puts links on dates, etc.*/ .applelinks a {color:#b1b1b1; text-decoration:none;} @-ms-viewport{width: device-width;p{margin:0 !important; padding:0 !important;} .main{border-collapse:collapse;table-layout:fixed;margin:0 auto;}
+ /*Overwrites left justification in Yahoo Mail*/ .body{margin:0 auto !important;} /*Center Justifies Mailing in Yahoo*/ } @media only screen and (max-width:480px) { html, body {overflow-x: hidden; padding:10px;background:#ffffff !important;} } </style> 
+    
+<style type="text/css"> @media only screen and (max-width:480px) { .hide {display:none !important;} .h10 {height:10px !important;} .h14 {height:14px !important;} .drop {width:100% !important; display:block !important;} .container{width:100% !important;display:block !important;} .inner-lead-image {width:100% !important; display:block !important;} .inner-lead-image img {width:100% !important;height:auto !important; display:block !important;} .inner-card {width:100% !important;display:block !important;height:auto !important;} .cell {width:100% !important;} .sub-header {width:100% !important;display:block !important;} .box {width:100% !important;display:block !important;} .box1 {width:100% !important;display:block !important;margin-bottom:16px !important;margin-top:10px !important;} .box2
+ {width:100% !important;display:block !important;margin-bottom:16px !important;} .inline {width:100% !important;display:block !important;margin-bottom:6px !important;} .bullet-table{width:100% !important;margin: 6px 0 6px !important;} .card-row {width:315px !important; display:block !important;} .promo {width:97% !important; margin:0 auto !important; display:block !important;} .promo img {width: 100% !important; height: auto !important; display:block !important;} .ad-card {width:300px !important; margin:0 auto 10px !important;display:block !important;background:none !important; border:0px !important} .promo-container {width:100% !important;display:block!important;margin: 0 auto !important;} .marquee {height: auto !important;} .marquee img{width:100% !important; height: auto !important;}
+ .adjust {height: auto !important;} .lead-text {width:100% !important;display:block !important;float:left;} .lead-btn {width:100% !important;margin-top:10px; float:left;text-align: center} .btn {width:80% !important;} .lead-btn a{ width:80% !important;text-align: center !important;display:contents} .inner-lead-image.hide {display:none !important;} .image-box{vertical-align: top !important;width:50% !important;} .button-box{float:left !important; width:100% !important;} .fleft{float:left !important;} .descr {width:50% !important;} } </style> 
+    <style> @media only screen and (max-width:340px) { .topic {font-size:18px !important;} } </style>  
+   </meta> 
+  </meta> 
+ </head> 
+ <!-- START BODY CONTAINER --> 
+ <body bgcolor="#D2D2D2" style="background-color:#D2D2D2; margin: 0px; padding-top:10px;padding-right:0; padding-bottom:0; -webkit-text-size-adjust:none; -ms-text-size-adjust: none;" yahoo="fix"> 
+  <!-- START PREHEADER --> 
+  <table style="display: none !important; visibility: hidden; opacity: 0; color: transparent; height: 0; width: 0;"> 
+   <tr> 
+    <td> <a id="preheader">Small daily choices can shape brain health. These tips sharpen focus, improve memory, and keep your mind energized for work and life.</a> </td> 
+   </tr> 
+  </table> 
+  <!-- END PREHEADER --> 
+  <!-- START MAIN TEMPLATE CONTAINER --> 
+  <table class="container" width="600" align="center" bgcolor="#ffffff" cellpadding="0" cellspacing="0" border="0" style="width:650px;"> 
+   <tr> 
+    <td> 
+     <!-- START INNER EMAIL CONTAINER --> 
+     <table class="container" align="center" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;"> 
+      <!-- START ON MOBILE HIDE VIEW AS WEBPAGE --> 
+      <!-- Jeff note: remove everything below and replace with reference to global content block / code that will add this --> 
+      <tr> 
+       <td class="hide"></td> 
+      </tr> 
+      <tr class="hide"> 
+       <td> 
+        <table width="100%" height="20" cellpadding="0" cellspacing="0" border="0"> 
+         <tr> 
+          <td height="20" style="height:20px;display:block;"></td> 
+         </tr> 
+        </table> </td> 
+      </tr> 
+      <!--This is where the VIEW AS A WEBPAG code is originally               <tr class="hide">                    <td>                        <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0">                            <tr>                                <td align="left" style="font-family:Helvetica, Arial, sans-serif;font-size:12px;font-weight:normal;color:#222222;text-decoration:none;">Trouble viewing this email? <a href="https://view.messages.webmd.com/?qs=3da4552c8df5ca468f7a1e651f5a638d21e2ed3b7ceb1077c1f6ff41327e642e989b5ae92af4f71daec5de67347a4300e6230f817b644cc0742554b5b3f30dff" style="color:#187aab;text-decoration:none;font-family:Arial;font-size:12px;">View as a Webpage</a></td>                                   <td class="hide" align="right"></td>                               </tr>                           </table>                      </td>                   </tr>               --> 
+      <tr> 
+       <td> 
+        <table class="hide" width="100%" cellpadding="0" cellspacing="0" border="0"> 
+         <tr> 
+          <td height="30" style="height:30px;"></td> 
+         </tr> 
+        </table> </td> 
+      </tr> 
+      <!-- END ON MOBILE HIDE VIEW AS WEBPAGE --> 
+      <!-- remove above per Jeff note --> 
+      <!-- START TITLE AND DATE CELL --> 
+      <tr> 
+       <td> 
+        <table width="93%" align="center" cellpadding="0" cellspacing="0" border="0" style=""> 
+         <tr valign="top"> 
+          <td> 
+           <table class="logo-cont" border="0" cellspacing="0" cellpadding="0" align="left"> 
+            <tbody> 
+             <tr> 
+              <td align="left" valign="middle"><a href="#" target="_blank" style="text-decoration: none;"> <img src="https://img.wbmdstatic.com/dtmcms/live/webmd/consumer_assets/site_images/newsletters/exact-target/logo_blue-bg.jpg" width="100" height="22" alt="webmd logo" border="0" style="display: block; max-width: 95px; font-family: Arial,sans-serif; font-size: 20px; line-height: 24px; color: #000000;" /></a></td> 
+              <td width="20" style="width: 20px; line-height: 0px; font-size: 0px;"><img src="images/spacer.gif" alt="" width="1" height="1" border="0" style="display: block; max-width: 1px;" /></td> 
+              <td width="1" style="width: 1px; line-height: 0px; font-size: 0px;" bgcolor="#999998"><img src="images/spacer.gif" alt="" width="1" height="1" border="0" style="display: block; max-width: 1px;" /></td> 
+              <td width="20" style="width: 20px; line-height: 0px; font-size: 0px;"><img src="images/spacer.gif" alt="" width="1" height="1" border="0" style="display: block; max-width: 1px; " /></td> 
+              <td align="left" valign="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:26px;color:#333132;font-weight:normal;font-weight:bold;">Good Health</td> 
+             </tr> 
+            </tbody> 
+           </table> </td> 
+         </tr> 
+        </table></td> 
+      </tr> 
+      <!-- END TITLE AND DATE CELL --> 
+      <!-- STAR SPACE --> 
+      <tr> 
+       <td> 
+        <table width="100%" cellpadding="0" cellspacing="0" border="0"> 
+         <tr> 
+          <td height="5" style="height:10px;"></td> 
+         </tr> 
+        </table> </td> 
+      </tr> 
+      <!-- END SPACE --> 
+      <!-- START GREEN BORDER LINE --> 
+      <tr> 
+       <td height="4" style="height:4px;"> 
+        <table width="93%" align="center" bgcolor="" cellpadding="0" cellspacing="0" border="0" style=""> 
+         <tr> 
+          <td width="100%" align="center" headers="2px" bgcolor="" style="border-bottom: 4px solid #9fd097;height:2px;line-height:1px;font-size:1px;font-family:Arial;"><span style="font-size:2px;">&nbsp;</span></td> 
+         </tr> 
+        </table> </td> 
+      </tr> 
+      <!-- END GREEN BORDER LINE --> 
+      <!-- START SPACE --> 
+      <tr> 
+       <td> 
+        <table width="100%" cellpadding="0" cellspacing="0" border="0"> 
+         <tr> 
+          <td height="10" style="height:10px;"></td> 
+         </tr> 
+        </table> </td> 
+      </tr> 
+      <!-- END SPACE --> 
+      <!-- START FULL BODY TABLEROW --> 
+      <tr> 
+       <td> 
+        <!-- START BODY CONTAINER Jeff note - had to replicate this same table many times to ensure our special tags are within a td and not between global table tr tags --> 
+        <table width="93%" align="center" cellpadding="0" cellspacing="0" border="0" style=""> 
+         <!-- START SPACE --> 
+         <tr class="hide"> 
+          <td> 
+           <table width="100%" cellpadding="0" cellspacing="0" border="0"> 
+            <tr> 
+             <td height="20" style="height:20px;line-height:20px;"></td> 
+            </tr> 
+           </table> </td> 
+         </tr> 
+         <!-- END SPACE --> 
+        </table> 
+        <!--START LEAD STORY MODULE--> 
+        <table width="93%" align="center" cellpadding="0" cellspacing="0" border="0" style=""> 
+         <tr> 
+          <!-- container td for module --> 
+          <td> 
+           <div rule-id="module" rule-header="Lead Story" id="data_module1" rule-moduleRequired="true" rule-defaultDisplay="true" rule-allRequired="true"> 
+            <!--START BLOCK--> 
+            <div rule-id="block" rule-maxBlock="1" rule-minBlock="1" id="17"> 
+             <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0" style=""> 
+              <tr> 
+               <td> 
+                <!--BEGIN TITLE HEADER--> 
+                <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0" style=""> 
+                 <tr> 
+                  <td class="title-header" style="font-family:Helvetica, Arial, sans-serif;font-size:22px;font-weight:bold;color:#222222;padding:0;"> 
+                   <!--START LINK SLOT--> <a rule-id="slot-link-text" id="18" rule-header-link="Article Link" rule-required="true" rule-header-text="Article Title" href="https://click.messages.webmd.com/?qs=5053ab3865fee354432021deb5eb52dd841e3e9a4c9bf1a916b0de4c144c807bd31d2706eafde9c8865e74974c031e311155fa98b9862993" class="sub-header" style="font-family:Helvetica,Arial,sans-serif;font-size:22px;color:#222222;font-weight:bold;text-decoration:none; text-align:left;" rule-editor="disabled">Tips to Keep Your Mind Sharp and Focused</a> 
+                   <!--END LINK SLOT--> </td> 
+                 </tr> 
+                </table> 
+                <!--END TITLE HEADER--> </td> 
+              </tr> 
+              <!--START SPACE --> 
+              <tr> 
+               <td> 
+                <table width="100%" cellpadding="0" cellspacing="0" border="0"> 
+                 <tr> 
+                  <td height="10" style="height:10px;"></td> 
+                 </tr> 
+                </table> </td> 
+              </tr> 
+              <!--END SPACE--> 
+              <!--BEGIN TEASER AND IMAGE ROW--> 
+              <tr> 
+               <td> 
+                <table cellpadding="0" cellspacing="0" border="0"> 
+                 <tr class="fleft"> 
+                  <!--HEADER TEXT DESCRIPTION--> 
+                  <td style="padding:0; vertical-align: center;"> 
+                   <table width="100%" style="vertical-align: center" cellpadding="0" cellspacing="0" border="0"> 
+                    <tr> 
+                     <td class="descr" width="315" style="width:315px;"> 
+                      <table class="lead-text" width="270" align="left" style="width:270px;vertical-align: center" cellpadding="0" cellspacing="0" border="0"> 
+                       <tr> 
+                        <td> 
+                         <!-- BEGIN LINK TEXT SLOT --> <a rule-id="slot-link-text" id="19" rule-header-link="Article Link" rule-header-text="Description" rule-required="true" rule-maxCharLength="375" href="https://click.messages.webmd.com/?qs=5053ab3865fee3546526d469226bec7cb68ba0b33e07e04fc8d10b8e490bb0b5596e7871e05b02d415fa4c38d661fe184772959fe767ad66" class="lead-text" style="font-family:Helvetica, Arial, sans-serif;font-size:14px;font-weight:normal;color:#222222;text-decoration:none;" rule-editor="disabled">Small daily choices can shape brain health. These tips sharpen focus, improve memory, and keep your mind energized for work and life.</a> 
+                         <!-- END LINK TEXT SLOT --> </td> 
+                       </tr> 
+                      </table> 
+                      <!--[if mso]> </td> <td> <![endif]--> </td> 
+                    </tr> 
+                   </table> </td> 
+                  <!--HEADER TEXT DESCRIPTION--> 
+                  <!-- FEATURED IMAGE --> 
+                  <td class="image-box" rowspan="2"> 
+                   <table cellpadding="0" cellspacing="0" border="0"> 
+                    <tr> 
+                     <td class="inner-lead-image" width="242" align="center" style="width:242px;"> 
+                      <!-- START IMAGE LINK SLOT --> <a rule-id="slot-link-img" rule-maxCharLength="300" rule-header-img="Image Path" rule-header-link="Article Link" rule-required="false" href="https://click.messages.webmd.com/?qs=5053ab3865fee354585c7e8f9b7e0e5ffb97257fe9d3403c6c3e38c8fc07213c132e6bece0d27e77e2b3d320c1203aab010c2f6556180a10" id="20" rule-editor="disabled"><img src="https://img.lb.wbmdstatic.com/vim/live/webmd/consumer_assets/site_images/articles/health_tools/care_for_your_emotions_her_her2_early_breast_cancer_slideshow/1800ss_getty_rf_meditating_on_floor_at_home.jpg?resize=242px:*&amp;output-quality=100" alt="" width="242" height="162" border="0" /></a> 
+                      <!-- END IMAGE LINK SLOT --> </td> 
+                    </tr> 
+                   </table> </td> 
+                  <!-- FEATURED IMAGE --> 
+                 </tr> 
+                 <!--BEGIN BUTTON--> 
+                 <tr> 
+                  <td class="button-box" align="center"> 
+                   <table class="lead-btn" width="100%" align="center" style="width:100%;" cellspacing="0" cellpadding="0" border="0"> 
+                    <tbody> 
+                     <tr> 
+                      <td class="lead-btn" width="80%" valign="top" align="left" height="20"> 
+                       <!-- START LINK TEXT SLOT --> <a rule-id="slot-link-text" id="21" rule-header-link="Article Link" rule-header-text="CTA Text" rule-required="true" href="https://click.messages.webmd.com/?qs=5053ab3865fee3540f92dc4b501d3f8a9455183a93564b3173efad9523c7296eb46c8c7c861cd7ba0783d03bfc242c8e698b953757cd8c71" class="btn" style="font-family:Helvetica,Arial,sans-serif;font-size:18px;font-weight:bold;color:#2280C4;text-decoration: none;line-height:20px;" rule-editor="disabled">Read More</a> 
+                       <!-- END LINK TEXT SLOT --> </td> 
+                     </tr> 
+                    </tbody> 
+                   </table> </td> 
+                 </tr> 
+                 <!--END BUTTON--> 
+                </table> </td> 
+              </tr> 
+              <!--END TEASER AND IMAGE ROW--> 
+             </table> 
+            </div> 
+            <!--END BLOCK--> 
+           </div> 
+           <!--END LEAD BODY STORY MODULE--> </td> 
+         </tr> 
+         <!-- START SPACE --> 
+         <tr> 
+          <td> 
+           <table width="100%" cellpadding="0" cellspacing="0" border="0"> 
+            <tr> 
+             <td height="20" style="height:20px;"></td> 
+            </tr> 
+           </table> </td> 
+         </tr> 
+         <!-- END SPACE --> 
+         <tr> 
+          <td bgcolor="#f8f8f8"> 
+           <!--START GREY TABLE HOLDER--> 
+           <table width="100%" align="center" bgcolor="#f7f5f5" style="padding-top:5px; padding-right:5px; padding-bottom:5px; padding-left:5px;" cellpadding="0" cellspacing="0" border="0"> 
+            <tr> 
+             <td> 
+              <!--START ARTICLE MODULE FIRST TD--> 
+              <div rule-id="module" id="data_module3" rule-header="Promos - Above Ad" rule-moduleRequired="true" rule-defaultDisplay="true" rule-allRequired="true"> 
+               <div class="drop"> 
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" align="left" class="inner-card" style="100%;"> 
+                 <tr> 
+                  <td> 
+                   <!--START TOP 2 ARTICLE BLOCK --> 
+                   <div rule-id="block" rule-maxBlock="2" rule-minBlock="2 " id="22"> 
+                    <table class="inline" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;"> 
+                     <tr valign="top"> 
+                      <td> 
+                       <table class="inner-table" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="" style=""> 
+                        <tr> 
+                         <td class="cell" width="100%" style="width:100%;padding:5px"> 
+                          <table class="box" width="100%" cellpadding="0" cellspacing="0" border="0"> 
+                           <!-- START SLOT LINK TEXT ARTICLE TITLE --> 
+                           <tr> 
+                            <td valign="top" style="padding-right:5px;"> <a rule-id="slot-link-text" id="23" rule-header-text="Article Title" rule-header-link="Article Link" rule-required="true" href="https://click.messages.webmd.com/?qs=5053ab3865fee3545df2ccfb2591c93a4fce90431b79535c1aff8a82a8c9b63f72c61dd00d452610d13e19be1725a12c559ba60ac27f75be" class="sub-header" style="font-family:Helvetica,Arial,sans-serif;font-size:22px;color:#222;font-weight:bold;text-decoration:none;" rule-editor="disabled">10 Effective Finger and Hand Exercises to Try</a> </td> 
+                           </tr> 
+                           <!-- END SLOT LINK TEXT ARTICLE TITLE --> 
+                           <tr> 
+                            <td height="5" colspan="3" style="height:5px;"></td> 
+                           </tr> 
+                           <!-- START SLOT LINK TEXT ARTICLE DESCRIPTION --> 
+                           <tr> 
+                            <td style="padding-right:5px;"> <a rule-id="slot-link-text" id="24" rule-header-link="Article Link" rule-header-text="Description" rule-required="true" href="https://click.messages.webmd.com/?qs=5053ab3865fee3547498b1a79aa0322ea2fb30c6304de43e05e9d66f1a3f83d8f5c25227d6dc4a63571ebfae9045927bf29aabf190c516b3" class="text" style="font-family:Helvetica,Arial,sans-serif;font-size:14px;color:#222;font-weight:normal; text-decoration:none;" rule-editor="disabled">These hand and finger exercises can make your grip stronger, help your hands move around better, and reduce daily discomfort.</a> </td> 
+                           </tr> 
+                           <!-- END SLOT LINK TEXT ARTICLE DESCRIPTION --> 
+                           <!-- START SLOT LINK TEXT CALL TO ACTION --> 
+                           <tr> 
+                            <td valign="middle" height="20"> <a rule-id="slot-link-text" id="25" rule-header-link="Article Link" rule-header-text="CTA Text" rule-required="true" href="https://click.messages.webmd.com/?qs=5053ab3865fee354db55159a9065fb41cd589e97293ef0e39374694896e71b60ba84fa95e20997d544b64b23f2f437323c725de403feae7d" style="font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:bold;color:#2280C4;text-decoration: none;line-height:20px;" rule-editor="disabled">Read More</a> </td> 
+                           </tr> 
+                           <!-- END SLOT LINK TEXT CALL TO ACTION --> 
+                          </table> </td> 
+                        </tr> 
+                        <!--SPACE ABVE THE AD--> 
+                        <tr> 
+                         <td height="14" colspan="3" style="height:14px;border-bottom:1px solid #e2e2e2;"></td> 
+                        </tr> 
+                       </table> </td> 
+                     </tr> 
+                    </table> 
+                   </div> 
+                   <div rule-id="block" rule-maxBlock="2" rule-minBlock="2 " id="22"> 
+                    <table class="inline" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;"> 
+                     <tr valign="top"> 
+                      <td> 
+                       <table class="inner-table" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="" style=""> 
+                        <tr> 
+                         <td class="cell" width="100%" style="width:100%;padding:5px"> 
+                          <table class="box" width="100%" cellpadding="0" cellspacing="0" border="0"> 
+                           <!-- START SLOT LINK TEXT ARTICLE TITLE --> 
+                           <tr> 
+                            <td valign="top" style="padding-right:5px;"> <a rule-id="slot-link-text" id="23" rule-header-text="Article Title" rule-header-link="Article Link" rule-required="true" href="https://click.messages.webmd.com/?qs=5053ab3865fee3547018183e9aac4cd0de64ac33723beb8b08610e96130c5e07bd0c193dbc6b1d0e75e39acec37965af5b343676ca16db65" class="sub-header" style="font-family:Helvetica,Arial,sans-serif;font-size:22px;color:#222;font-weight:bold;text-decoration:none;" rule-editor="disabled">What Might Happen if You Don't Wash Your Sheets</a> </td> 
+                           </tr> 
+                           <!-- END SLOT LINK TEXT ARTICLE TITLE --> 
+                           <tr> 
+                            <td height="5" colspan="3" style="height:5px;"></td> 
+                           </tr> 
+                           <!-- START SLOT LINK TEXT ARTICLE DESCRIPTION --> 
+                           <tr> 
+                            <td style="padding-right:5px;"> <a rule-id="slot-link-text" id="24" rule-header-link="Article Link" rule-header-text="Description" rule-required="true" href="https://click.messages.webmd.com/?qs=5053ab3865fee354f6b412be67bb50db772dc6fff2729c34cac3e3855984abef7e6fa1b0bfae5777c4fee9bf41f8de33cbdfad9fc2156844" class="text" style="font-family:Helvetica,Arial,sans-serif;font-size:14px;color:#222;font-weight:normal; text-decoration:none;" rule-editor="disabled">Your sheets may look clean but hide sweat, dead skin, and germs. Find out what happens when you don’t wash them regularly.</a> </td> 
+                           </tr> 
+                           <!-- END SLOT LINK TEXT ARTICLE DESCRIPTION --> 
+                           <!-- START SLOT LINK TEXT CALL TO ACTION --> 
+                           <tr> 
+                            <td valign="middle" height="20"> <a rule-id="slot-link-text" id="25" rule-header-link="Article Link" rule-header-text="CTA Text" rule-required="true" href="https://click.messages.webmd.com/?qs=5053ab3865fee354e03d174ab37ad2c97e38e22a807d1bbd0d9f3d38df4215811b979782f07db05d69effb21ee230571e516c6314dfb72ab" style="font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:bold;color:#2280C4;text-decoration: none;line-height:20px;" rule-editor="disabled">Read More</a> </td> 
+                           </tr> 
+                           <!-- END SLOT LINK TEXT CALL TO ACTION --> 
+                          </table> </td> 
+                        </tr> 
+                        <!--SPACE ABVE THE AD--> 
+                        <tr> 
+                         <td height="14" colspan="3" style="height:14px;border-bottom:1px solid #e2e2e2;"></td> 
+                        </tr> 
+                       </table> </td> 
+                     </tr> 
+                    </table> 
+                   </div> 
+                   <!--END TOP 2 ARTICLE BLOCK --> </td> 
+                 </tr> 
+                 <tr> 
+                  <td> 
+                   <!--START TOP AD BLOCK--> 
+                   <!--END TOP AD BLOCK--> </td> 
+                 </tr> 
+                </table> 
+               </div> 
+              </div> 
+              <!--END ARTICLE BLOCK FIRST SECTION--> </td> 
+            </tr> 
+            <tr> 
+             <td> 
+              <!--START ARTICLE MODULE FIRST TD--> 
+              <div rule-id="module" id="data_module4" rule-header="Promos - Below Ad" rule-moduleRequired="true" rule-defaultDisplay="true" rule-allRequired="true"> 
+               <div class="drop"> 
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" align="left" class="inner-card" style="100%;"> 
+                 <tr> 
+                  <td> 
+                   <!--START REMAINING 4 ARTICLE BLOCK  --> 
+                   <div rule-id="block" rule-maxBlock="4" rule-minBlock="1 " id="26"> 
+                    <table class="inline" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;"> 
+                     <tr valign="top"> 
+                      <td> 
+                       <table class="inner-table" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="" style=""> 
+                        <tr> 
+                         <td class="cell" width="100%" style="width:100%;padding:5px"> 
+                          <table class="box" width="100%" cellpadding="0" cellspacing="0" border="0"> 
+                           <!-- START SLOT LINK TEXT ARTICLE TITLE --> 
+                           <tr> 
+                            <td valign="top" style="padding-right:5px;"> <a rule-id="slot-link-text" id="27" rule-header-text="Article Title" rule-header-link="Article Link" rule-required="false" href="https://click.messages.webmd.com/?qs=5053ab3865fee35404a84004ba869127917638c3d1d6dfae284aa6ddb3876b2b246cc045dad9cca10248f17d4a0b01e7fb7a1629380d597c" class="sub-header" style="font-family:Helvetica,Arial,sans-serif;font-size:22px;color:#222;font-weight:bold;text-decoration:none;" rule-editor="disabled">15 Tasty Ways to Get More Calcium</a> </td> 
+                           </tr> 
+                           <!-- END SLOT LINK TEXT ARTICLE TITLE --> 
+                           <tr> 
+                            <td height="5" colspan="3" style="height:5px;"></td> 
+                           </tr> 
+                           <!-- START SLOT LINK TEXT ARTICLE DESCRIPTION --> 
+                           <tr> 
+                            <td style="padding-right:5px;"> <a rule-id="slot-link-text" id="28" rule-header-link="Article Link" rule-header-text="Description" rule-required="true" href="https://click.messages.webmd.com/?qs=5053ab3865fee3546f98c96c57d402f6e0cb8f7ccd2c9d1749d8a9941669e47a92a272a4e0b8fd33ae1fcbcf8f5fbc7c9d07f75250f03408" class="text" style="font-family:Helvetica,Arial,sans-serif;font-size:14px;color:#222;font-weight:normal; text-decoration:none;" rule-editor="disabled">Strengthen your bones and boost your health with delicious calcium-rich dishes that bring both flavor and nutrition to your meals.</a> </td> 
+                           </tr> 
+                           <!-- END SLOT LINK TEXT ARTICLE DESCRIPTION --> 
+                           <!-- START SLOT LINK TEXT CALL TO ACTION --> 
+                           <tr> 
+                            <td valign="middle" height="20"> <a rule-id="slot-link-text" id="29" rule-header-link="Article Link" rule-header-text="CTA Text" rule-required="true" href="https://click.messages.webmd.com/?qs=5053ab3865fee354d31333ee52feb9c20b2e571eb0c5aafb96d9802bfff18e90105c51b07e72f1503bf07dfdfcef9b380587a7f20798535b" style="font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:bold;color:#2280C4;text-decoration: none;line-height:20px;" rule-editor="disabled">Read More</a> </td> 
+                           </tr> 
+                           <!-- END SLOT LINK TEXT CALL TO ACTION --> 
+                          </table> </td> 
+                        </tr> 
+                        <tr> 
+                         <td height="14" colspan="3" style="height:14px;border-bottom:1px solid #e2e2e2;"></td> 
+                        </tr> 
+                       </table> </td> 
+                     </tr> 
+                    </table> 
+                   </div> 
+                   <div rule-id="block" rule-maxBlock="4" rule-minBlock="1 " id="26"> 
+                    <table class="inline" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;"> 
+                     <tr valign="top"> 
+                      <td> 
+                       <table class="inner-table" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="" style=""> 
+                        <tr> 
+                         <td class="cell" width="100%" style="width:100%;padding:5px"> 
+                          <table class="box" width="100%" cellpadding="0" cellspacing="0" border="0"> 
+                           <!-- START SLOT LINK TEXT ARTICLE TITLE --> 
+                           <tr> 
+                            <td valign="top" style="padding-right:5px;"> <a rule-id="slot-link-text" id="27" rule-header-text="Article Title" rule-header-link="Article Link" rule-required="false" href="https://click.messages.webmd.com/?qs=5053ab3865fee3544a03dbbebd12a2c4bc14ba9cbf77bb7e24a2735ca04a39f9245e22517a6a8605ae78dc1311149b53e31d77fe591b9555" class="sub-header" style="font-family:Helvetica,Arial,sans-serif;font-size:22px;color:#222;font-weight:bold;text-decoration:none;" rule-editor="disabled">Common Misconceptions About High Blood Pressure</a> </td> 
+                           </tr> 
+                           <!-- END SLOT LINK TEXT ARTICLE TITLE --> 
+                           <tr> 
+                            <td height="5" colspan="3" style="height:5px;"></td> 
+                           </tr> 
+                           <!-- START SLOT LINK TEXT ARTICLE DESCRIPTION --> 
+                           <tr> 
+                            <td style="padding-right:5px;"> <a rule-id="slot-link-text" id="28" rule-header-link="Article Link" rule-header-text="Description" rule-required="true" href="https://click.messages.webmd.com/?qs=5053ab3865fee35457e3e8aeaa2d702318b0656d6be6e31771e12338d7668a339f44d4bb45d2d669f0f22914493cd767d5f856952958cea7" class="text" style="font-family:Helvetica,Arial,sans-serif;font-size:14px;color:#222;font-weight:normal; text-decoration:none;" rule-editor="disabled">Don’t let myths put your health at risk. Learn the real facts about high blood pressure and how to keep it under control.</a> </td> 
+                           </tr> 
+                           <!-- END SLOT LINK TEXT ARTICLE DESCRIPTION --> 
+                           <!-- START SLOT LINK TEXT CALL TO ACTION --> 
+                           <tr> 
+                            <td valign="middle" height="20"> <a rule-id="slot-link-text" id="29" rule-header-link="Article Link" rule-header-text="CTA Text" rule-required="true" href="https://click.messages.webmd.com/?qs=5053ab3865fee354bee823926fba766c2920596e169d62c2d5fc04bf43ae1f2ac8ec14978bc231de08ade44074e0b0992be9fb26e848ddd3" style="font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:bold;color:#2280C4;text-decoration: none;line-height:20px;" rule-editor="disabled">Read More</a> </td> 
+                           </tr> 
+                           <!-- END SLOT LINK TEXT CALL TO ACTION --> 
+                          </table> </td> 
+                        </tr> 
+                        <tr> 
+                         <td height="14" colspan="3" style="height:14px;border-bottom:1px solid #e2e2e2;"></td> 
+                        </tr> 
+                       </table> </td> 
+                     </tr> 
+                    </table> 
+                   </div> 
+                   <div rule-id="block" rule-maxBlock="4" rule-minBlock="1 " id="26"> 
+                    <table class="inline" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;"> 
+                     <tr valign="top"> 
+                      <td> 
+                       <table class="inner-table" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="" style=""> 
+                        <tr> 
+                         <td class="cell" width="100%" style="width:100%;padding:5px"> 
+                          <table class="box" width="100%" cellpadding="0" cellspacing="0" border="0"> 
+                           <!-- START SLOT LINK TEXT ARTICLE TITLE --> 
+                           <tr> 
+                            <td valign="top" style="padding-right:5px;"> <a rule-id="slot-link-text" id="27" rule-header-text="Article Title" rule-header-link="Article Link" rule-required="false" href="https://click.messages.webmd.com/?qs=5053ab3865fee354de0d0a55d936922c967dceb04bdc5fabc8543b5eae60e76dd47c85f8887c82bbd750e9affe4a01d4732f06a8247530c7" class="sub-header" style="font-family:Helvetica,Arial,sans-serif;font-size:22px;color:#222;font-weight:bold;text-decoration:none;" rule-editor="disabled">Life at 90 and Beyond: Thriving in Your Golden Years</a> </td> 
+                           </tr> 
+                           <!-- END SLOT LINK TEXT ARTICLE TITLE --> 
+                           <tr> 
+                            <td height="5" colspan="3" style="height:5px;"></td> 
+                           </tr> 
+                           <!-- START SLOT LINK TEXT ARTICLE DESCRIPTION --> 
+                           <tr> 
+                            <td style="padding-right:5px;"> <a rule-id="slot-link-text" id="28" rule-header-link="Article Link" rule-header-text="Description" rule-required="true" href="https://click.messages.webmd.com/?qs=5053ab3865fee3543e7ba88c0955c9de1ddcc234cdbcd2e6715d8487cb5280b3065576267dcd8f13a10a863621cec59966e8fb118e19504f" class="text" style="font-family:Helvetica,Arial,sans-serif;font-size:14px;color:#222;font-weight:normal; text-decoration:none;" rule-editor="disabled">Reaching your 90s comes with both challenges and rewards. Learn how “super-agers” stay mentally sharp, socially active, and physically healthy -- proving that aging well is possible at any stage.</a> </td> 
+                           </tr> 
+                           <!-- END SLOT LINK TEXT ARTICLE DESCRIPTION --> 
+                           <!-- START SLOT LINK TEXT CALL TO ACTION --> 
+                           <tr> 
+                            <td valign="middle" height="20"> <a rule-id="slot-link-text" id="29" rule-header-link="Article Link" rule-header-text="CTA Text" rule-required="true" href="https://click.messages.webmd.com/?qs=5053ab3865fee354800bd86713b781020746530b8490645a8bcdec0cc8c59c854f7735f9fc2c4e28d63127c2b1623b18365ca84cc0f895b5" style="font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:bold;color:#2280C4;text-decoration: none;line-height:20px;" rule-editor="disabled">Watch More</a> </td> 
+                           </tr> 
+                           <!-- END SLOT LINK TEXT CALL TO ACTION --> 
+                          </table> </td> 
+                        </tr> 
+                        <tr> 
+                         <td height="14" colspan="3" style="height:14px;border-bottom:1px solid #e2e2e2;"></td> 
+                        </tr> 
+                       </table> </td> 
+                     </tr> 
+                    </table> 
+                   </div> 
+                   <div rule-id="block" rule-maxBlock="4" rule-minBlock="1 " id="26"> 
+                    <table class="inline" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;"> 
+                     <tr valign="top"> 
+                      <td> 
+                       <table class="inner-table" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="" style=""> 
+                        <tr> 
+                         <td class="cell" width="100%" style="width:100%;padding:5px"> 
+                          <table class="box" width="100%" cellpadding="0" cellspacing="0" border="0"> 
+                           <!-- START SLOT LINK TEXT ARTICLE TITLE --> 
+                           <tr> 
+                            <td valign="top" style="padding-right:5px;"> <a rule-id="slot-link-text" id="27" rule-header-text="Article Title" rule-header-link="Article Link" rule-required="false" href="https://click.messages.webmd.com/?qs=5053ab3865fee354e1841c744761ab1d1c758277db076d35dfa5acb7167724bd68107999ac9cf7b3e439b0ace5a6deb32a0b5759ae765e7a" class="sub-header" style="font-family:Helvetica,Arial,sans-serif;font-size:22px;color:#222;font-weight:bold;text-decoration:none;" rule-editor="disabled">Understanding Breast Cancer: Signs, Risks, and Care</a> </td> 
+                           </tr> 
+                           <!-- END SLOT LINK TEXT ARTICLE TITLE --> 
+                           <tr> 
+                            <td height="5" colspan="3" style="height:5px;"></td> 
+                           </tr> 
+                           <!-- START SLOT LINK TEXT ARTICLE DESCRIPTION --> 
+                           <tr> 
+                            <td style="padding-right:5px;"> <a rule-id="slot-link-text" id="28" rule-header-link="Article Link" rule-header-text="Description" rule-required="true" href="https://click.messages.webmd.com/?qs=5053ab3865fee354031eac5d1918c2c04a660eb409ceefd44a4506b136ecea0bb7ef8427188d7bfe30190e64212a4e5b8fa031bc5fbf8310" class="text" style="font-family:Helvetica,Arial,sans-serif;font-size:14px;color:#222;font-weight:normal; text-decoration:none;" rule-editor="disabled">Early detection can make a big difference. Learn about common signs, risk factors, and care strategies that may lead to better outcomes.</a> </td> 
+                           </tr> 
+                           <!-- END SLOT LINK TEXT ARTICLE DESCRIPTION --> 
+                           <!-- START SLOT LINK TEXT CALL TO ACTION --> 
+                           <tr> 
+                            <td valign="middle" height="20"> <a rule-id="slot-link-text" id="29" rule-header-link="Article Link" rule-header-text="CTA Text" rule-required="true" href="https://click.messages.webmd.com/?qs=5053ab3865fee3546f48396e0fde9055b83b9bddf719156be311e75a471614f3fbe172e018ecb8bd58a37aac2ad9636bc4961c40b70666a4" style="font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:bold;color:#2280C4;text-decoration: none;line-height:20px;" rule-editor="disabled">Read More</a> </td> 
+                           </tr> 
+                           <!-- END SLOT LINK TEXT CALL TO ACTION --> 
+                          </table> </td> 
+                        </tr> 
+                        <tr> 
+                         <td height="14" colspan="3" style="height:14px;border-bottom:1px solid #e2e2e2;"></td> 
+                        </tr> 
+                       </table> </td> 
+                     </tr> 
+                    </table> 
+                   </div> 
+                   <!--END REMAINING 3 ARTICLE BLOCK --> </td> 
+                 </tr> 
+                </table> 
+               </div> 
+              </div> 
+              <!--END ARTICLE BLOCK FIRST SECTION--> </td> 
+            </tr> 
+           </table> 
+           <!--END GREY TABLE HOLDER--> </td> 
+         </tr> 
+        </table> 
+        <!-- END BODY CONTAINER --> 
+        <!--START PROMO SECTION--> 
+        <table width="93%" cellpadding="0" cellspacing="0" border="0" align="center"> 
+         <tr> 
+          <td align="center"> 
+           <!-- START PROMO TITLE MODULE --> 
+           <div rule-id="module" id="data_module5" rule-header="Insert Header Here" rule-moduleRequired="false" rule-defaultDisplay="false" rule-headerEditable="true"> 
+            <!--START PROMO TITLE BLOCK--> 
+            <table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#ffffff"> 
+             <!--START PROMO TITLE TEXT SLOT--> 
+             <tr> 
+              <td height="40" style="font-family:Helvetica,Arial,sans-serif;font-size:20px;font-weight:bold;color:#88a906;padding-left:8px;">Top Picks</td> 
+             </tr> 
+             <!--END PROMO TITLE TEXT SLOT--> 
+            </table> 
+            <!--END PROMO TITLE BLOCK--> 
+            <!-- END PROMO TITLE MODULE --> 
+            <!--START LIGHT GREY PROMO BOX--> 
+            <table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#f7f5f5"> 
+             <tr> 
+              <td style="padding-left:5px; padding-right:5px;"> 
+               <!--START PROMO LINK MODULE--> 
+               <!--START PROMO LINK BLOCK--> 
+               <div rule-id="block" rule-maxBlock="3" rule-minBlock="1" id="30"> 
+                <table class="inline" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f7f5f5"> 
+                 <tr> 
+                  <td> 
+                   <table class="inner-table" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="" style=""> 
+                    <tr> 
+                     <td width="95%" style="padding:5px"> 
+                      <table class="box" width="95%" cellpadding="0" cellspacing="0" border="0"> 
+                       <tr> 
+                        <td class="info" height="8" valign="top" style="font-family:Helvetica,Arial,sans-serif;font-size:10px;text-transform:uppercase;color:#676767;font-weight:bold;"></td> 
+                       </tr> 
+                       <!-- BEGIN PROMO LINK TEXT SLOT --> 
+                       <tr> 
+                        <td valign="top" width="100%"> <a rule-id="slot-link-text" id="31" rule-header-link="Article Link" rule-header-text="Article Title" rule-required="true" href="https://click.messages.webmd.com/?qs=5053ab3865fee35433270a4af9a2f16183539b21337aa5ec97dda19c6e96e01a60225541f10ad39e125d94a852f6785fafaff6cbbc9a138b" class="sub-header" style="font-family:Helvetica,Arial,sans-serif;font-size:16px;color:#222222;font-weight:bold;text-decoration:none;" rule-editor="disabled">Understanding the MG-ADL Scale</a> 
+                         <!-- START PROMO ICON SLOT --> 
+                         <!-- END PROMO ICON SLOT --> </td> 
+                       </tr> 
+                       <!-- END PROMO LINK TEXT SLOT --> 
+                      </table> </td> 
+                    </tr> 
+                    <tr> 
+                     <td height="14" colspan="3" style="height:8px;border-bottom:1px solid #e2e2e2;"></td> 
+                    </tr> 
+                   </table> </td> 
+                 </tr> 
+                </table> 
+               </div> 
+               <div rule-id="block" rule-maxBlock="3" rule-minBlock="1" id="30"> 
+                <table class="inline" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f7f5f5"> 
+                 <tr> 
+                  <td> 
+                   <table class="inner-table" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="" style=""> 
+                    <tr> 
+                     <td width="95%" style="padding:5px"> 
+                      <table class="box" width="95%" cellpadding="0" cellspacing="0" border="0"> 
+                       <tr> 
+                        <td class="info" height="8" valign="top" style="font-family:Helvetica,Arial,sans-serif;font-size:10px;text-transform:uppercase;color:#676767;font-weight:bold;"></td> 
+                       </tr> 
+                       <!-- BEGIN PROMO LINK TEXT SLOT --> 
+                       <tr> 
+                        <td valign="top" width="100%"> <a rule-id="slot-link-text" id="31" rule-header-link="Article Link" rule-header-text="Article Title" rule-required="true" href="https://click.messages.webmd.com/?qs=5053ab3865fee3549fdc9eb382735ee07b7ee38e9560de9ae69ffc85af1e4a6e40ec9b3120fae3beede0ed3f7f10d1aea687075af83dd96e" class="sub-header" style="font-family:Helvetica,Arial,sans-serif;font-size:16px;color:#222222;font-weight:bold;text-decoration:none;" rule-editor="disabled">Managing HS in Sensitive Areas</a> 
+                         <!-- START PROMO ICON SLOT --> 
+                         <!-- END PROMO ICON SLOT --> </td> 
+                       </tr> 
+                       <!-- END PROMO LINK TEXT SLOT --> 
+                      </table> </td> 
+                    </tr> 
+                    <tr> 
+                     <td height="14" colspan="3" style="height:8px;border-bottom:1px solid #e2e2e2;"></td> 
+                    </tr> 
+                   </table> </td> 
+                 </tr> 
+                </table> 
+               </div> 
+               <div rule-id="block" rule-maxBlock="3" rule-minBlock="1" id="30"> 
+                <table class="inline" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f7f5f5"> 
+                 <tr> 
+                  <td> 
+                   <table class="inner-table" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="" style=""> 
+                    <tr> 
+                     <td width="95%" style="padding:5px"> 
+                      <table class="box" width="95%" cellpadding="0" cellspacing="0" border="0"> 
+                       <tr> 
+                        <td class="info" height="8" valign="top" style="font-family:Helvetica,Arial,sans-serif;font-size:10px;text-transform:uppercase;color:#676767;font-weight:bold;"></td> 
+                       </tr> 
+                       <!-- BEGIN PROMO LINK TEXT SLOT --> 
+                       <tr> 
+                        <td valign="top" width="100%"> <a rule-id="slot-link-text" id="31" rule-header-link="Article Link" rule-header-text="Article Title" rule-required="true" href="https://click.messages.webmd.com/?qs=5053ab3865fee35496382a84a3acbe3293a1936b8a568a3fff3906b55b9b77c1726b7a76fa3e7476ed65facb7df838565f5b8d11f89204ea" class="sub-header" style="font-family:Helvetica,Arial,sans-serif;font-size:16px;color:#222222;font-weight:bold;text-decoration:none;" rule-editor="disabled">What to Expect With Non-Small-Cell Lung Cancer</a> 
+                         <!-- START PROMO ICON SLOT --> 
+                         <!-- END PROMO ICON SLOT --> </td> 
+                       </tr> 
+                       <!-- END PROMO LINK TEXT SLOT --> 
+                      </table> </td> 
+                    </tr> 
+                    <tr> 
+                     <td height="14" colspan="3" style="height:8px;border-bottom:1px solid #e2e2e2;"></td> 
+                    </tr> 
+                   </table> </td> 
+                 </tr> 
+                </table> 
+               </div> 
+               <!--END PROMO LINK BLOCK--> 
+               <!--END PROMO LINK MODULE--> </td> 
+             </tr> 
+            </table> 
+           </div> 
+           <!--END LIGHT GREY PROMO BOX--> </td> 
+         </tr> 
+        </table> 
+        <!--END PROMO SECTION--> 
+        <!--START SPONSOR SECTION--> 
+        <table width="93%" cellpadding="0" cellspacing="0" border="0" align="center"> 
+         <tr> 
+          <td align="center"> 
+           <!-- START SPONSOR TITLE MODULE --> 
+           <div rule-id="module" id="data_module6" rule-header="Define Header Here" rule-moduleRequired="false" rule-defaultDisplay="false" rule-allRequired="false" rule-headerEditable="true"> 
+            <!--START SPONSOR TITLE BLOCK--> 
+            <table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#ffffff"> 
+             <!--START PROMO TITLE TEXT SLOT--> 
+             <tr> 
+              <td rule-required="true" height="40" style="font-family:Helvetica,Arial,sans-serif;font-size:20px;font-weight:bold;color:#ff6633;padding-left:8px;">From Our Sponsors </td> 
+             </tr> 
+             <!--END PROMO TITLE TEXT SLOT--> 
+            </table> 
+            <!--END SPONSOR TITLE BLOCK--> 
+            <!-- END SPONSOR TITLE MODULE --> 
+            <!--START SPONSOR LINK GREY BOX--> 
+            <table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#f7f5f5"> 
+             <tr> 
+              <td style="padding-left:5px; padding-right:5px;"> 
+               <!--START SPONSOR LINK MODULE--> 
+               <!--START SPONSOR LINK BLOCK--> 
+               <div rule-id="block" rule-maxBlock="3" rule-minBlock="1" id="33"> 
+                <table class="inline" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f7f5f5"> 
+                 <tr> 
+                  <td> 
+                   <table class="inner-table" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="" style=""> 
+                    <tr> 
+                     <td width="95%" style="padding:5px"> 
+                      <table class="box" width="95%" cellpadding="0" cellspacing="0" border="0"> 
+                       <tr> 
+                        <td class="info" height="8" valign="top" style="font-family:Helvetica,Arial,sans-serif;font-size:10px;text-transform:uppercase;color:#676767;font-weight:bold;"></td> 
+                       </tr> 
+                       <tr> 
+                        <td valign="top"> <a rule-id="slot-link-text" id="34" rule-header-link="Article Link" rule-header-text="Article Title" rule-required="true" href="https://click.messages.webmd.com/?qs=5053ab3865fee354e8bc4c9ddc0189de7e70fdfd25072c1f54c3950b1c95fda1488aadef014438028bbb008eb1dc6c31bd82cdcf0b8d5e9c" class="sub-header" style="font-family:Helvetica,Arial,sans-serif;font-size:16px;color:#222222;font-weight:bold;text-decoration:none;" rule-editor="disabled">Cardiac Issue: Care and Treatment</a> 
+                         <!-- START PROMO ICON SLOT --> 
+                         <!-- END PROMO ICON SLOT --> </td> 
+                       </tr> 
+                      </table> </td> 
+                    </tr> 
+                    <tr> 
+                     <td height="14" colspan="3" style="height:8px;border-bottom:1px solid #e2e2e2;"></td> 
+                    </tr> 
+                   </table> 
+                   <!--END SPONSOR LINK BLOCK--> 
+                   <!--END SPONSOR LINK MODULE--> </td> 
+                 </tr> 
+                </table> 
+               </div> </td> 
+             </tr> 
+            </table> 
+           </div> 
+           <!--END SPONSOR LINK GREY BOX--> </td> 
+         </tr> 
+        </table> </td> 
+      </tr> 
+      <!--Ad --> 
+      <!--END AD--> 
+      <tr> 
+       <td> 
+        <table class="footer" width="100%" cellpadding="0" cellspacing="0" border="0"> 
+         <tbody> 
+          <tr> 
+           <td> 
+            <table width="100%" cellpadding="0" cellspacing="0" border="0"> 
+             <tbody> 
+              <tr> 
+               <td height="20" style="height:20px;"></td> 
+              </tr> 
+             </tbody> 
+            </table> </td> 
+          </tr> 
+          <tr> 
+           <td align="center" colspan="3" style="padding: 0px 0px 20px;"> 
+            <div align="center"> 
+             <table width="100%" border="0" cellspacing="0" cellpadding="0" class="shell"> 
+              <tbody> 
+               <tr> 
+                <td> 
+                 <table width="93%" align="center" cellpadding="0" cellspacing="0" border="0"> 
+                  <tbody> 
+                   <tr> 
+                    <td> 
+                     <table width="240px" border="0" align="center" cellspacing="0" cellpadding="0" class="socialfoot"> 
+                      <tbody> 
+                       <tr> 
+                        <td width="40"><a href="https://click.messages.webmd.com/?qs=5053ab3865fee35456585e2839dd16aa41ce05420e6bd5eecd98f0b75e44e211fb52dd878f9ae2db09dd6fc1119511ee3308d9e97ee49a2f" target="_blank" style="text-decoration:none;border:none;"><img src="https://image.messages.webmd.com/lib/fe9f13707564027c77/m/1/dc3ddbbb-4048-403d-ac80-d7216a696583.png" width="30" alt="Missing image" /></a></td> 
+                        <td width="10">&nbsp;</td> 
+                        <td width="40"><a href="https://click.messages.webmd.com/?qs=5053ab3865fee35401cf6b2c022d7ce03c3044bfbb577af61a8937f6c7666f76b09209766ff29ba3182bf6ba5e3ec3ba07660f2a44df3891" target="_blank" style="text-decoration:none;border:none;"><img src="https://image.messages.webmd.com/lib/fe9f13707564027c77/m/1/6d13f997-f32b-4d73-ac3b-9d61f547824d.png" width="30" alt="Missing image" /></a></td> 
+                        <td width="10">&nbsp;</td> 
+                        <td width="40"><a href="https://click.messages.webmd.com/?qs=5053ab3865fee3546740acb64101d1920591c80bf603c888916e65657097a6328c028585208ea5f608ce2108283d08ea02ae8a191f337321" target="_blank" style="text-decoration:none;border:none;"><img src="https://image.messages.webmd.com/lib/fe9f13707564027c77/m/1/6eda3d19-d5d9-4093-906a-64ce4388b637.png" width="30" alt="Missing image" /></a></td> 
+                        <td width="10">&nbsp;</td> 
+                        <td width="40"><a href="https://click.messages.webmd.com/?qs=5053ab3865fee35475eb73a4b51e037031e098ddae608f455ef7d072e810d1abf4d9b4814a71b225d497f4b87d2720aedb2a43936f422b14" target="_blank" style="text-decoration:none;border:none;"><img src="https://image.messages.webmd.com/lib/fe9f13707564027c77/m/1/12949f81-be8a-46ca-a471-fad8e3228099.png" width="30" alt="Missing image" /></a></td> 
+                        <td width="10">&nbsp;</td> 
+                        <td width="40"><a href="https://click.messages.webmd.com/?qs=5053ab3865fee3546d4a75fe5cce2f307481851570de382505e439f4c3b83c078f3bea52849a281627ace5b1a70ea30770d6bb90b75462d2" target="_blank" style="text-decoration:none;border:none;"><img src="https://image.messages.webmd.com/lib/fe9f13707564027c77/m/1/d89e3e7c-16ae-4752-9ee7-05f8df3839ce.png" width="30" alt="Missing image" /></a></td> 
+                       </tr> 
+                      </tbody> 
+                     </table> </td> 
+                   </tr> 
+                  </tbody> 
+                 </table> </td> 
+               </tr> 
+               <tr> 
+                <td align="center"> 
+                 <table width="100%" border="0" cellspacing="0" cellpadding="0"> 
+                  <tbody> 
+                   <tr> 
+                    <td height="20">&nbsp;</td> 
+                   </tr> 
+                  </tbody> 
+                 </table> 
+                 <table width="93%" align="center" border="0" cellspacing="0" cellpadding="0"> 
+                  <tbody> 
+                   <tr> 
+                    <td align="center" style="font-family:'Helvetica',Arial,sans-serif;font-size:12px;font-weight:bold;color:#626367"><a href="https://click.messages.webmd.com/?qs=5053ab3865fee35495a5eec600ec55e9d1ee01887359ad0ff730f81de419d6de3efcbc79846bd9b781264806dae239beea7f75cdaad69766" style="color:#226EBF;text-decoration:none;">WebMD.com</a> &nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://click.messages.webmd.com/?qs=5053ab3865fee354a3f529938bf49d65b45871fd32feac3d7f01430a1d4b396cf473af25ce9b3353327e13f1827d1e19f2732f6d526ad776" style="color:#226EBF;text-decoration:none;">Mobile Apps</a> &nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://click.messages.webmd.com/?qs=5053ab3865fee354bf75a0646ce0da092eb5904bcd78fbd77af89b364ce17c660eb7bbb149b03bfd945aafce1d199e5cee579f4ffae23a0a" style="color:#226EBF;text-decoration:none;">Unsubscribe</a> &nbsp;&nbsp; | &nbsp;&nbsp; 
+<a href="https://view.messages.webmd.com/?qs=3da4552c8df5ca468f7a1e651f5a638d21e2ed3b7ceb1077c1f6ff41327e642e989b5ae92af4f71daec5de67347a4300e6230f817b644cc0f5e499ea32a44bc4d8bc8a2593101a72bfff06c1bc388a16" style="color:#226EBF;text-decoration:none;font-family:Arial;font-size:12px;">View as a Webpage</a></td> 
+                   </tr> 
+                   <tr> 
+                    <td height="10">&nbsp; </td> 
+                   </tr> 
+                   <tr> 
+                    <td width="100%" style="font-family:'Helvetica',Arial,sans-serif;font-size:12px;color:#626367;line-height:18px;">You are receiving this message because you registered with WebMD as mrinix02@gmail.com. If you did not register for WebMD please contact our <a href="https://click.messages.webmd.com/?qs=5053ab3865fee354668b0c1fa1135c790ca5336544ceccfb309652092f1fb3f9b0cf7d558894ca053da7eef6a52fc8f8e5b8ed5b10bc067d" target="_blank" style="font-family:'Helvetica',Arial,sans-serif;font-size:12px;color:#2280C4;text-decoration:none;">Customer Care Team</a></td> 
+                   </tr> 
+                   <tr> 
+                    <td height="10"></td> 
+                   </tr> 
+                   <tr> 
+                    <td width="100%"><a href="https://click.messages.webmd.com/?qs=5053ab3865fee354385e0f826318307726e4f0390476d63ed9a5e34212a32ed9e90a3d856c50f93b90813ca9fb8123fdd328d507e6f8babf" target="_blank" style="font-family:'Helvetica',Arial,sans-serif;font-size:12px;color:#2280C4;text-decoration:none;">WebMD Privacy Policy</a></td> 
+                   </tr> 
+                   <tr> 
+                    <td width="100%" style="font-family: 'Helvetica',Arial,sans-serif;font-size:12px;color:#626367;line-height:19px;">© 2025 WebMD, LLC. All rights reserved. WebMD Office of Privacy <span class="mobile-hidden">|</span> 283-299 Market Street, 3rd Floor <span class="mobile-hidden">|</span> 2 Gateway Center <span class="mobile-hidden">|</span> Newark, NJ 07102 </td> 
+                   </tr> 
+                  </tbody> 
+                 </table> </td> 
+               </tr> 
+              </tbody> 
+             </table> 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> </td> 
+      </tr> 
+     </table> </td> 
+   </tr> 
+  </table> 
+  <!-- END MAIN TEMPLATE CONTAINER --> 
+  <!-- Live Intent Required Code --> 
+  <table cellpadding="0" cellspacing="0" border="0" width="40" height="6"> 
+   <tbody> 
+    <tr> 
+     <td><img src="https://sli.webmd.com/imp?s=125726200&amp;li=99999&amp;e=&amp;p=&amp;stpe=pixel&amp;env=1" width="2" height="6" border="0" /></td> 
+     <td><img src="https://sli.webmd.com/imp?s=125726201&amp;li=99999&amp;e=&amp;p=&amp;stpe=pixel&amp;env=1" width="2" height="6" border="0" /></td> 
+     <td><img src="https://sli.webmd.com/imp?s=125726202&amp;li=99999&amp;e=&amp;p=&amp;stpe=pixel&amp;env=1" width="2" height="6" border="0" /></td> 
+     <td><img src="https://sli.webmd.com/imp?s=125726203&amp;li=99999&amp;e=&amp;p=&amp;stpe=pixel&amp;env=1" width="2" height="6" border="0" /></td> 
+     <td><img src="https://sli.webmd.com/imp?s=125726204&amp;li=99999&amp;e=&amp;p=&amp;stpe=pixel&amp;env=1" width="2" height="6" border="0" /></td> 
+    </tr> 
+   </tbody> 
+  </table> 
+  <!-- Live Intent Required Code END -->  
+  <!-- Live Intent Required Coding contact Danny Tran for issues              <img src="https://regimg.webmd.com/1x1.gif?mb=%40O1SdpwMzxWdl%2f0E%40b1mt%40HnVev1imbCw3wg7BzGh%40s%3d" width="1" height="1">       <!-- RegionEnd[ socialslot:"WbmdSocial"] --> 
+  <!-- TRACKING CODE --> 
+  <img src="https://click.messages.webmd.com/open.aspx?ffcb10-fe91137775660c7f71-fe251c7671600d7d7c1670-fe9f13707564027c77-ff921178-fe2615797c65047e7c1372-ff061673756507&d=60249&bmt=0" width="1" height="1" alt=""> 
+  </custom> 
+  <!-- TRACKING CODE --> 
+   </img> 
+ </body>                                             
+</html>
+
+--XYvlR54P23Hz=_?:--
+

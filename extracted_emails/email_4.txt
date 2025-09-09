@@ -1,0 +1,1322 @@
+Delivered-To: mrinix02@gmail.com
+Received: by 2002:ac8:5854:0:b0:4b0:8b25:add9 with SMTP id h20csp1494651qth;
+        Mon, 8 Sep 2025 16:38:02 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGAZDxRHbcs33RRfhwfaf9CZLE3NjkTQ+fOppeGe5vjNALfV7ab36G++SPfDr0s70Ab5Fmj
+X-Received: by 2002:a05:690c:4:b0:71f:b944:103c with SMTP id 00721157ae682-727f544655cmr92730747b3.45.1757374682657;
+        Mon, 08 Sep 2025 16:38:02 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1757374682; cv=none;
+        d=google.com; s=arc-20240605;
+        b=MtIblpcfAReI8WtPF0tX0Xx2YDLolZcNTc685TBm34OE8cQxv4pRgyzW1ChwbnqEOQ
+         iCcBBkXu6jqK8Ywx4VH2EJVy1CAhlh49c593QIqfn+qcqpXtwqQJj8EailzaJpNxffZW
+         XmHW5vscbqTIbx3KqHfBOUrUnlzLQG+ul6NWHfFiRhuYPrgyvwQoeXT91GGBR7xU7HUI
+         g38CixshwPkTSRMQAfp+5aGQGECsRF4DlC2KSiYi35/JmEzar3VTp7o6nryf96YXugJ1
+         Yc5O1Xerl6NAOroLsXfDw7mGuy0eLf8kEq/o6c0Bok3TcoDKwIquDK0JCRSHfUvwdspg
+         lVhA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:from:subject:list-unsubscribe-post:reply-to
+         :list-unsubscribe:mime-version:date:message-id:to:dkim-signature;
+        bh=xeaNpkxPqSkm6cA2Qqg3wMkcKxqKM/o2bVaoDJNLQaQ=;
+        fh=mm+362Y5dgmvdXLtMtosrUX46nOI2vdazMyMfEsXwlU=;
+        b=BOt4WJs8ygqB56A96uaVpGYvTu3A+QouvahJCarYMWolFmUTNJKvzFFGLZDv4C3TPZ
+         oWhkhIgvQ8Wp8NmSeEICkxT/DEHRLQBDODlVgQACuwRcnCnpGCMWHbwXvLSxOe7V3qwa
+         SqxeEI4YBTkbCGf1zceOuoq0dvNsCc3dpYCx6uHwU/X7pcR7/I6ygQpQozj3oqE/s/DZ
+         5niTlv5YIw5v0yUG+J5UffXNrzWS9LjTzxAmETcULdQQSi3fkOg1Xv518duEivfggLEZ
+         pVd4mZ6QS1E/5gW/a882zvG61JjWHWR/yDpgqGmuv7e17XnmuCB+Ly0CPg1c/bafpBRu
+         7f9w==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@em.cars.com header.s=scph0918 header.b=ZnKA52X2;
+       spf=pass (google.com: domain of msprvs1=20346breiyknk=bounces-236543@em.cars.com designates 147.253.210.56 as permitted sender) smtp.mailfrom="msprvs1=20346BReiYKnK=bounces-236543@em.cars.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=em.cars.com
+Return-Path: <msprvs1=20346BReiYKnK=bounces-236543@em.cars.com>
+Received: from mta-210-56.sparkpostmail.com (mta-210-56.sparkpostmail.com. [147.253.210.56])
+        by mx.google.com with ESMTPS id 00721157ae682-723a8526b68si96744387b3.209.2025.09.08.16.38.02
+        for <mrinix02@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 08 Sep 2025 16:38:02 -0700 (PDT)
+Received-SPF: pass (google.com: domain of msprvs1=20346breiyknk=bounces-236543@em.cars.com designates 147.253.210.56 as permitted sender) client-ip=147.253.210.56;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@em.cars.com header.s=scph0918 header.b=ZnKA52X2;
+       spf=pass (google.com: domain of msprvs1=20346breiyknk=bounces-236543@em.cars.com designates 147.253.210.56 as permitted sender) smtp.mailfrom="msprvs1=20346BReiYKnK=bounces-236543@em.cars.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=em.cars.com
+Return-Path: <msprvs1=20346BReiYKnK=bounces-236543@em.cars.com>
+X-MSFBL: q0BykVKRg+TtCgp8tTaW0Ct6aYGKPIcyIJwQJQWcyp8=|eyJjdXN0b21lcl9pZCI
+	6IjIzNjU0MyIsInN1YmFjY291bnRfaWQiOiIwIiwiciI6Im1yaW5peDAyQGdtYWl
+	sLmNvbSIsIm1lc3NhZ2VfaWQiOiI2OGJhZDk2OGJmNjhmNmZhNzQ5YiIsInRlbmF
+	udF9pZCI6InNwYyJ9
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=em.cars.com;
+	s=scph0918; t=1757374681; i=@em.cars.com;
+	bh=xeaNpkxPqSkm6cA2Qqg3wMkcKxqKM/o2bVaoDJNLQaQ=;
+	h=To:Message-ID:Date:Content-Type:List-Unsubscribe:
+	 List-Unsubscribe-Post:Subject:From:From:To:Cc:Subject;
+	b=ZnKA52X2NtiGWs7F2eWU3XjTxtl8PA0tIRj1xqvpFR1Oha1Lun5LLS5IsdKepX1SN
+	 Z5V30p+D3i0xu34kbjdLtERI6R0SkmLrgpcCYLFraHEJuAcTAgVddVzyeJ6H5+2i19
+	 rYc9n6fTpaOAAjusoSjVEqYThsjZlMIUk2AwkgOA=
+Received: from [10.90.7.63] ([10.90.7.63])
+	by i-043c0815e4248071f.mta1vrest.sd.prd.sparkpost (ecelerity 5.1.0.74593 r(msys-ecelerity:tags/5.1.0.7)) with REST
+	id B9/47-29465-9D86FB86; Mon, 08 Sep 2025 23:38:01 +0000
+To: mrinix02@gmail.com
+Message-ID: <B9.47.29465.9D86FB86@i-043c0815e4248071f.mta1vrest.sd.prd.sparkpost>
+Date: Mon, 08 Sep 2025 23:38:01 +0000
+Content-Type: multipart/alternative; boundary="_----L0SBIdWN44+lg6bGNmydwg===_99/47-29465-9D86FB86"
+MIME-Version: 1.0
+X-Campaign-ID: 12651915
+List-Unsubscribe: <https://links.iterable.com/e/encryptedUnsubscribe?_r=47f16e37803d44c8a302ee7782c80abb&_s=562a2dcdf0f1499982ebeb0faff6a973&_t=eY2pwIwAvhq8jhHUOnRc16ULwhya-mvVdBQN1VpqAZs2CFweHIoQo5dowkDRAx6U_rVIHJMGKkumlQ9RSnw2Y0pYfveyOCutfd5GwMWZaW4%3D>,<mailto:unsubscribe+12651915+16575508@unsubscribe.iterable.com>
+X-Message-ID: 562a2dcdf0f1499982ebeb0faff6a973
+X-Feedback-ID: 16575508:12651915:16607:iterable
+Reply-To: donotreply@cars.com
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Subject: We found these vehicles similar your recent search
+From: "Cars.com" <email@em.cars.com>
+Feedback-ID: 16575508:12651915:16607:iterable
+
+--_----L0SBIdWN44+lg6bGNmydwg===_99/47-29465-9D86FB86
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="UTF-8"
+
+Cars.com =0A=0A <https://www.cars.com/=3Faff=3Dacqem16&emc=3Dacqem16> =0A=
+=0A=0A Thanks for your recent search! =0A We have our matches just for you!=
+ =0A=0A =0A<https://www.cars.com/vehicledetail/2a6e797a-553d-4326-8433-a727=
+964ac4e1/=3Faff=3Dacqem16&emc=3Dacqem16>=0A 2024 Chevrolet Equinox 1LT  =0A=
+<https://www.cars.com/vehicledetail/2a6e797a-553d-4326-8433-a727964ac4e1/=
+=3Faff=3Dacqem16&emc=3Dacqem16>=0A=0A $21,892 =0A=0A=0A 38,166 mi. =0A=0A D=
+onovan Auto & Truck Center =0A=0A=0A=0AView details =0A<https://www.cars.co=
+m/vehicledetail/2a6e797a-553d-4326-8433-a727964ac4e1/=3Faff=3Dacqem16&emc=
+=3Dacqem16>=0A=0A =0A<https://www.cars.com/vehicledetail/79475162-542a-4c01=
+-b453-63b7fea7e2e2/=3Faff=3Dacqem16&emc=3Dacqem16>=0A 2023 Chevrolet Blazer=
+ 2LT  =0A<https://www.cars.com/vehicledetail/79475162-542a-4c01-b453-63b7fe=
+a7e2e2/=3Faff=3Dacqem16&emc=3Dacqem16>=0A=0A $24,302 =0A=0A=0A 46,914 mi. =
+=0A=0A Don Hattan Chevrolet =0A=0A=0A=0AView details =0A<https://www.cars.c=
+om/vehicledetail/79475162-542a-4c01-b453-63b7fea7e2e2/=3Faff=3Dacqem16&emc=
+=3Dacqem16>=0A=0A =0A<https://www.cars.com/vehicledetail/b73ec64c-995d-40ad=
+-939b-3138911dcda5/=3Faff=3Dacqem16&emc=3Dacqem16>=0A 2022 Chevrolet Equino=
+x FWD RS  =0A<https://www.cars.com/vehicledetail/b73ec64c-995d-40ad-939b-31=
+38911dcda5/=3Faff=3Dacqem16&emc=3Dacqem16>=0A=0A $28,173 =0A=0A=0A 22,140 m=
+i. =0A=0A Don Hattan Chevrolet =0A=0A=0A=0AView details =0A<https://www.car=
+s.com/vehicledetail/b73ec64c-995d-40ad-939b-3138911dcda5/=3Faff=3Dacqem16&e=
+mc=3Dacqem16>=0A=0A =0A<https://www.cars.com/vehicledetail/8f56b8ae-c809-41=
+5e-9e72-21657d20173a/=3Faff=3Dacqem16&emc=3Dacqem16>=0A 2021 Buick Encore G=
+X Select  =0A<https://www.cars.com/vehicledetail/8f56b8ae-c809-415e-9e72-21=
+657d20173a/=3Faff=3Dacqem16&emc=3Dacqem16>=0A=0A $18,423 =0A=0A=0A 42,638 m=
+i. =0A=0A Donovan Auto & Truck Center =0A=0A=0A=0AView details =0A<https://=
+www.cars.com/vehicledetail/8f56b8ae-c809-415e-9e72-21657d20173a/=3Faff=3Dac=
+qem16&emc=3Dacqem16>=0A=0A =0A<https://www.cars.com/vehicledetail/a04c4440-=
+f299-46ae-be2f-76f7f032acfc/=3Faff=3Dacqem16&emc=3Dacqem16>=0A 2024 GMC Ter=
+rain SLT  =0A<https://www.cars.com/vehicledetail/a04c4440-f299-46ae-be2f-76=
+f7f032acfc/=3Faff=3Dacqem16&emc=3Dacqem16>=0A=0A $24,990 =0A=0A=0A 37,445 m=
+i. =0A=0A Donovan Auto & Truck Center =0A=0A=0A=0AView details =0A<https://=
+www.cars.com/vehicledetail/a04c4440-f299-46ae-be2f-76f7f032acfc/=3Faff=3Dac=
+qem16&emc=3Dacqem16>=0A=0A =0A<https://www.cars.com/vehicledetail/c319f567-=
+48d0-4af6-8c98-0f3c80a23b17/=3Faff=3Dacqem16&emc=3Dacqem16>=0A 2024 GMC Ter=
+rain SLT  =0A<https://www.cars.com/vehicledetail/c319f567-48d0-4af6-8c98-0f=
+3c80a23b17/=3Faff=3Dacqem16&emc=3Dacqem16>=0A=0A $25,985 =0A=0A=0A 33,420 m=
+i. =0A=0A Donovan Auto & Truck Center =0A=0A=0A=0AView details =0A<https://=
+www.cars.com/vehicledetail/c319f567-48d0-4af6-8c98-0f3c80a23b17/=3Faff=3Dac=
+qem16&emc=3Dacqem16>=0A=0A =0A<https://www.cars.com/vehicledetail/576bf7a2-=
+3ba4-4378-b4c8-4ec0d9aa8aa6/=3Faff=3Dacqem16&emc=3Dacqem16>=0A 2024 Buick E=
+ncore GX Sport Touring  =0A<https://www.cars.com/vehicledetail/576bf7a2-3ba=
+4-4378-b4c8-4ec0d9aa8aa6/=3Faff=3Dacqem16&emc=3Dacqem16>=0A=0A $22,990 =0A=
+=0A=0A 31,921 mi. =0A=0A Donovan Auto & Truck Center =0A=0A=0A=0AView detai=
+ls =0A<https://www.cars.com/vehicledetail/576bf7a2-3ba4-4378-b4c8-4ec0d9aa8=
+aa6/=3Faff=3Dacqem16&emc=3Dacqem16>=0A=0A =0A<https://www.cars.com/vehicled=
+etail/b0eb90cd-bdbf-4cd6-8217-eba7cf52e133/=3Faff=3Dacqem16&emc=3Dacqem16>=
+=0A 2024 GMC Terrain SLT  =0A<https://www.cars.com/vehicledetail/b0eb90cd-b=
+dbf-4cd6-8217-eba7cf52e133/=3Faff=3Dacqem16&emc=3Dacqem16>=0A=0A $24,349 =
+=0A=0A=0A 49,456 mi. =0A=0A Donovan Auto & Truck Center =0A=0A=0A=0AView de=
+tails =0A<https://www.cars.com/vehicledetail/b0eb90cd-bdbf-4cd6-8217-eba7cf=
+52e133/=3Faff=3Dacqem16&emc=3Dacqem16>=0A=0A <https://www.cars.com/shopping=
+/=3Faff=3Dacqem16&emc=3Dacqem16> =0A Want to keep the search going=3F  =0A<=
+https://www.cars.com/shopping/=3Faff=3Dacqem16&emc=3Dacqem16> =0A=0A=0A=0AV=
+iew more inventory <https://www.cars.com/shopping/=3Faff=3Dacqem16&emc=3Dac=
+qem16> =0A=0A=0A New Cars =0A =0A<https://www.cars.com/shopping/results/=3F=
+stock_type=3Dnew&makes%5B%5D=3D&models%5B%5D=3D&list_price_max=3D&maximum_d=
+istance=3Dall&aff=3Dacqem16&emc=3Dacqem16>=0A Used Cars =0A =0A<https://www=
+.cars.com/shopping/results/=3Fstock_type=3Dused&makes%5B%5D=3D&models%5B%5=
+D=3D&list_price_max=3D&maximum_distance=3Dall&aff=3Dacqem16&emc=3Dacqem16>=
+=0A Sell Your Car =0A <https://www.cars.com/sell/=3Faff=3Dacqem16&emc=3Dacq=
+em16> =0A <https://www.cars.com/=3Faff=3Dacqem16&emc=3Dacqem16> =0A=0A <htt=
+ps://www.youtube.com/user/Carscom/=3Faff=3Dacqem16&emc=3Dacqem16>  =0A<http=
+s://www.tiktok.com/@carsdotcom=3Faff=3Dacqem16&emc=3Dacqem16>  =0A<https://=
+www.facebook.com/CarsDotCom/=3Faff=3Dacqem16&emc=3Dacqem16>  =0A<https://ww=
+w.instagram.com/carsdotcom/=3Fhl=3Den&aff=3Dacqem16&emc=3Dacqem16>  =0A<htt=
+ps://www.pinterest.com/carsdotcom/=3Faff=3Dacqem16&emc=3Dacqem16> =0A=0A Do=
+wnload our app experience =0A=0A=0A <https://cars.onelink.me/4236356000/755=
+4a12d/=3Faff=3Dacqem16&emc=3Dacqem16>  =0A<https://cars.onelink.me/42363560=
+00/7554a12d/=3Faff=3Dacqem16&emc=3Dacqem16> =0A=0A This email was sent to m=
+rinix02@gmail.com <mailto:mrinix02@gmail.com>.=0A =C2=AE 2025 Cars.com. All=
+ rights reserved.=0A Cars.com, 300 S. Riverside Plaza, Suite 1100, Chicago,=
+ IL 60606 =0A<https://maps.google.com/=3Fq=3D300+S.+Riverside+Plaza,+Suite+=
+1100,+Chicago,+IL+60606>=0A We value your privacy. Cars.com Privacy Stateme=
+nt =0A<https://www.cars.com/about/privacy/=3Faff=3Dacqem16&emc=3Dacqem16>=
+=0AUnsubscribe =0A<https://emaillinks.cars.com/e/eh=3F_t=3D47f16e37803d44c8=
+a302ee7782c80abb&_m=3D562a2dcdf0f1499982ebeb0faff6a973&_e=3DMzWOU_wsT-MNeuh=
+oe_tgveCTg1uIK2akVeIZ761HkoxHKu-v3NP18cVXodNDjZgyfcW86Iu7sKWGB5oNVxTLzW7-Fq=
+zDgQw3EZxMAW-jdZk8bbiGzI4oyjwQnbgNg0AONgURZpQTwGJyafOI3f_UQAgpbqmbMP2XF2Mru=
+SdYuMGPrvLHqTOSRziJFTlUr9qnFT2ocdVohNs63-wVfBN3nlf5v39d3cYPvv7Mjz84ZEM5K7oV=
+fOtx_hdXkWakPinpYVGY5i0UALi3Mfb9vByHrt61UZq30R3VuPCO6ZuyRBPAEYp9wQbPKP7o--4=
+07yMo>=0AManage Preferences =0A<https://www.cars.com/email-preferences/=3Fa=
+ff=3Dacqem16&emc=3Dacqem16>
+--_----L0SBIdWN44+lg6bGNmydwg===_99/47-29465-9D86FB86
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="UTF-8"
+
+<!DOCTYPE html> <html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn=
+:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:off=
+ice" xml:lang=3D"en" lang=3D"en"> <head> <meta http-equiv=3D"content-type" =
+content=3D"text/html; charset=3Dutf-8"> <meta name=3D"viewport" content=3D"=
+width=3Ddevice-width, initial-scale=3D1.0, maximum-scale=3D1.0"> <meta http=
+-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge"> <meta name=3D"x-apple-dis=
+able-message-reformatting"> <meta name=3D"format-detection" content=3D"tele=
+phone=3Dno, date=3Dno, address=3Dno, email=3Dno, url=3Dno"> <title>Cars.com=
+</title> <style>@font-face{font-family:'DM Sans';font-style:normal;font-wei=
+ght:100 1000;font-display:swap;src:url(https://fonts.gstatic.com/s/dmsans/v=
+15/rP2Hp2ywxg089UriCZ2IHSeH.woff2) format('woff2');unicode-range:U+0100-02B=
+A,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D=
+00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C6=
+0-2C7F,U+A720-A7FF}@font-face{font-family:'DM Sans';font-style:normal;font-=
+weight:100 1000;font-display:swap;src:url(https://fonts.gstatic.com/s/dmsan=
+s/v15/rP2Hp2ywxg089UriCZOIHQ.woff2) format('woff2');unicode-range:U+0000-00=
+FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329=
+,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}.purpl=
+e-button-hover:hover{transition:.3s ease!important}.primary-button:hover{tr=
+ansition:.3s ease!important}.secondary-button:hover{transition:.3s ease!imp=
+ortant}</style> <style>body{margin:0;padding:0;-webkit-text-size-adjust:100=
+%!important;-ms-text-size-adjust:100%!important;-webkit-font-smoothing:anti=
+aliased!important}a[x-apple-data-detectors]{color:inherit!important;text-de=
+coration:none!important;font-size:inherit!important;font-family:inherit!imp=
+ortant;font-weight:inherit!important;line-height:inherit!important}.purple-=
+button-hover:hover{background-color:#7740b6!important}.link-hover:hover{tex=
+t-decoration:2px underline #9754e6!important}.secondary-button:hover{backgr=
+ound-color:#e0e4e3!important}@media screen and (max-width:600px){body,.bg-c=
+olor-null{background-color:transparent!important;-webkit-background-color:t=
+ransparent!important;-moz-background-color:transparent!important}html,body{=
+width:100%;min-width:100vw;overflow-x:auto!important}body{-webkit-overflow-=
+scrolling:touch;width:100%;min-width:100%;position:relative;top:0;left:0;ri=
+ght:0;margin:0;padding:0}.outer-wrapper,.inner-wrapper{width:100%!important=
+;max-width:600px!important}.mobile-stack{display:block!important;width:100%=
+!important;max-width:100%!important;padding-left:0!important;padding-right:=
+0!important}.mobile-stack table{max-width:100%!important}.mobile-stack+.mob=
+ile-stack{margin-top:16px!important}.button-full-width{width:100%!important=
+}.car-image{max-height:400px!important;height:100%!important;object-fit:cov=
+er!important}.cp-mobile{padding:20px 20px 48px 20px!important}.car-divider{=
+padding:40px 0 24px 0!important}.pb-24{padding-bottom:24px!important}.pt-nu=
+ll{padding-top:0!important}.pt-24{padding-top:24px!important}.ht-mobile{fon=
+t-size:32px!important;line-height:38px!important;letter-spacing:-0.96px!imp=
+ortant}.h2-mobile{font-size:20px!important;line-height:24px!important;lette=
+r-spacing:-0.5px}.module-image{width:145px!important;margin:0 auto!importan=
+t;max-width:145px!important}.wht-stroke{border:1px solid #fff!important}.br=
+-null{border-radius:0!important}.legal-text{padding:20px!important}.text-ce=
+nter{text-align:center!important;padding-bottom:16px!important}}@media scre=
+en and (max-width:480px){.pd-legal{padding:20px 10px!important}.inner-wrapp=
+er{width:100%!important;max-width:100%!important}.outer-wrapper{background-=
+color:transparent!important}.bg-color-null{background-color:#fff!important}=
+.btn-pd{padding:8px 0!important}}</style> <!--[if mso]><noscript> <xml> <o=
+:OfficeDocumentSettings> <o:AllowPNG/> <o:PixelsPerInch>96</o:PixelsPerInch=
+> </o:OfficeDocumentSettings> </xml> </noscript><![endif]--> </head> <body =
+class=3D"bg-color-null" style=3D"margin: 0 auto; padding: 0; background-col=
+or: #e0e4e3; padding-bottom: 0px; border-bottom: none; -webkit-text-size-ad=
+just: 100% !important; -ms-text-size-adjust: 100% !important; -webkit-font-=
+smoothing: antialiased !important;">=0D=0A<div style=3D"color:transparent;v=
+isibility:hidden;opacity:0;font-size:0px;border:0;max-height:1px;width:1px;=
+margin:0px;padding:0px;border-width:0px!important;display:none!important;li=
+ne-height:0px!important;"><img border=3D"0" width=3D"1" height=3D"1" src=3D=
+"https://post.spmailtechnolo.com/q/2lxQNsDlHLo15skeb_POIw~~/AAOb_xA~/sZ33S4=
+Vjc4BxlRvwXBEin2UVW4SXRCwq4lJR9p1cwDH8kZcT68X-7rd1aO70c3GuQ0OwxhxRiAfc4M4bD=
+3IUSQ~~" alt=3D""/></div>=0D=0A<span style=3D"color:transparent;visibility:=
+hidden;display:none;opacity:0;height:0;width:0;font-size:0;"></span><img sr=
+c=3D"https://emaillinks.cars.com/e/eo=3F_t=3D47f16e37803d44c8a302ee7782c80a=
+bb&amp;_m=3D562a2dcdf0f1499982ebeb0faff6a973&amp;_e=3DeY2pwIwAvhq8jhHUOnRc1=
+6ULwhya-mvVdBQN1VpqAZs2CFweHIoQo5dowkDRAx6U_rVIHJMGKkumlQ9RSnw2Y9MyprxWBqHf=
+N3QlN6wgA0xDGoZz5z4lwN_lpiaKso_6OEkg6qYvcnogFhjbkEWVeQ%3D%3D" style=3D"bord=
+er:0;width:1px;height:1px;border-width:0px!important;display:none!important=
+;line-height:0!important;" width=3D"1" height=3D"1"/> <!-- BEGIN : VARIABLE=
+ ASSIGNMENTS END: VARIABLE ASSIGNMENTS --> <!--[if mso]><table role=3D"pres=
+entation" width=3D"100%"><tr><td><![endif]--> <!-- 800px outer wrapper --> =
+<div style=3D"overflow-x: auto"> <table class=3D"bg-color-null" role=3D"pre=
+sentation" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" style=3D"width:=
+ 100%; margin: 0 auto; background-color: #e0e4e3"> <tr> <td align=3D"center=
+"> <!--[if mso]><table role=3D"presentation" cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0" width=3D"800" align=3D"center"> <tr> <td><![endif]--> <=
+table role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0" border=3D"0=
+" class=3D"outer-wrapper" style=3D"width: 100%; max-width: 800px; margin: 0=
+ auto; background-color: #f0f2f1"> <tr> <td align=3D"center"> <!-- *Logo Se=
+ction --> <a href=3D"https://emaillinks.cars.com/u/click=3F_t=3D47f16e37803=
+d44c8a302ee7782c80abb&_m=3D562a2dcdf0f1499982ebeb0faff6a973&_e=3DMzWOU_wsT-=
+MNeuhoe_tgvaPijfyc8MZgRYePcVXFx1X50_kScnlbsrW9d2pYfNMzmbWFAcaBdW8Fx5Gj206Ia=
+7kh2uGZxxBqKspVfMGTSHC8SgoTzYSDNIZnT10SqirVMpluDevVpkAE7F6Tl_yJlls8C0mFuPEr=
+Sk5fU0payjDMjq1F0Wca4JwIIx2tNtSpK2Es4f2zBq3nDjS3CwZ4tnAkLobbJpjC8BuvDSjXUXw=
+k6QF8p72TkeaMMM5q5ql3h1gywg6q3dX8A4lrTbIVFtv4NA0V0nv-fyNH1eoBgwu2-VZHvSBTtv=
+qullFvPSODxUUpE1pdnhieMiuiTRiUY6hlDE9rfjWV0WSRIZ_wHsTa8t1984WyC1KHlkTemG-ey=
+GcIxHUoczSiTsVyr8Q-PbE5fdPRiR8fofR8slDE_8c9UMNtFHPpzQjxbF-VaC7Kgoq_LnlP1F6s=
+CnQKYv7JN5g4FGDkr2Zz0GDKOw3oc3_cyELO6BGLKNKndiZETh73y9cKuNphm4zcD_BAsG3X8jV=
+kd-4-LK_-62P9NTqPg8A%3D" target=3D"_blank" style=3D"display: block"> <img s=
+rc=3D"https://img.carsdn.co/image/upload/v1752510780/fuse-header2x.jpg" alt=
+=3D"" width=3D"800" height=3D"auto" border=3D"0" style=3D"display: block; w=
+idth: 100%; max-width: 800px; height: auto"/> </a> <!-- *Main Content Area =
+--> <table role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" class=3D"outer-wrapper" style=3D"width: 100%; max-width: 800px; marg=
+in: 0 auto"> <tr> <td align=3D"center"> <!-- 600px Main Content Area inner =
+wrapper --> <!--[if mso]><table role=3D"presentation" cellspacing=3D"0" cel=
+lpadding=3D"0" border=3D"0" width=3D"600" align=3D"center"> <tr> <td><![end=
+if]--> <table role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0" bor=
+der=3D"0" class=3D"inner-wrapper" style=3D"width: 100%; max-width: 600px; m=
+argin: 0 auto"> <tr> <td class=3D"br-null cp-mobile" style=3D"background-co=
+lor: #ffffff; padding: 32px 20px 48px 20px; border-radius: 10px; max-width:=
+ 560px" align=3D"center"> <!-- *Header --> <table role=3D"presentation" cel=
+lspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%"> <tr> <td clas=
+s=3D"ht-mobile pb-24" style=3D" font-family: 'DM Sans', Arial, sans-serif; =
+font-size: 47px; font-weight: 700; line-height: 52px; color: #212121; paddi=
+ng-bottom: 16px; text-align: center; letter-spacing: -1.41px; "> Thanks for=
+ your recent search! </td> </tr> <tr> <td style=3D"font-family: 'DM Sans', =
+Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; co=
+lor: #212121; text-align: center"> We have our matches just for you! </td> =
+</tr> </table> <!-- *Car Lists --> <table role=3D"presentation" cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" style=3D"width: 100%; =
+max-width: 560px; margin: 0 auto"> <!-- 1st car --> <!----> <tr> <td class=
+=3D"mobile-stack pt-24" style=3D"padding: 40px 0px 24px 0px"> <table role=
+=3D"presentation" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D=
+"100%" style=3D"width: 100%"> <tr> <!-- Image Column --> <td class=3D"mobil=
+e-stack" width=3D"188" style=3D"vertical-align: top"> <a href=3D"https://em=
+aillinks.cars.com/u/click=3F_t=3D47f16e37803d44c8a302ee7782c80abb&_m=3D562a=
+2dcdf0f1499982ebeb0faff6a973&_e=3DMzWOU_wsT-MNeuhoe_tgvahOFiiaMHyFuIGv3CrQB=
+d4M4SpoL9sjs3D_-OKN-LkOQmLio9JUF9mawnuzZQNzA5Yi9b70DnOs24Kke7mOv54abzGGkPaU=
+xv9kPHAeVuGs7mGxhVcnpSo6h4XU_tVoSBN96M2-IKSFnk8l7LsxiLvaJ5LOEw_Bp1e48Q4iiCJ=
+ttW_ikaWs6m9PRfPEog3IVvxnLNf0dxyJzvQF0piXGMfZ7IjTLIO9lvnkcXw0HXhhpHNBuN90jh=
+MguH76uoi2XSI7E3ZbRLiUmJikQpZrdOf2-gsds_vmXfDn64Of5ADRFL4eelyRP6dzrf-q4ptxM=
+rLwWXKw7zLT9MZcwTqGhNOAhhwJp0T2Q0l5BdtfYP21uzHUYxTBKxZwLrEcDLKu3BjOEPV8Q5pX=
+BknO-IqYT5Njxzk7V20yMirlIa95lpoC5DZZ-gDLwKXHwuE1YiXiVbZP-hVvghV1LiebAgvag30=
+2o53DNPpK8MNtiEhxaYFEhqB2zU6LqVX0MounzXNT89TSWw36f8TkGW7FFzlSl-V94NZsq-iVll=
+-Mdz2ZwuqRVyPh20c-2_eyCggrWK2UTzXIvIJUqTrzkLMAdXfG7jw%3D" target=3D"_blank"=
+> <img src=3D"https://platform.cstatic-images.com/in/v2/45f7fbe1-47ba-5e76-=
+9293-0267d7c92b96/3c9ed7e6-7fd3-4bcb-9dd6-54c654938b54/RqU-HMNvK61n8SG2UVfZ=
+StNUT5E.jpg" alt=3D"2024 Chevrolet Equinox 1LT" width=3D"188" style=3D"disp=
+lay: block; width: 100%; max-width: 100%; height: auto; border-radius: 10px=
+; max-height: 141px; object-fit: cover" class=3D"car-image"> </a> </td> <!-=
+- Content Column --> <td class=3D"mobile-stack" style=3D"vertical-align: to=
+p; padding-left: 24px"> <table role=3D"presentation" cellspacing=3D"0" cell=
+padding=3D"0" border=3D"0" width=3D"100%" style=3D"width: 100%"> <!-- Vehic=
+le Title --> <tr> <td style=3D"padding-bottom: 8px"> <a href=3D"https://ema=
+illinks.cars.com/u/click=3F_t=3D47f16e37803d44c8a302ee7782c80abb&_m=3D562a2=
+dcdf0f1499982ebeb0faff6a973&_e=3DMzWOU_wsT-MNeuhoe_tgvahOFiiaMHyFuIGv3CrQBd=
+4M4SpoL9sjs3D_-OKN-LkOQmLio9JUF9mawnuzZQNzA5Yi9b70DnOs24Kke7mOv54abzGGkPaUx=
+v9kPHAeVuGs7mGxhVcnpSo6h4XU_tVoSBN96M2-IKSFnk8l7LsxiLvaJ5LOEw_Bp1e48Q4iiCJt=
+tW_ikaWs6m9PRfPEog3IVvxnLNf0dxyJzvQF0piXGMfZ7IjTLIO9lvnkcXw0HXhhpHNBuN90jhM=
+guH76uoi2XSI7E3ZbRLiUmJikQpZrdOf2-gsds_vmXfDn64Of5ADRFL4eelyRP6dzrf-q4ptxMr=
+LwWXKw7zLT9MZcwTqGhNOAhhwJp0T2Q0l5BdtfYP21uzHUYxTBKxZwLrEcDLKu3BjOEPV8Q5pXB=
+knO-IqYT5Njxzk7V20yMirlIa95lpoC5DZZ-gDLwKXHwuE1YiXiVWNJhp6fRaFP-6ewHjHaIHEI=
+Cgsc8arh4lzwDDR2v-WEdJDzgVr2NdKNHPlggs5fBPGpvr_UrhwVMKprVbSN8SQ6Dzvxu10Ln6P=
+0wBy3e5JhfdhOhBcPv_Vk4EoE0UPF0x8hE_BqlqP9L3C5_0hAgOg%3D" target=3D"_blank" =
+style=3D" font-family: 'DM Sans', Arial, sans-serif; font-size: 16px; font-=
+weight: 700; line-height: 24px; color: #212121; margin: 0; text-decoration:=
+ none; " class=3D"link-hover"> 2024 Chevrolet Equinox 1LT </a> </td> </tr> =
+<!-- Price --> <tr> <td style=3D"padding-bottom: 8px"> <p style=3D"font-fam=
+ily: 'DM Sans', Arial, sans-serif; font-size: 20px; font-weight: 700; line-=
+height: 27px; color: #212121; margin: 0"> $21,892 </p> </td> </tr> <!-- Mil=
+es --> <!-- --> <tr> <td style=3D"padding-bottom: 8px"> <table role=3D"pres=
+entation" cellspacing=3D"0" cellpadding=3D"0" border=3D"0"> <tr> <td style=
+=3D"padding-right: 4px"> <img src=3D"https://img.carsdn.co/image/upload/v17=
+27901232/speedometer.png" alt width=3D"14" height=3D"14" style=3D"display: =
+block"> </td> <td style=3D"font-family: 'DM Sans', Arial, sans-serif; font-=
+size: 12px; font-weight: 400; line-height: 18px; color: #212121"> 38,166 mi=
+. </td> </tr> </table> </td> </tr> <!-- --> <!-- Location --> <!-- Locatio=
+n --> <tr> <td style=3D"padding-bottom: 8px"> <table role=3D"presentation" =
+cellspacing=3D"0" cellpadding=3D"0" border=3D"0"> <tr> <td style=3D"padding=
+-right: 4px"> <img src=3D"https://img.carsdn.co/image/upload/v1719419084/ma=
+p_marker_2.png" alt width=3D"14" height=3D"14" style=3D"display: block"> </=
+td> <td style=3D"font-family: 'DM Sans', Arial, sans-serif; font-size: 12px=
+; font-weight: 400; line-height: 18px; color: #212121"> Donovan Auto &amp; =
+Truck Center </td> </tr> </table> </td> </tr> <!-- Button --> <tr> <td> <!-=
+-[if mso]><v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D=
+"urn:schemas-microsoft-com:office:word" href=3D"https://emaillinks.cars.com=
+/u/click=3F_t=3D47f16e37803d44c8a302ee7782c80abb&_m=3D562a2dcdf0f1499982ebe=
+b0faff6a973&_e=3DMzWOU_wsT-MNeuhoe_tgvahOFiiaMHyFuIGv3CrQBd4M4SpoL9sjs3D_-O=
+KN-LkOQmLio9JUF9mawnuzZQNzA5Yi9b70DnOs24Kke7mOv54abzGGkPaUxv9kPHAeVuGs7mGxh=
+VcnpSo6h4XU_tVoSBN96M2-IKSFnk8l7LsxiLvaJ5LOEw_Bp1e48Q4iiCJttW_ikaWs6m9PRfPE=
+og3IVvxnLNf0dxyJzvQF0piXGMfZ7IjTLIO9lvnkcXw0HXhhpHNBuN90jhMguH76uoi2XSI7E3Z=
+bRLiUmJikQpZrdOf2-gsds_vmXfDn64Of5ADRFL4eelyRP6dzrf-q4ptxMrLwWXKw7zLT9MZcwT=
+qGhNOAhhwJp0T2Q0l5BdtfYP21uzHUYxTBKxZwLrEcDLKu3BjOEPV8Q5pXBknO-IqYT5Njxzk7V=
+20yMirlIa95lpoC5DZZ-gDLwKXHwuE1YiXiVY8JK8E3YFVaYmI9GVFAwLYnfqmbdpqKwZWEiZmB=
+Yi7Tf3UHVF-gCg_UhXMnk5s4dZgNhlD-ymToFhXrEy0n2fHDLjqB_-UMsMJjxnyiSHQA169fog8=
+GFTSZ3bk9hiwMciIr7S9UvryjutqiUHLZOVQ%3D" style=3D"height: 32px; v-text-anch=
+or: middle; width: 200px" arcsize=3D"50000%" fillcolor=3D"#9754e6" stroke=
+=3D"false"> <w:anchorlock/> <center style=3D"color: #ffffff; font-family: '=
+DM Sans', Arial, sans-serif; font-size: 14px; font-weight: 700">View detail=
+s</center> </v:roundrect><![endif]--> <!--[if !mso]><!--> <table role=3D"pr=
+esentation" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" class=3D"butto=
+n-full-width" style=3D"width: 100%; max-width: 200px"> <tr> <td> <table rol=
+e=3D"presentation" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=
+=3D"100%" style=3D"width: 100%"> <tr> <td style=3D"background-color: #9754e=
+6; border-radius: 999px" class=3D"purple-button-hover"> <table role=3D"pres=
+entation" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" s=
+tyle=3D"width: 100%"> <tr> <td align=3D"center"> <a class=3D"btn-pd" href=
+=3D"https://emaillinks.cars.com/u/click=3F_t=3D47f16e37803d44c8a302ee7782c8=
+0abb&_m=3D562a2dcdf0f1499982ebeb0faff6a973&_e=3DMzWOU_wsT-MNeuhoe_tgvahOFii=
+aMHyFuIGv3CrQBd4M4SpoL9sjs3D_-OKN-LkOQmLio9JUF9mawnuzZQNzA5Yi9b70DnOs24Kke7=
+mOv54abzGGkPaUxv9kPHAeVuGs7mGxhVcnpSo6h4XU_tVoSBN96M2-IKSFnk8l7LsxiLvaJ5LOE=
+w_Bp1e48Q4iiCJttW_ikaWs6m9PRfPEog3IVvxnLNf0dxyJzvQF0piXGMfZ7IjTLIO9lvnkcXw0=
+HXhhpHNBuN90jhMguH76uoi2XSI7E3ZbRLiUmJikQpZrdOf2-gsds_vmXfDn64Of5ADRFL4eely=
+RP6dzrf-q4ptxMrLwWXKw7zLT9MZcwTqGhNOAhhwJp0T2Q0l5BdtfYP21uzHUYxTBKxZwLrEcDL=
+Ku3BjOEPV8Q5pXBknO-IqYT5Njxzk7V20yMirlIa95lpoC5DZZ-gDLwKXHwuE1YiXiVeqF4iM4Z=
+yMeJWXe9P7bqEYbGHvomVQFqq1GbHwi4_LNO_KXa70tZeIEpQUrIB6LsMVHBcMsMxn7DvPQbG-x=
+fS4PNIcdORN-LxkBFItzm_8GbxW6aWIB3xt9jDB3pGaYVpWYo0-OzdjS5QnQSNezwTs%3D" tar=
+get=3D"_blank" style=3D" display: block; padding: 4px 20px; color: #ffffff;=
+ font-family: 'DM Sans', Arial, sans-serif; font-size: 14px; font-weight: 7=
+00; line-height: 21px; text-decoration: none; ">View details</a> </td> </tr=
+> </table> </td> </tr> </table> </td> </tr> </table> <!--<![endif]--> </td>=
+ </tr> </table> </td> </tr> </table> </td> </tr> <!----> <!-- 2nd car --> <=
+!----> <tr> <td class=3D"mobile-stack car-divider" style=3D"padding: 24px 0=
+; border-top: 1px solid #e0e4e3"> <table role=3D"presentation" cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" style=3D"width: 100%">=
+ <tr> <!-- Image Column --> <td class=3D"mobile-stack" width=3D"188" style=
+=3D"vertical-align: top"> <a href=3D"https://emaillinks.cars.com/u/click=3F=
+_t=3D47f16e37803d44c8a302ee7782c80abb&_m=3D562a2dcdf0f1499982ebeb0faff6a973=
+&_e=3DMzWOU_wsT-MNeuhoe_tgvahOFiiaMHyFuIGv3CrQBd518Goyh_Lnb19HxFEcJKO4etBvD=
+zE9yN_Ht19n-tjFPf9jYXxhcZxFxNat2UdV7TpbViUJ56GUrHCs0KL62TlKmSUD3nbUZFBI7O9d=
+qVlziijPNSJtp7prqWnfbA630mrOOLEN2wZjaKRRhZfuwSRpWBVR4qX3vWYmCg2LAzDqHZHjPFK=
+mu45cdfBrAz17QeKQuV0ESdhE-aY9PaIDX7IYNkvraNPeac7_L18ugQ2biKMbNNsglydnoS6ukQ=
+gzpMURnnkET7P7df8dEISOiyr7kxvpC7x0E-47TcerhIsmrVU8nxuR6-w8Hq5WRBXeRn2Q_BJVk=
+2e6lyhEY4Zhfhahchk4ZtkAqGM1-Re4DKQAeXxm5SGKY7oZqEO7m4mjJ1Y9G2VCazLhDM6z1S5M=
+p8C5MM1-og4aWLobiXTjQGKLP-YYnKssNmRuNFJNJRNOkU8kAluoAtv6mAbIX0AjBmjuuspYWwu=
+Xbdazydm8IgtN7mcNxB6ax2vT0WfAPUlVUvIChrDoUgrDFZpnq2y0SkJHmlRUutFEE0cCjfANHe=
+P1cSonbZ33Q3XlpNge9509h-w%3D" target=3D"_blank"> <img src=3D"https://platfo=
+rm.cstatic-images.com/in/v2/961ed542-b5d3-5bea-840d-4b7a08227bc8/dee39694-9=
+c09-43dc-af06-8362c0b75f7a/ChK3uwVCXwi0dl5sF3lI6sB5f0A.jpg" alt=3D"2023 Che=
+vrolet Blazer 2LT" width=3D"188" style=3D"display: block; width: 100%; max-=
+width: 100%; height: auto; border-radius: 10px; max-height: 141px; object-f=
+it: cover" class=3D"car-image"> </a> </td> <!-- Content Column --> <td clas=
+s=3D"mobile-stack" style=3D"vertical-align: top; padding-left: 24px"> <tabl=
+e role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" wi=
+dth=3D"100%" style=3D"width: 100%"> <!-- Vehicle Title --> <tr> <td style=
+=3D"padding-bottom: 8px"> <a href=3D"https://emaillinks.cars.com/u/click=3F=
+_t=3D47f16e37803d44c8a302ee7782c80abb&_m=3D562a2dcdf0f1499982ebeb0faff6a973=
+&_e=3DMzWOU_wsT-MNeuhoe_tgvahOFiiaMHyFuIGv3CrQBd518Goyh_Lnb19HxFEcJKO4etBvD=
+zE9yN_Ht19n-tjFPf9jYXxhcZxFxNat2UdV7TpbViUJ56GUrHCs0KL62TlKmSUD3nbUZFBI7O9d=
+qVlziijPNSJtp7prqWnfbA630mrOOLEN2wZjaKRRhZfuwSRpWBVR4qX3vWYmCg2LAzDqHZHjPFK=
+mu45cdfBrAz17QeKQuV0ESdhE-aY9PaIDX7IYNkvraNPeac7_L18ugQ2biKMbNNsglydnoS6ukQ=
+gzpMURnnkET7P7df8dEISOiyr7kxvpC7x0E-47TcerhIsmrVU8nxuR6-w8Hq5WRBXeRn2Q_BJVk=
+2e6lyhEY4Zhfhahchk4ZtkAqGM1-Re4DKQAeXxm5SGKY7oZqEO7m4mjJ1Y9G2VCazLhDM6z1S5M=
+p8C5MM1-og4aWLobiXTjQGKLP1_kyQ6eIjisF5JnDxtR_rU67IqLhbQt5jiOQwug5pqtZcAEnag=
+ftbs3aTafn1TT-D8DztHJ9y14gJ2TyxVgE25T7ulSd8aN2cTgYauuQuIixiM3yyh5m1MosSRHeK=
+9qIgkPQ9GovznFEb-NZxAPl8M%3D" target=3D"_blank" style=3D" font-family: 'DM =
+Sans', Arial, sans-serif; font-size: 16px; font-weight: 700; line-height: 2=
+4px; color: #212121; margin: 0; text-decoration: none; " class=3D"link-hove=
+r"> 2023 Chevrolet Blazer 2LT </a> </td> </tr> <!-- Price --> <tr> <td styl=
+e=3D"padding-bottom: 8px"> <p style=3D"font-family: 'DM Sans', Arial, sans-=
+serif; font-size: 20px; font-weight: 700; line-height: 27px; color: #212121=
+; margin: 0"> $24,302 </p> </td> </tr> <!-- Miles --> <!-- --> <tr> <td sty=
+le=3D"padding-bottom: 8px"> <table role=3D"presentation" cellspacing=3D"0" =
+cellpadding=3D"0" border=3D"0"> <tr> <td style=3D"padding-right: 4px"> <img=
+ src=3D"https://img.carsdn.co/image/upload/v1727901232/speedometer.png" alt=
+ width=3D"14" height=3D"14" style=3D"display: block"> </td> <td style=3D"fo=
+nt-family: 'DM Sans', Arial, sans-serif; font-size: 12px; font-weight: 400;=
+ line-height: 18px; color: #212121"> 46,914 mi. </td> </tr> </table> </td> =
+</tr> <!-- --> <!-- Location --> <tr> <td style=3D"padding-bottom: 8px"> <t=
+able role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0" border=3D"0"=
+> <tr> <td style=3D"padding-right: 4px"> <img src=3D"https://img.carsdn.co/=
+image/upload/v1719419084/map_marker_2.png" alt width=3D"14" height=3D"14" s=
+tyle=3D"display: block"> </td> <td style=3D"font-family: 'DM Sans', Arial, =
+sans-serif; font-size: 12px; font-weight: 400; line-height: 18px; color: #2=
+12121"> Don Hattan Chevrolet </td> </tr> </table> </td> </tr> <!-- Button -=
+-> <tr> <td> <!--[if mso]><v:roundrect xmlns:v=3D"urn:schemas-microsoft-com=
+:vml" xmlns:w=3D"urn:schemas-microsoft-com:office:word" href=3D"https://ema=
+illinks.cars.com/u/click=3F_t=3D47f16e37803d44c8a302ee7782c80abb&_m=3D562a2=
+dcdf0f1499982ebeb0faff6a973&_e=3DMzWOU_wsT-MNeuhoe_tgvahOFiiaMHyFuIGv3CrQBd=
+518Goyh_Lnb19HxFEcJKO4etBvDzE9yN_Ht19n-tjFPf9jYXxhcZxFxNat2UdV7TpbViUJ56GUr=
+HCs0KL62TlKmSUD3nbUZFBI7O9dqVlziijPNSJtp7prqWnfbA630mrOOLEN2wZjaKRRhZfuwSRp=
+WBVR4qX3vWYmCg2LAzDqHZHjPFKmu45cdfBrAz17QeKQuV0ESdhE-aY9PaIDX7IYNkvraNPeac7=
+_L18ugQ2biKMbNNsglydnoS6ukQgzpMURnnkET7P7df8dEISOiyr7kxvpC7x0E-47TcerhIsmrV=
+U8nxuR6-w8Hq5WRBXeRn2Q_BJVk2e6lyhEY4Zhfhahchk4ZtkAqGM1-Re4DKQAeXxm5SGKY7oZq=
+EO7m4mjJ1Y9G2VCazLhDM6z1S5Mp8C5MM1-og4aWLobiXTjQGKLP9mLGCN1HijdeDKitDIhhQUG=
+ydoMW8-7NiUVXTt8jqy22f6ruqrePwHNtMqDQpC5zC7Qt4s9GDQmbDiRhZ1Pwlm4bKB5EMCWSxm=
+oS70AvWSuVtFvtvnn7UFqe4S1lGzh-mD7zQBHuSV6XFFT2BubK0U%3D" style=3D"height: 3=
+2px; v-text-anchor: middle; width: 200px" arcsize=3D"50000%" fillcolor=3D"#=
+9754e6" stroke=3D"false"> <w:anchorlock/> <center style=3D"color: #ffffff; =
+font-family: 'DM Sans', Arial, sans-serif; font-size: 14px; font-weight: 70=
+0">View details</center> </v:roundrect><![endif]--> <!--[if !mso]><!--> <ta=
+ble role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" =
+class=3D"button-full-width" style=3D"width: 100%; max-width: 200px"> <tr> <=
+td> <table role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" width=3D"100%" style=3D"width: 100%"> <tr> <td style=3D"background-c=
+olor: #9754e6; border-radius: 999px" class=3D"purple-button-hover"> <table =
+role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" widt=
+h=3D"100%" style=3D"width: 100%"> <tr> <td align=3D"center"> <a class=3D"bt=
+n-pd" href=3D"https://emaillinks.cars.com/u/click=3F_t=3D47f16e37803d44c8a3=
+02ee7782c80abb&_m=3D562a2dcdf0f1499982ebeb0faff6a973&_e=3DMzWOU_wsT-MNeuhoe=
+_tgvahOFiiaMHyFuIGv3CrQBd518Goyh_Lnb19HxFEcJKO4etBvDzE9yN_Ht19n-tjFPf9jYXxh=
+cZxFxNat2UdV7TpbViUJ56GUrHCs0KL62TlKmSUD3nbUZFBI7O9dqVlziijPNSJtp7prqWnfbA6=
+30mrOOLEN2wZjaKRRhZfuwSRpWBVR4qX3vWYmCg2LAzDqHZHjPFKmu45cdfBrAz17QeKQuV0ESd=
+hE-aY9PaIDX7IYNkvraNPeac7_L18ugQ2biKMbNNsglydnoS6ukQgzpMURnnkET7P7df8dEISOi=
+yr7kxvpC7x0E-47TcerhIsmrVU8nxuR6-w8Hq5WRBXeRn2Q_BJVk2e6lyhEY4Zhfhahchk4ZtkA=
+qGM1-Re4DKQAeXxm5SGKY7oZqEO7m4mjJ1Y9G2VCazLhDM6z1S5Mp8C5MM1-og4aWLobiXTjQGK=
+LP6S0hnQlS2YnOv9jL2PguLjDcX9mYIskAYldbH0gkCU7zoyHixxKznBdd0GA9ADtEjnpr4_RcL=
+6tzI2id5GcXjpc_QCJGDuqcBy5KMSBzW6Hzj7mN1WsKt1FUhtCW5A-b4yMmeIVKVq0gD5p4wkLB=
+No%3D" target=3D"_blank" style=3D" display: block; padding: 4px 20px; color=
+: #ffffff; font-family: 'DM Sans', Arial, sans-serif; font-size: 14px; font=
+-weight: 700; line-height: 21px; text-decoration: none; ">View details</a> =
+</td> </tr> </table> </td> </tr> </table> </td> </tr> </table> <!--<![endif=
+]--> </td> </tr> </table> </td> </tr> </table> </td> </tr> <!----> <!-- 3rd=
+ car --> <!----> <tr> <td class=3D"mobile-stack car-divider" style=3D"paddi=
+ng: 24px 0; border-top: 1px solid #e0e4e3"> <table role=3D"presentation" ce=
+llspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" style=3D"widt=
+h: 100%"> <tr> <!-- Image Column --> <td class=3D"mobile-stack" width=3D"18=
+8" style=3D"vertical-align: top"> <a href=3D"https://emaillinks.cars.com/u/=
+click=3F_t=3D47f16e37803d44c8a302ee7782c80abb&_m=3D562a2dcdf0f1499982ebeb0f=
+aff6a973&_e=3DMzWOU_wsT-MNeuhoe_tgvahOFiiaMHyFuIGv3CrQBd6_8VE9927FKRRyjdJoK=
+lgjK9gwrDvgwdGrJhiTlCwAUHT7a94w0gEPLSBrT6S_Vx-yCxzIqGMvSVkrUKLHLYMzk5m9bfcZ=
+TFsKKZ29NfAoZ1nPttvgJ4N-RD-rhRV36lzwMaNKgpcrMsfbNmr5pbi0wmAj6BedH9cCHTuII7C=
+-JXvYnAV3LWZKa09OLgBfKvsoRf9Rq5am5e4pj9EZF-Ts3ePRFuafej0JWSMkfyfnbU_bThXbpx=
+q-uGxvvFVY9Bcc4e6XzZnPv4R82bBMuDptiYDjyCEfYogxH7aTWcez5L-Aj6OuTgq-zUfRhlXdn=
+4T6loqMQBXFCxVJtBpBqBJHzOsiekq_EgtZ1Ggw1R0kLbtiT1QI0GRgDNYE5U-Bjne7Np1ZpteJ=
+lj7dIxZ4QigzHkPRBh-CL0kocED5lkvkQpPLAOjgqWzEihXTA6Pn-BM9t1wBdDY3BtwJkRtwXYw=
+YDA06qKYMnw77B5KqBChpmwOYXsdlDlNEEeg7ytjIeT-XnbhpPjrbwI1iY1OWVd8yFMmVgfnnXN=
+IXdFnAuphWvEZndMBPdqxJneThzS_QTSc%3D" target=3D"_blank"> <img src=3D"https:=
+//platform.cstatic-images.com/in/v2/961ed542-b5d3-5bea-840d-4b7a08227bc8/e9=
+c08e47-79cc-4c3a-bbd2-7e727c4895d5/wSaReIEeVXFqOZBTnc_oCKXYGcY.jpg" alt=3D"=
+2022 Chevrolet Equinox FWD RS" width=3D"188" style=3D"display: block; width=
+: 100%; max-width: 100%; height: auto; border-radius: 10px; max-height: 141=
+px; object-fit: cover" class=3D"car-image"> </a> </td> <!-- Content Column =
+--> <td class=3D"mobile-stack" style=3D"vertical-align: top; padding-left: =
+24px"> <table role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0" bor=
+der=3D"0" width=3D"100%" style=3D"width: 100%"> <!-- Vehicle Title --> <tr>=
+ <td style=3D"padding-bottom: 8px"> <a href=3D"https://emaillinks.cars.com/=
+u/click=3F_t=3D47f16e37803d44c8a302ee7782c80abb&_m=3D562a2dcdf0f1499982ebeb=
+0faff6a973&_e=3DMzWOU_wsT-MNeuhoe_tgvahOFiiaMHyFuIGv3CrQBd6_8VE9927FKRRyjdJ=
+oKlgjK9gwrDvgwdGrJhiTlCwAUHT7a94w0gEPLSBrT6S_Vx-yCxzIqGMvSVkrUKLHLYMzk5m9bf=
+cZTFsKKZ29NfAoZ1nPttvgJ4N-RD-rhRV36lzwMaNKgpcrMsfbNmr5pbi0wmAj6BedH9cCHTuII=
+7C-JXvYnAV3LWZKa09OLgBfKvsoRf9Rq5am5e4pj9EZF-Ts3ePRFuafej0JWSMkfyfnbU_bThXb=
+pxq-uGxvvFVY9Bcc4e6XzZnPv4R82bBMuDptiYDjyCEfYogxH7aTWcez5L-Aj6OuTgq-zUfRhlX=
+dn4T6loqMQBXFCxVJtBpBqBJHzOsiekq_EgtZ1Ggw1R0kLbtiT1QI0GRgDNYE5U-Bjne7Np1Zpt=
+eJlj7dIxZ4QigzHkPRBh-CL0kocED5lkvkQmpPRGxdfWsiYJBJQorJRUf6ZZeyya5-SzZhZdlqo=
+-ZPIP70BrI6bJHKUzrWIYeBaj9ii0ZnIknBvvzKFxZuTTxX4L0PxdVrl4fT682byABcLnbPEdtu=
+6GTtuSoQw9l87yRXOzQTx1O_RM7KR3MhfmQ%3D" target=3D"_blank" style=3D" font-fa=
+mily: 'DM Sans', Arial, sans-serif; font-size: 16px; font-weight: 700; line=
+-height: 24px; color: #212121; margin: 0; text-decoration: none; " class=3D=
+"link-hover"> 2022 Chevrolet Equinox FWD RS </a> </td> </tr> <!-- Price -->=
+ <tr> <td style=3D"padding-bottom: 8px"> <p style=3D"font-family: 'DM Sans'=
+, Arial, sans-serif; font-size: 20px; font-weight: 700; line-height: 27px; =
+color: #212121; margin: 0"> $28,173 </p> </td> </tr> <!-- Miles --> <!-- --=
+> <tr> <td style=3D"padding-bottom: 8px"> <table role=3D"presentation" cell=
+spacing=3D"0" cellpadding=3D"0" border=3D"0"> <tr> <td style=3D"padding-rig=
+ht: 4px"> <img src=3D"https://img.carsdn.co/image/upload/v1727901232/speedo=
+meter.png" alt width=3D"14" height=3D"14" style=3D"display: block"> </td> <=
+td style=3D"font-family: 'DM Sans', Arial, sans-serif; font-size: 12px; fon=
+t-weight: 400; line-height: 18px; color: #212121"> 22,140 mi. </td> </tr> <=
+/table> </td> </tr> <!-- --> <!-- Location --> <tr> <td style=3D"padding-bo=
+ttom: 8px"> <table role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0=
+" border=3D"0"> <tr> <td style=3D"padding-right: 4px"> <img src=3D"https://=
+img.carsdn.co/image/upload/v1719419084/map_marker_2.png" alt width=3D"14" h=
+eight=3D"14" style=3D"display: block"> </td> <td style=3D"font-family: 'DM =
+Sans', Arial, sans-serif; font-size: 12px; font-weight: 400; line-height: 1=
+8px; color: #212121"> Don Hattan Chevrolet </td> </tr> </table> </td> </tr>=
+ <!-- Button --> <tr> <td> <!--[if mso]><v:roundrect xmlns:v=3D"urn:schemas=
+-microsoft-com:vml" xmlns:w=3D"urn:schemas-microsoft-com:office:word" href=
+=3D"https://emaillinks.cars.com/u/click=3F_t=3D47f16e37803d44c8a302ee7782c8=
+0abb&_m=3D562a2dcdf0f1499982ebeb0faff6a973&_e=3DMzWOU_wsT-MNeuhoe_tgvahOFii=
+aMHyFuIGv3CrQBd6_8VE9927FKRRyjdJoKlgjK9gwrDvgwdGrJhiTlCwAUHT7a94w0gEPLSBrT6=
+S_Vx-yCxzIqGMvSVkrUKLHLYMzk5m9bfcZTFsKKZ29NfAoZ1nPttvgJ4N-RD-rhRV36lzwMaNKg=
+pcrMsfbNmr5pbi0wmAj6BedH9cCHTuII7C-JXvYnAV3LWZKa09OLgBfKvsoRf9Rq5am5e4pj9EZ=
+F-Ts3ePRFuafej0JWSMkfyfnbU_bThXbpxq-uGxvvFVY9Bcc4e6XzZnPv4R82bBMuDptiYDjyCE=
+fYogxH7aTWcez5L-Aj6OuTgq-zUfRhlXdn4T6loqMQBXFCxVJtBpBqBJHzOsiekq_EgtZ1Ggw1R=
+0kLbtiT1QI0GRgDNYE5U-Bjne7Np1ZpteJlj7dIxZ4QigzHkPRBh-CL0kocED5lkvkQllgwhE-G=
+ntUl5XMxHmhqvJpQ9cX7E5Dt5hWSo7FXz7HDg6bmJCygyXMhUXS450zH0BN-TQ0W8RexQU-qEWt=
+RGn042RGnO-gaUM1hya_PhR4hx8hpw5MjWflU7zDCHQt_OkyTD4fdBCqHK_R0UHxIaY%3D" sty=
+le=3D"height: 32px; v-text-anchor: middle; width: 200px" arcsize=3D"50000%"=
+ fillcolor=3D"#9754e6" stroke=3D"false"> <w:anchorlock/> <center style=3D"c=
+olor: #ffffff; font-family: 'DM Sans', Arial, sans-serif; font-size: 14px; =
+font-weight: 700">View details</center> </v:roundrect><![endif]--> <!--[if =
+!mso]><!--> <table role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0=
+" border=3D"0" class=3D"button-full-width" style=3D"width: 100%; max-width:=
+ 200px"> <tr> <td> <table role=3D"presentation" cellspacing=3D"0" cellpaddi=
+ng=3D"0" border=3D"0" width=3D"100%" style=3D"width: 100%"> <tr> <td style=
+=3D"background-color: #9754e6; border-radius: 999px" class=3D"purple-button=
+-hover"> <table role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0" b=
+order=3D"0" width=3D"100%" style=3D"width: 100%"> <tr> <td align=3D"center"=
+> <a class=3D"btn-pd" href=3D"https://emaillinks.cars.com/u/click=3F_t=3D47=
+f16e37803d44c8a302ee7782c80abb&_m=3D562a2dcdf0f1499982ebeb0faff6a973&_e=3DM=
+zWOU_wsT-MNeuhoe_tgvahOFiiaMHyFuIGv3CrQBd6_8VE9927FKRRyjdJoKlgjK9gwrDvgwdGr=
+JhiTlCwAUHT7a94w0gEPLSBrT6S_Vx-yCxzIqGMvSVkrUKLHLYMzk5m9bfcZTFsKKZ29NfAoZ1n=
+PttvgJ4N-RD-rhRV36lzwMaNKgpcrMsfbNmr5pbi0wmAj6BedH9cCHTuII7C-JXvYnAV3LWZKa0=
+9OLgBfKvsoRf9Rq5am5e4pj9EZF-Ts3ePRFuafej0JWSMkfyfnbU_bThXbpxq-uGxvvFVY9Bcc4=
+e6XzZnPv4R82bBMuDptiYDjyCEfYogxH7aTWcez5L-Aj6OuTgq-zUfRhlXdn4T6loqMQBXFCxVJ=
+tBpBqBJHzOsiekq_EgtZ1Ggw1R0kLbtiT1QI0GRgDNYE5U-Bjne7Np1ZpteJlj7dIxZ4QigzHkP=
+RBh-CL0kocED5lkvkQgDEvps5GUbCkTdiJhIt0CKO79lQqzq5kXpLkQWztu56kP4DVpNm9O9at5=
+IICkM555w_1XmoP0hFZDwB7e9oAmQMzTGESfahj99C9RCm1k0D6rx0_RC2qJ5iHN5Kv94n4m6Cz=
+Q3TKG-ljgJoWDftUcE%3D" target=3D"_blank" style=3D" display: block; padding:=
+ 4px 20px; color: #ffffff; font-family: 'DM Sans', Arial, sans-serif; font-=
+size: 14px; font-weight: 700; line-height: 21px; text-decoration: none; ">V=
+iew details</a> </td> </tr> </table> </td> </tr> </table> </td> </tr> </tab=
+le> <!--<![endif]--> </td> </tr> </table> </td> </tr> </table> </td> </tr> =
+<!----> <!-- 4th car --> <!----> <tr> <td class=3D"mobile-stack car-divider=
+" style=3D"padding: 24px 0; border-top: 1px solid #e0e4e3"> <table role=3D"=
+presentation" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100=
+%" style=3D"width: 100%"> <tr> <!-- Image Column --> <td class=3D"mobile-st=
+ack" width=3D"188" style=3D"vertical-align: top"> <a href=3D"https://emaill=
+inks.cars.com/u/click=3F_t=3D47f16e37803d44c8a302ee7782c80abb&_m=3D562a2dcd=
+f0f1499982ebeb0faff6a973&_e=3DMzWOU_wsT-MNeuhoe_tgvahOFiiaMHyFuIGv3CrQBd6DZ=
+e1W6kEKCZE7wNm26hp6OYe85wL-PSBCs0QSSZO6P0erzq5DseND00JuJ13Smp6jPrzXodz9mQdh=
+ZWwv7TvHm0jmxiAbdKHns9oXkXEIAXpFnJCvXYX1ho11VddetYs_XSe-RnN_QzHSa5kuqC0KfZF=
+o9kU4N_2RjRZXdBPr9pKKlFlpCtSIX8AMlZUfLlTUEnUn5fpFYNZmbFWEN75_8CtltfHRBkGBF1=
+WgNWoQdUi4827o2s97L5-M3sBVIrdu8o1xqgR9AxYNuQMW4GNnacCQ1PH-eZCsWdU-o0nsMVwWp=
+CgMh2iHFcYy337HnLdz38hhEVtCYW_OTdlKfO2GZXwbj43sI9B85-UScaC742_GUJT32Tc01_WM=
+1Lu0ChETTl6mChkPSb8pNlQPuf5QzXDVyWTAvSe2a2SgWbDLf7F6D58DWiB-IAXwusAfV7tvDAg=
+YaoTxGWIAZvkosJqPH8P0x9ZPoN8nD5b88r7fdZJ-C9DD-xd-W-n7DqidkxsEJajNUquDCTr49x=
+FWOkArWL1F0S-UIUiboi_AJuDfF43iIaIZMO0ET6RSXHMzWbo%3D" target=3D"_blank"> <i=
+mg src=3D"https://platform.cstatic-images.com/in/v2/45f7fbe1-47ba-5e76-9293=
+-0267d7c92b96/5b4ce2ca-31ab-4775-94a3-65959698ff35/fuzPnFVseKwNqfhJTDX-aZbu=
+UFA.jpg" alt=3D"2021 Buick Encore GX Select" width=3D"188" style=3D"display=
+: block; width: 100%; max-width: 100%; height: auto; border-radius: 10px; m=
+ax-height: 141px; object-fit: cover" class=3D"car-image"> </a> </td> <!-- C=
+ontent Column --> <td class=3D"mobile-stack" style=3D"vertical-align: top; =
+padding-left: 24px"> <table role=3D"presentation" cellspacing=3D"0" cellpad=
+ding=3D"0" border=3D"0" width=3D"100%" style=3D"width: 100%"> <!-- Vehicle =
+Title --> <tr> <td style=3D"padding-bottom: 8px"> <a href=3D"https://emaill=
+inks.cars.com/u/click=3F_t=3D47f16e37803d44c8a302ee7782c80abb&_m=3D562a2dcd=
+f0f1499982ebeb0faff6a973&_e=3DMzWOU_wsT-MNeuhoe_tgvahOFiiaMHyFuIGv3CrQBd6DZ=
+e1W6kEKCZE7wNm26hp6OYe85wL-PSBCs0QSSZO6P0erzq5DseND00JuJ13Smp6jPrzXodz9mQdh=
+ZWwv7TvHm0jmxiAbdKHns9oXkXEIAXpFnJCvXYX1ho11VddetYs_XSe-RnN_QzHSa5kuqC0KfZF=
+o9kU4N_2RjRZXdBPr9pKKlFlpCtSIX8AMlZUfLlTUEnUn5fpFYNZmbFWEN75_8CtltfHRBkGBF1=
+WgNWoQdUi4827o2s97L5-M3sBVIrdu8o1xqgR9AxYNuQMW4GNnacCQ1PH-eZCsWdU-o0nsMVwWp=
+CgMh2iHFcYy337HnLdz38hhEVtCYW_OTdlKfO2GZXwbj43sI9B85-UScaC742_GUJT32Tc01_WM=
+1Lu0ChETTl6mChkPSb8pNlQPuf5QzXDVyWTAvSe2a2SgWbDLf4DxAupEcSyGWAuh7znAoZEmqhm=
+_WKAi7F6M0l1Z6HFLqzZt-AqCjibq0g8dKOpQ7mFv9liRtI7lH6yG6RfrquKV1hDYzOYrIbcjpj=
+kELbhmqY5i40lffr-KfA2lJPy-k6kLm030ChXQvl6kf1R8nfU%3D" target=3D"_blank" sty=
+le=3D" font-family: 'DM Sans', Arial, sans-serif; font-size: 16px; font-wei=
+ght: 700; line-height: 24px; color: #212121; margin: 0; text-decoration: no=
+ne; " class=3D"link-hover"> 2021 Buick Encore GX Select </a> </td> </tr> <!=
+-- Price --> <tr> <td style=3D"padding-bottom: 8px"> <p style=3D"font-famil=
+y: 'DM Sans', Arial, sans-serif; font-size: 20px; font-weight: 700; line-he=
+ight: 27px; color: #212121; margin: 0"> $18,423 </p> </td> </tr> <!-- Miles=
+ --> <!-- --> <tr> <td style=3D"padding-bottom: 8px"> <table role=3D"presen=
+tation" cellspacing=3D"0" cellpadding=3D"0" border=3D"0"> <tr> <td style=3D=
+"padding-right: 4px"> <img src=3D"https://img.carsdn.co/image/upload/v17279=
+01232/speedometer.png" alt width=3D"14" height=3D"14" style=3D"display: blo=
+ck"> </td> <td style=3D"font-family: 'DM Sans', Arial, sans-serif; font-siz=
+e: 12px; font-weight: 400; line-height: 18px; color: #212121"> 42,638 mi. <=
+/td> </tr> </table> </td> </tr> <!-- --> <!-- Location --> <tr> <td style=
+=3D"padding-bottom: 8px"> <table role=3D"presentation" cellspacing=3D"0" ce=
+llpadding=3D"0" border=3D"0"> <tr> <td style=3D"padding-right: 4px"> <img s=
+rc=3D"https://img.carsdn.co/image/upload/v1719419084/map_marker_2.png" alt =
+width=3D"14" height=3D"14" style=3D"display: block"> </td> <td style=3D"fon=
+t-family: 'DM Sans', Arial, sans-serif; font-size: 12px; font-weight: 400; =
+line-height: 18px; color: #212121"> Donovan Auto &amp; Truck Center </td> <=
+/tr> </table> </td> </tr> <!-- Button --> <tr> <td> <!--[if mso]><v:roundre=
+ct xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schemas-microso=
+ft-com:office:word" href=3D"https://emaillinks.cars.com/u/click=3F_t=3D47f1=
+6e37803d44c8a302ee7782c80abb&_m=3D562a2dcdf0f1499982ebeb0faff6a973&_e=3DMzW=
+OU_wsT-MNeuhoe_tgvahOFiiaMHyFuIGv3CrQBd6DZe1W6kEKCZE7wNm26hp6OYe85wL-PSBCs0=
+QSSZO6P0erzq5DseND00JuJ13Smp6jPrzXodz9mQdhZWwv7TvHm0jmxiAbdKHns9oXkXEIAXpFn=
+JCvXYX1ho11VddetYs_XSe-RnN_QzHSa5kuqC0KfZFo9kU4N_2RjRZXdBPr9pKKlFlpCtSIX8AM=
+lZUfLlTUEnUn5fpFYNZmbFWEN75_8CtltfHRBkGBF1WgNWoQdUi4827o2s97L5-M3sBVIrdu8o1=
+xqgR9AxYNuQMW4GNnacCQ1PH-eZCsWdU-o0nsMVwWpCgMh2iHFcYy337HnLdz38hhEVtCYW_OTd=
+lKfO2GZXwbj43sI9B85-UScaC742_GUJT32Tc01_WM1Lu0ChETTl6mChkPSb8pNlQPuf5QzXDVy=
+WTAvSe2a2SgWbDLfxw3ayoVhaEk_hL81T8mcXcUUSi4SKf-Y45FnPjN754UkVFP0j67wrnMzYdx=
+4duOrqfr5vTgAwA86LiCD91vr6wg4cH95l4qLiPbXgcyKxuZkysOqblup6DEi4EeOAK6dNzmFvz=
+qe0MgshqldASDKDA%3D" style=3D"height: 32px; v-text-anchor: middle; width: 2=
+00px" arcsize=3D"50000%" fillcolor=3D"#9754e6" stroke=3D"false"> <w:anchorl=
+ock/> <center style=3D"color: #ffffff; font-family: 'DM Sans', Arial, sans-=
+serif; font-size: 14px; font-weight: 700">View details</center> </v:roundre=
+ct><![endif]--> <!--[if !mso]><!--> <table role=3D"presentation" cellspacin=
+g=3D"0" cellpadding=3D"0" border=3D"0" class=3D"button-full-width" style=3D=
+"width: 100%; max-width: 200px"> <tr> <td> <table role=3D"presentation" cel=
+lspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" style=3D"width=
+: 100%"> <tr> <td style=3D"background-color: #9754e6; border-radius: 999px"=
+ class=3D"purple-button-hover"> <table role=3D"presentation" cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0" width=3D"100%" style=3D"width: 100%"> <t=
+r> <td align=3D"center"> <a class=3D"btn-pd" href=3D"https://emaillinks.car=
+s.com/u/click=3F_t=3D47f16e37803d44c8a302ee7782c80abb&_m=3D562a2dcdf0f14999=
+82ebeb0faff6a973&_e=3DMzWOU_wsT-MNeuhoe_tgvahOFiiaMHyFuIGv3CrQBd6DZe1W6kEKC=
+ZE7wNm26hp6OYe85wL-PSBCs0QSSZO6P0erzq5DseND00JuJ13Smp6jPrzXodz9mQdhZWwv7TvH=
+m0jmxiAbdKHns9oXkXEIAXpFnJCvXYX1ho11VddetYs_XSe-RnN_QzHSa5kuqC0KfZFo9kU4N_2=
+RjRZXdBPr9pKKlFlpCtSIX8AMlZUfLlTUEnUn5fpFYNZmbFWEN75_8CtltfHRBkGBF1WgNWoQdU=
+i4827o2s97L5-M3sBVIrdu8o1xqgR9AxYNuQMW4GNnacCQ1PH-eZCsWdU-o0nsMVwWpCgMh2iHF=
+cYy337HnLdz38hhEVtCYW_OTdlKfO2GZXwbj43sI9B85-UScaC742_GUJT32Tc01_WM1Lu0ChET=
+Tl6mChkPSb8pNlQPuf5QzXDVyWTAvSe2a2SgWbDLfy4o5OFDZXiB-cGtzLOMEsYjFgYJWGKnYfb=
+3t-LdjNUoBzlCRfIPlTiKI0JtL6c1fEHVLjojauVDBGKtjTAYghygy3JTEPC2b5f42YL-INUf4E=
+52RM970bDPCHfaBVXeHKfKZVfV6dKx5QiBRl7Nl0U%3D" target=3D"_blank" style=3D" d=
+isplay: block; padding: 4px 20px; color: #ffffff; font-family: 'DM Sans', A=
+rial, sans-serif; font-size: 14px; font-weight: 700; line-height: 21px; tex=
+t-decoration: none; ">View details</a> </td> </tr> </table> </td> </tr> </t=
+able> </td> </tr> </table> <!--<![endif]--> </td> </tr> </table> </td> </tr=
+> </table> </td> </tr> <!----> <!-- 5th car --> <!----> <tr> <td class=3D"m=
+obile-stack car-divider" style=3D"padding: 24px 0; border-top: 1px solid #e=
+0e4e3"> <table role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0" bo=
+rder=3D"0" width=3D"100%" style=3D"width: 100%"> <tr> <!-- Image Column -->=
+ <td class=3D"mobile-stack" width=3D"188" style=3D"vertical-align: top"> <a=
+ href=3D"https://emaillinks.cars.com/u/click=3F_t=3D47f16e37803d44c8a302ee7=
+782c80abb&_m=3D562a2dcdf0f1499982ebeb0faff6a973&_e=3DMzWOU_wsT-MNeuhoe_tgva=
+hOFiiaMHyFuIGv3CrQBd6scqyCZioCroCxfQqcand8mjS0MdAinjaMG9CgD4IR2DZtN3Q-wROlI=
+04SN0uT75G3lNNsasVR51qzC0TgyM3AX-lI3FMgEDV6y7byJTSZTqdQG4H5SSZLdEkurLE_20MN=
+Tu-HU3MmJ2cQd1Kpx1LIZFjGKfWfU-DY2P8RaQ-PytnTWAxjCY0bLfjAAe5mzR-R_CkYhDed8PL=
+axTp_lGlxpmSmiFQ3OhRP-w8Lp2FzH2cRobFMl-3bs04S6BfP0tkYFU7XzVuI2GzsVTnTNI_SA4=
+_xu1FMrXOU4Ga632XjAScyY8KsgTQ8HEc_Ev4UZJPeBDRNFvbLq4-7xB9MVLLcPmRBMLPLgSZqc=
+vnIp8AmdTeM6OfLDfa1gZ4nO4ueJfxHl_5CSXGCLxniPIdieWcYqSRjJ70BkOOd-v6GcJWH8p5b=
+BkMVW6xPljOeTV38CMgTJeQR7mx6Xm7HERMG6OkSP64tzP_NTeZmSobD9SK2iJb5dSv7szp8O88=
+HaSyv0nqQHzO2Gqox4VYNvrBb-LVn0nYRiH1NwzO1rLJbyfTxUI3WCYPllnq8QcjOOOajNns%3D=
+" target=3D"_blank"> <img src=3D"https://platform.cstatic-images.com/in/v2/=
+45f7fbe1-47ba-5e76-9293-0267d7c92b96/b686449f-6b5c-47a6-a8e5-c66d36c6f8ce/A=
+lz4KNasW3Kq0K51WD8NevWqfDc.jpg" alt=3D"2024 GMC Terrain SLT" width=3D"188" =
+style=3D"display: block; width: 100%; max-width: 100%; height: auto; border=
+-radius: 10px; max-height: 141px; object-fit: cover" class=3D"car-image"> <=
+/a> </td> <!-- Content Column --> <td class=3D"mobile-stack" style=3D"verti=
+cal-align: top; padding-left: 24px"> <table role=3D"presentation" cellspaci=
+ng=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" style=3D"width: 100%=
+"> <!-- Vehicle Title --> <tr> <td style=3D"padding-bottom: 8px"> <a href=
+=3D"https://emaillinks.cars.com/u/click=3F_t=3D47f16e37803d44c8a302ee7782c8=
+0abb&_m=3D562a2dcdf0f1499982ebeb0faff6a973&_e=3DMzWOU_wsT-MNeuhoe_tgvahOFii=
+aMHyFuIGv3CrQBd6scqyCZioCroCxfQqcand8mjS0MdAinjaMG9CgD4IR2DZtN3Q-wROlI04SN0=
+uT75G3lNNsasVR51qzC0TgyM3AX-lI3FMgEDV6y7byJTSZTqdQG4H5SSZLdEkurLE_20MNTu-HU=
+3MmJ2cQd1Kpx1LIZFjGKfWfU-DY2P8RaQ-PytnTWAxjCY0bLfjAAe5mzR-R_CkYhDed8PLaxTp_=
+lGlxpmSmiFQ3OhRP-w8Lp2FzH2cRobFMl-3bs04S6BfP0tkYFU7XzVuI2GzsVTnTNI_SA4_xu1F=
+MrXOU4Ga632XjAScyY8KsgTQ8HEc_Ev4UZJPeBDRNFvbLq4-7xB9MVLLcPmRBMLPLgSZqcvnIp8=
+AmdTeM6OfLDfa1gZ4nO4ueJfxHl_5CSXGCLxniPIdieWcYqSRjJ70BkOOd-v6GcJWH8g4G0HYq7=
+nI9JYI-O6Plz6RbR1UlK-26F_pYCW6wJGPLYWicn90EtRgefmvuqvGoH14ks-4I0KDhmdjChG3S=
+uj9xmc0m6MI2IVlPmIlio_-HFUaWuEDyG8TGsx1oqvnAdMupZrsNaWcOlRDQDfTvDCA%3D" tar=
+get=3D"_blank" style=3D" font-family: 'DM Sans', Arial, sans-serif; font-si=
+ze: 16px; font-weight: 700; line-height: 24px; color: #212121; margin: 0; t=
+ext-decoration: none; " class=3D"link-hover"> 2024 GMC Terrain SLT </a> </t=
+d> </tr> <!-- Price --> <tr> <td style=3D"padding-bottom: 8px"> <p style=3D=
+"font-family: 'DM Sans', Arial, sans-serif; font-size: 20px; font-weight: 7=
+00; line-height: 27px; color: #212121; margin: 0"> $24,990 </p> </td> </tr>=
+ <!-- Miles --> <!-- --> <tr> <td style=3D"padding-bottom: 8px"> <table rol=
+e=3D"presentation" cellspacing=3D"0" cellpadding=3D"0" border=3D"0"> <tr> <=
+td style=3D"padding-right: 4px"> <img src=3D"https://img.carsdn.co/image/up=
+load/v1727901232/speedometer.png" alt width=3D"14" height=3D"14" style=3D"d=
+isplay: block"> </td> <td style=3D"font-family: 'DM Sans', Arial, sans-seri=
+f; font-size: 12px; font-weight: 400; line-height: 18px; color: #212121"> 3=
+7,445 mi. </td> </tr> </table> </td> </tr> <!-- --> <!-- Location --> <tr> =
+<td style=3D"padding-bottom: 8px"> <table role=3D"presentation" cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0"> <tr> <td style=3D"padding-right: 4px=
+"> <img src=3D"https://img.carsdn.co/image/upload/v1719419084/map_marker_2.=
+png" alt width=3D"14" height=3D"14" style=3D"display: block"> </td> <td sty=
+le=3D"font-family: 'DM Sans', Arial, sans-serif; font-size: 12px; font-weig=
+ht: 400; line-height: 18px; color: #212121"> Donovan Auto &amp; Truck Cente=
+r </td> </tr> </table> </td> </tr> <!-- Button --> <tr> <td> <!--[if mso]><=
+v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schema=
+s-microsoft-com:office:word" href=3D"https://emaillinks.cars.com/u/click=3F=
+_t=3D47f16e37803d44c8a302ee7782c80abb&_m=3D562a2dcdf0f1499982ebeb0faff6a973=
+&_e=3DMzWOU_wsT-MNeuhoe_tgvahOFiiaMHyFuIGv3CrQBd6scqyCZioCroCxfQqcand8mjS0M=
+dAinjaMG9CgD4IR2DZtN3Q-wROlI04SN0uT75G3lNNsasVR51qzC0TgyM3AX-lI3FMgEDV6y7by=
+JTSZTqdQG4H5SSZLdEkurLE_20MNTu-HU3MmJ2cQd1Kpx1LIZFjGKfWfU-DY2P8RaQ-PytnTWAx=
+jCY0bLfjAAe5mzR-R_CkYhDed8PLaxTp_lGlxpmSmiFQ3OhRP-w8Lp2FzH2cRobFMl-3bs04S6B=
+fP0tkYFU7XzVuI2GzsVTnTNI_SA4_xu1FMrXOU4Ga632XjAScyY8KsgTQ8HEc_Ev4UZJPeBDRNF=
+vbLq4-7xB9MVLLcPmRBMLPLgSZqcvnIp8AmdTeM6OfLDfa1gZ4nO4ueJfxHl_5CSXGCLxniPIdi=
+eWcYqSRjJ70BkOOd-v6GcJWH8hNj2KBogm1-MDjPqBAdhUb6XQPsNJOYoY914zSEh9dDBET6QHJ=
+BkEn0UiNU2dIdRRJEE5CUwAUpQoWYhB0lbVJFp7JGVVSTIutPjh5K5yijK-xmeFiaOhmkVTB2SC=
+kcDiOIVAq7iwaYnWLJtO3vMug%3D" style=3D"height: 32px; v-text-anchor: middle;=
+ width: 200px" arcsize=3D"50000%" fillcolor=3D"#9754e6" stroke=3D"false"> <=
+w:anchorlock/> <center style=3D"color: #ffffff; font-family: 'DM Sans', Ari=
+al, sans-serif; font-size: 14px; font-weight: 700">View details</center> </=
+v:roundrect><![endif]--> <!--[if !mso]><!--> <table role=3D"presentation" c=
+ellspacing=3D"0" cellpadding=3D"0" border=3D"0" class=3D"button-full-width"=
+ style=3D"width: 100%; max-width: 200px"> <tr> <td> <table role=3D"presenta=
+tion" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" style=
+=3D"width: 100%"> <tr> <td style=3D"background-color: #9754e6; border-radiu=
+s: 999px" class=3D"purple-button-hover"> <table role=3D"presentation" cells=
+pacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" style=3D"width: =
+100%"> <tr> <td align=3D"center"> <a class=3D"btn-pd" href=3D"https://email=
+links.cars.com/u/click=3F_t=3D47f16e37803d44c8a302ee7782c80abb&_m=3D562a2dc=
+df0f1499982ebeb0faff6a973&_e=3DMzWOU_wsT-MNeuhoe_tgvahOFiiaMHyFuIGv3CrQBd6s=
+cqyCZioCroCxfQqcand8mjS0MdAinjaMG9CgD4IR2DZtN3Q-wROlI04SN0uT75G3lNNsasVR51q=
+zC0TgyM3AX-lI3FMgEDV6y7byJTSZTqdQG4H5SSZLdEkurLE_20MNTu-HU3MmJ2cQd1Kpx1LIZF=
+jGKfWfU-DY2P8RaQ-PytnTWAxjCY0bLfjAAe5mzR-R_CkYhDed8PLaxTp_lGlxpmSmiFQ3OhRP-=
+w8Lp2FzH2cRobFMl-3bs04S6BfP0tkYFU7XzVuI2GzsVTnTNI_SA4_xu1FMrXOU4Ga632XjAScy=
+Y8KsgTQ8HEc_Ev4UZJPeBDRNFvbLq4-7xB9MVLLcPmRBMLPLgSZqcvnIp8AmdTeM6OfLDfa1gZ4=
+nO4ueJfxHl_5CSXGCLxniPIdieWcYqSRjJ70BkOOd-v6GcJWH8nucD696vVzQmuAACeWs8Hjiq6=
+XYsKjBd-nucI8OLmBreqNzUtFaRR8xMpUyF7NUkHFVIbTQTcaX0IdbrNzpaswdihLTLONFpA3es=
+y31YGHaPC4ixMHV1_xf-6-OzGjzUcWqgw446wtr_v5pT02n18E%3D" target=3D"_blank" st=
+yle=3D" display: block; padding: 4px 20px; color: #ffffff; font-family: 'DM=
+ Sans', Arial, sans-serif; font-size: 14px; font-weight: 700; line-height: =
+21px; text-decoration: none; ">View details</a> </td> </tr> </table> </td> =
+</tr> </table> </td> </tr> </table> <!--<![endif]--> </td> </tr> </table> <=
+/td> </tr> </table> </td> </tr> <!----> <!-- 6th car --> <!----> <tr> <td c=
+lass=3D"mobile-stack car-divider" style=3D"padding: 24px 0; border-top: 1px=
+ solid #e0e4e3"> <table role=3D"presentation" cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0" width=3D"100%" style=3D"width: 100%"> <tr> <!-- Image C=
+olumn --> <td class=3D"mobile-stack" width=3D"188" style=3D"vertical-align:=
+ top"> <a href=3D"https://emaillinks.cars.com/u/click=3F_t=3D47f16e37803d44=
+c8a302ee7782c80abb&_m=3D562a2dcdf0f1499982ebeb0faff6a973&_e=3DMzWOU_wsT-MNe=
+uhoe_tgvahOFiiaMHyFuIGv3CrQBd5dh7bKyJeW4uyVnepPcXTouLVCr52Qx_Z3bP7MLP2Fsi52=
+DL6N5guIAGjGERBpg3thni-o3bvUy4cgDFJXiLgxa9V-Se8PyR6i-uxFABMNv0Dnu5EGnT09z0S=
+fxYmOGYXM62fp8siH-AnNKQonpXxgLJN6szznkV8e4_WvWKT38a2EOgYd0Xc-JuuPJp3q0p65a3=
+WQkpMgaxHFif4iWOzlFye8_NSmBcsL1HIKe1OeiweJiupfKMsB4rTDpJbRMrsZQCi1-9JcuSsIc=
+ShzabSM3wwFJkTAuCTJ6r7Um2SYuqsj7oSOdgCnKRVOXU4XVv8hHLEim3VzPUNMp6PoXeYBXcd_=
+pmbRn7gX-kw4B2kZ-C0UHWHjESXk-Yc0NLg-Gi3TTexeacgHof53xWDaPs-8piyQ37D9L2THxbb=
+JZJJYI-ZSETM6orAr6brzsXGaDkvXWqlWCHUfqC7U38PIGpgOzbOg6-Xr7_MUp1l0TWaBrtftPy=
+-6GrRDmlxiuFUWsoFiyNPsrG0ITo963gtpb9reMfFjImg-usJoZ7bzATvgcbtEqjJokjHMEo8IZ=
+Kq0Lng%3D" target=3D"_blank"> <img src=3D"https://platform.cstatic-images.c=
+om/in/v2/45f7fbe1-47ba-5e76-9293-0267d7c92b96/72c5c62c-894e-4ad6-a2ae-aced5=
+47d97fc/VQIcu09si3BxrA2Leus9Fyr2LOk.jpg" alt=3D"2024 GMC Terrain SLT" width=
+=3D"188" style=3D"display: block; width: 100%; max-width: 100%; height: aut=
+o; border-radius: 10px; max-height: 141px; object-fit: cover" class=3D"car-=
+image"> </a> </td> <!-- Content Column --> <td class=3D"mobile-stack" style=
+=3D"vertical-align: top; padding-left: 24px"> <table role=3D"presentation" =
+cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" style=3D"wi=
+dth: 100%"> <!-- Vehicle Title --> <tr> <td style=3D"padding-bottom: 8px"> =
+<a href=3D"https://emaillinks.cars.com/u/click=3F_t=3D47f16e37803d44c8a302e=
+e7782c80abb&_m=3D562a2dcdf0f1499982ebeb0faff6a973&_e=3DMzWOU_wsT-MNeuhoe_tg=
+vahOFiiaMHyFuIGv3CrQBd5dh7bKyJeW4uyVnepPcXTouLVCr52Qx_Z3bP7MLP2Fsi52DL6N5gu=
+IAGjGERBpg3thni-o3bvUy4cgDFJXiLgxa9V-Se8PyR6i-uxFABMNv0Dnu5EGnT09z0SfxYmOGY=
+XM62fp8siH-AnNKQonpXxgLJN6szznkV8e4_WvWKT38a2EOgYd0Xc-JuuPJp3q0p65a3WQkpMga=
+xHFif4iWOzlFye8_NSmBcsL1HIKe1OeiweJiupfKMsB4rTDpJbRMrsZQCi1-9JcuSsIcShzabSM=
+3wwFJkTAuCTJ6r7Um2SYuqsj7oSOdgCnKRVOXU4XVv8hHLEim3VzPUNMp6PoXeYBXcd_pmbRn7g=
+X-kw4B2kZ-C0UHWHjESXk-Yc0NLg-Gi3TTexeacgHof53xWDaPs-8piyQ37D9L2THxbbJZJJYI-=
+2983N1LNeKA2A7W9wgdQAp7142dw5ko367yxFojdq9UJMGQYD_-D70iU8eXai5cjDB4O9Ei7bwy=
+zGiTzJstsdx-EIdEjNREQI21JtFxVW1ByADJ3bGvW_RVJF7-hvxeK1uF0ZEguerNWLqGS6fWbU%=
+3D" target=3D"_blank" style=3D" font-family: 'DM Sans', Arial, sans-serif; =
+font-size: 16px; font-weight: 700; line-height: 24px; color: #212121; margi=
+n: 0; text-decoration: none; " class=3D"link-hover"> 2024 GMC Terrain SLT <=
+/a> </td> </tr> <!-- Price --> <tr> <td style=3D"padding-bottom: 8px"> <p s=
+tyle=3D"font-family: 'DM Sans', Arial, sans-serif; font-size: 20px; font-we=
+ight: 700; line-height: 27px; color: #212121; margin: 0"> $25,985 </p> </td=
+> </tr> <!-- Miles --> <!-- --> <tr> <td style=3D"padding-bottom: 8px"> <ta=
+ble role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">=
+ <tr> <td style=3D"padding-right: 4px"> <img src=3D"https://img.carsdn.co/i=
+mage/upload/v1727901232/speedometer.png" alt width=3D"14" height=3D"14" sty=
+le=3D"display: block"> </td> <td style=3D"font-family: 'DM Sans', Arial, sa=
+ns-serif; font-size: 12px; font-weight: 400; line-height: 18px; color: #212=
+121"> 33,420 mi. </td> </tr> </table> </td> </tr> <!-- --> <!-- Location --=
+> <tr> <td style=3D"padding-bottom: 8px"> <table role=3D"presentation" cell=
+spacing=3D"0" cellpadding=3D"0" border=3D"0"> <tr> <td style=3D"padding-rig=
+ht: 4px"> <img src=3D"https://img.carsdn.co/image/upload/v1719419084/map_ma=
+rker_2.png" alt width=3D"14" height=3D"14" style=3D"display: block"> </td> =
+<td style=3D"font-family: 'DM Sans', Arial, sans-serif; font-size: 12px; fo=
+nt-weight: 400; line-height: 18px; color: #212121"> Donovan Auto &amp; Truc=
+k Center </td> </tr> </table> </td> </tr> <!-- Button --> <tr> <td> <!--[if=
+ mso]><v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn=
+:schemas-microsoft-com:office:word" href=3D"https://emaillinks.cars.com/u/c=
+lick=3F_t=3D47f16e37803d44c8a302ee7782c80abb&_m=3D562a2dcdf0f1499982ebeb0fa=
+ff6a973&_e=3DMzWOU_wsT-MNeuhoe_tgvahOFiiaMHyFuIGv3CrQBd5dh7bKyJeW4uyVnepPcX=
+TouLVCr52Qx_Z3bP7MLP2Fsi52DL6N5guIAGjGERBpg3thni-o3bvUy4cgDFJXiLgxa9V-Se8Py=
+R6i-uxFABMNv0Dnu5EGnT09z0SfxYmOGYXM62fp8siH-AnNKQonpXxgLJN6szznkV8e4_WvWKT3=
+8a2EOgYd0Xc-JuuPJp3q0p65a3WQkpMgaxHFif4iWOzlFye8_NSmBcsL1HIKe1OeiweJiupfKMs=
+B4rTDpJbRMrsZQCi1-9JcuSsIcShzabSM3wwFJkTAuCTJ6r7Um2SYuqsj7oSOdgCnKRVOXU4XVv=
+8hHLEim3VzPUNMp6PoXeYBXcd_pmbRn7gX-kw4B2kZ-C0UHWHjESXk-Yc0NLg-Gi3TTexeacgHo=
+f53xWDaPs-8piyQ37D9L2THxbbJZJJYI82fZdgvyxykA6q6ShYTszbhs3dx4MFZBTrMEB09ZygZ=
+jlivsnOyfs0frTR1NKse7D9g0hofLUz-1Uwefs5EgnkDP9dAGAfK13v0R506DmCVc_LVthL7Je2=
+onYPb_qxye7ns6_GLG0ze3OWeFV7_GrY%3D" style=3D"height: 32px; v-text-anchor: =
+middle; width: 200px" arcsize=3D"50000%" fillcolor=3D"#9754e6" stroke=3D"fa=
+lse"> <w:anchorlock/> <center style=3D"color: #ffffff; font-family: 'DM San=
+s', Arial, sans-serif; font-size: 14px; font-weight: 700">View details</cen=
+ter> </v:roundrect><![endif]--> <!--[if !mso]><!--> <table role=3D"presenta=
+tion" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" class=3D"button-full=
+-width" style=3D"width: 100%; max-width: 200px"> <tr> <td> <table role=3D"p=
+resentation" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%=
+" style=3D"width: 100%"> <tr> <td style=3D"background-color: #9754e6; borde=
+r-radius: 999px" class=3D"purple-button-hover"> <table role=3D"presentation=
+" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" style=3D"=
+width: 100%"> <tr> <td align=3D"center"> <a class=3D"btn-pd" href=3D"https:=
+//emaillinks.cars.com/u/click=3F_t=3D47f16e37803d44c8a302ee7782c80abb&_m=3D=
+562a2dcdf0f1499982ebeb0faff6a973&_e=3DMzWOU_wsT-MNeuhoe_tgvahOFiiaMHyFuIGv3=
+CrQBd5dh7bKyJeW4uyVnepPcXTouLVCr52Qx_Z3bP7MLP2Fsi52DL6N5guIAGjGERBpg3thni-o=
+3bvUy4cgDFJXiLgxa9V-Se8PyR6i-uxFABMNv0Dnu5EGnT09z0SfxYmOGYXM62fp8siH-AnNKQo=
+npXxgLJN6szznkV8e4_WvWKT38a2EOgYd0Xc-JuuPJp3q0p65a3WQkpMgaxHFif4iWOzlFye8_N=
+SmBcsL1HIKe1OeiweJiupfKMsB4rTDpJbRMrsZQCi1-9JcuSsIcShzabSM3wwFJkTAuCTJ6r7Um=
+2SYuqsj7oSOdgCnKRVOXU4XVv8hHLEim3VzPUNMp6PoXeYBXcd_pmbRn7gX-kw4B2kZ-C0UHWHj=
+ESXk-Yc0NLg-Gi3TTexeacgHof53xWDaPs-8piyQ37D9L2THxbbJZJJYI9YssNztYygp5dwBj9B=
+shY2ffEN04GzMpg0kHQvew7cpV42Nok-G8dlO-1V_yloosF4Qy-eiW9Jcp3IxWtroKAkhoPAZng=
+WGunGCh1VGbYp-L0HTwlAHWtPRqEvXZZg_4Ig-Fz5ZeZlT3ZCm1jNRBw0%3D" target=3D"_bl=
+ank" style=3D" display: block; padding: 4px 20px; color: #ffffff; font-fami=
+ly: 'DM Sans', Arial, sans-serif; font-size: 14px; font-weight: 700; line-h=
+eight: 21px; text-decoration: none; ">View details</a> </td> </tr> </table>=
+ </td> </tr> </table> </td> </tr> </table> <!--<![endif]--> </td> </tr> </t=
+able> </td> </tr> </table> </td> </tr> <!----> <!-- 7th car --> <!----> <tr=
+> <td class=3D"mobile-stack car-divider" style=3D"padding: 24px 0; border-t=
+op: 1px solid #e0e4e3"> <table role=3D"presentation" cellspacing=3D"0" cell=
+padding=3D"0" border=3D"0" width=3D"100%" style=3D"width: 100%"> <tr> <!-- =
+Image Column --> <td class=3D"mobile-stack" width=3D"188" style=3D"vertical=
+-align: top"> <a href=3D"https://emaillinks.cars.com/u/click=3F_t=3D47f16e3=
+7803d44c8a302ee7782c80abb&_m=3D562a2dcdf0f1499982ebeb0faff6a973&_e=3DMzWOU_=
+wsT-MNeuhoe_tgvahOFiiaMHyFuIGv3CrQBd5a7uhOqPsOYAcPg6TdrcpFMUrwdkX85_rlxhUqc=
+pd0CKd4B5IAtM7OIrDfJcCJ7Lca6brCLQ7ZBWRPglNKsAxidya57atG_37UJiLGFTQRHnR1UwWI=
+vC05ES-3G173qRHRSclfbIGcx8VDqpEOxCvB6ireLh7sMbo1YvvNegnE6oIMn1vRmMK8l7vON-O=
+Evar0UXjH7mis8zOWYhDiQWnb50ch9LoO5dIKWlf1Vwma4-HMj0L-VOOtvCDmkGtqP5EkPmy4o9=
+0_WMa_JK-TCaaNIB6FRyl-L4DoE7E1kGvf3DxQRhiUdJvuDE06S7LYclZoEWmCV0AaCVRDhZE8w=
+RRDQZ5EnaJzoE91_-Ma7bwXoPaBnl1hdPLsavy3VvI7XhyZq3ZatZKcOKHInUAluGM8iN5Fgx2V=
+2caQ7v1Rju2HddqBypbv7Y8qOmnyeX8Funt1yif84I803CpsTGNzodDFvw0iA5ZbpHtt6dmy_Pa=
+aMg763YpD4dOgBXMICVfyQ3DZPQ0QTxhSNz-sGDEfSNCAeuXAzxTGd1RgUoLJU0nRIdCZhdv5Uh=
+2qfbCQpLW7U2g%3D" target=3D"_blank"> <img src=3D"https://platform.cstatic-i=
+mages.com/in/v2/45f7fbe1-47ba-5e76-9293-0267d7c92b96/52f28f4c-f852-43ef-8ce=
+e-ee459f1ae723/AUpL10JBnu9qVfzF_wggZDhx3L8.jpg" alt=3D"2024 Buick Encore GX=
+ Sport Touring" width=3D"188" style=3D"display: block; width: 100%; max-wid=
+th: 100%; height: auto; border-radius: 10px; max-height: 141px; object-fit:=
+ cover" class=3D"car-image"> </a> </td> <!-- Content Column --> <td class=
+=3D"mobile-stack" style=3D"vertical-align: top; padding-left: 24px"> <table=
+ role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" wid=
+th=3D"100%" style=3D"width: 100%"> <!-- Vehicle Title --> <tr> <td style=3D=
+"padding-bottom: 8px"> <a href=3D"https://emaillinks.cars.com/u/click=3F_t=
+=3D47f16e37803d44c8a302ee7782c80abb&_m=3D562a2dcdf0f1499982ebeb0faff6a973&_=
+e=3DMzWOU_wsT-MNeuhoe_tgvahOFiiaMHyFuIGv3CrQBd5a7uhOqPsOYAcPg6TdrcpFMUrwdkX=
+85_rlxhUqcpd0CKd4B5IAtM7OIrDfJcCJ7Lca6brCLQ7ZBWRPglNKsAxidya57atG_37UJiLGFT=
+QRHnR1UwWIvC05ES-3G173qRHRSclfbIGcx8VDqpEOxCvB6ireLh7sMbo1YvvNegnE6oIMn1vRm=
+MK8l7vON-OEvar0UXjH7mis8zOWYhDiQWnb50ch9LoO5dIKWlf1Vwma4-HMj0L-VOOtvCDmkGtq=
+P5EkPmy4o90_WMa_JK-TCaaNIB6FRyl-L4DoE7E1kGvf3DxQRhiUdJvuDE06S7LYclZoEWmCV0A=
+aCVRDhZE8wRRDQZ5EnaJzoE91_-Ma7bwXoPaBnl1hdPLsavy3VvI7XhyZq3ZatZKcOKHInUAluG=
+M8iN5Fgx2V2caQ7v1Rju2HdTtVj3Ze7NS_1wd2x65Ux5VDpszie6o_1d_fjBF55EbYZVtELPh6M=
+GS1hPSJ8d1Xo3y-LwvAgYavwoktNRKh41yEpmyI0P_TFYbInNxKlf-GScx2mbZpL0lUoeIF89RC=
+3Mow34MnbkWoW_0PpN8rYwQ%3D" target=3D"_blank" style=3D" font-family: 'DM Sa=
+ns', Arial, sans-serif; font-size: 16px; font-weight: 700; line-height: 24p=
+x; color: #212121; margin: 0; text-decoration: none; " class=3D"link-hover"=
+> 2024 Buick Encore GX Sport Touring </a> </td> </tr> <!-- Price --> <tr> <=
+td style=3D"padding-bottom: 8px"> <p style=3D"font-family: 'DM Sans', Arial=
+, sans-serif; font-size: 20px; font-weight: 700; line-height: 27px; color: =
+#212121; margin: 0"> $22,990 </p> </td> </tr> <!-- Miles --> <!-- --> <tr> =
+<td style=3D"padding-bottom: 8px"> <table role=3D"presentation" cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0"> <tr> <td style=3D"padding-right: 4px=
+"> <img src=3D"https://img.carsdn.co/image/upload/v1727901232/speedometer.p=
+ng" alt width=3D"14" height=3D"14" style=3D"display: block"> </td> <td styl=
+e=3D"font-family: 'DM Sans', Arial, sans-serif; font-size: 12px; font-weigh=
+t: 400; line-height: 18px; color: #212121"> 31,921 mi. </td> </tr> </table>=
+ </td> </tr> <!-- --> <!-- Location --> <tr> <td style=3D"padding-bottom: 8=
+px"> <table role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0" borde=
+r=3D"0"> <tr> <td style=3D"padding-right: 4px"> <img src=3D"https://img.car=
+sdn.co/image/upload/v1719419084/map_marker_2.png" alt width=3D"14" height=
+=3D"14" style=3D"display: block"> </td> <td style=3D"font-family: 'DM Sans'=
+, Arial, sans-serif; font-size: 12px; font-weight: 400; line-height: 18px; =
+color: #212121"> Donovan Auto &amp; Truck Center </td> </tr> </table> </td>=
+ </tr> <!-- Button --> <tr> <td> <!--[if mso]><v:roundrect xmlns:v=3D"urn:s=
+chemas-microsoft-com:vml" xmlns:w=3D"urn:schemas-microsoft-com:office:word"=
+ href=3D"https://emaillinks.cars.com/u/click=3F_t=3D47f16e37803d44c8a302ee7=
+782c80abb&_m=3D562a2dcdf0f1499982ebeb0faff6a973&_e=3DMzWOU_wsT-MNeuhoe_tgva=
+hOFiiaMHyFuIGv3CrQBd5a7uhOqPsOYAcPg6TdrcpFMUrwdkX85_rlxhUqcpd0CKd4B5IAtM7OI=
+rDfJcCJ7Lca6brCLQ7ZBWRPglNKsAxidya57atG_37UJiLGFTQRHnR1UwWIvC05ES-3G173qRHR=
+SclfbIGcx8VDqpEOxCvB6ireLh7sMbo1YvvNegnE6oIMn1vRmMK8l7vON-OEvar0UXjH7mis8zO=
+WYhDiQWnb50ch9LoO5dIKWlf1Vwma4-HMj0L-VOOtvCDmkGtqP5EkPmy4o90_WMa_JK-TCaaNIB=
+6FRyl-L4DoE7E1kGvf3DxQRhiUdJvuDE06S7LYclZoEWmCV0AaCVRDhZE8wRRDQZ5EnaJzoE91_=
+-Ma7bwXoPaBnl1hdPLsavy3VvI7XhyZq3ZatZKcOKHInUAluGM8iN5Fgx2V2caQ7v1Rju2HdVFx=
+qV0WGU4Y5fxzwcUa3iqU7B3XlyJUA-OtnC9kbHX08u3tWeKGfWvCrV-dam5O8nelfdO1VdbFQyP=
+s4RBz9LenvLzN86AplcPPYt0sbmDkeQyBvhs5ieb3uiF5PZHH4CKhB29zijeW6Vj_j8ykOMk%3D=
+" style=3D"height: 32px; v-text-anchor: middle; width: 200px" arcsize=3D"50=
+000%" fillcolor=3D"#9754e6" stroke=3D"false"> <w:anchorlock/> <center style=
+=3D"color: #ffffff; font-family: 'DM Sans', Arial, sans-serif; font-size: 1=
+4px; font-weight: 700">View details</center> </v:roundrect><![endif]--> <!-=
+-[if !mso]><!--> <table role=3D"presentation" cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0" class=3D"button-full-width" style=3D"width: 100%; max-w=
+idth: 200px"> <tr> <td> <table role=3D"presentation" cellspacing=3D"0" cell=
+padding=3D"0" border=3D"0" width=3D"100%" style=3D"width: 100%"> <tr> <td s=
+tyle=3D"background-color: #9754e6; border-radius: 999px" class=3D"purple-bu=
+tton-hover"> <table role=3D"presentation" cellspacing=3D"0" cellpadding=3D"=
+0" border=3D"0" width=3D"100%" style=3D"width: 100%"> <tr> <td align=3D"cen=
+ter"> <a class=3D"btn-pd" href=3D"https://emaillinks.cars.com/u/click=3F_t=
+=3D47f16e37803d44c8a302ee7782c80abb&_m=3D562a2dcdf0f1499982ebeb0faff6a973&_=
+e=3DMzWOU_wsT-MNeuhoe_tgvahOFiiaMHyFuIGv3CrQBd5a7uhOqPsOYAcPg6TdrcpFMUrwdkX=
+85_rlxhUqcpd0CKd4B5IAtM7OIrDfJcCJ7Lca6brCLQ7ZBWRPglNKsAxidya57atG_37UJiLGFT=
+QRHnR1UwWIvC05ES-3G173qRHRSclfbIGcx8VDqpEOxCvB6ireLh7sMbo1YvvNegnE6oIMn1vRm=
+MK8l7vON-OEvar0UXjH7mis8zOWYhDiQWnb50ch9LoO5dIKWlf1Vwma4-HMj0L-VOOtvCDmkGtq=
+P5EkPmy4o90_WMa_JK-TCaaNIB6FRyl-L4DoE7E1kGvf3DxQRhiUdJvuDE06S7LYclZoEWmCV0A=
+aCVRDhZE8wRRDQZ5EnaJzoE91_-Ma7bwXoPaBnl1hdPLsavy3VvI7XhyZq3ZatZKcOKHInUAluG=
+M8iN5Fgx2V2caQ7v1Rju2HddGKJZvHRKRzaUSUzlHxS3xUljTVesYdxDxy8zLBFiqIRpCvwxR1R=
+Mvs36ZtyN8n3RMl9_JPhXGCBPkJ4tDXZss-9OxZICncxoTQoBevnE_r8gPTmWhmdlV3fQ25AXcf=
+_i9gdPavmzzdWgE1SqOgCNc%3D" target=3D"_blank" style=3D" display: block; pad=
+ding: 4px 20px; color: #ffffff; font-family: 'DM Sans', Arial, sans-serif; =
+font-size: 14px; font-weight: 700; line-height: 21px; text-decoration: none=
+; ">View details</a> </td> </tr> </table> </td> </tr> </table> </td> </tr> =
+</table> <!--<![endif]--> </td> </tr> </table> </td> </tr> </table> </td> <=
+/tr> <!----> <!-- 8th car --> <!----> <tr> <td class=3D"mobile-stack car-di=
+vider" style=3D"padding: 24px 0; border-top: 1px solid #e0e4e3"> <table rol=
+e=3D"presentation" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=
+=3D"100%" style=3D"width: 100%"> <tr> <!-- Image Column --> <td class=3D"mo=
+bile-stack" width=3D"188" style=3D"vertical-align: top"> <a href=3D"https:/=
+/emaillinks.cars.com/u/click=3F_t=3D47f16e37803d44c8a302ee7782c80abb&_m=3D5=
+62a2dcdf0f1499982ebeb0faff6a973&_e=3DMzWOU_wsT-MNeuhoe_tgvahOFiiaMHyFuIGv3C=
+rQBd4AaqN_VM5jBy3v8nWj0QhIBozJCTewIvlpuO-J4-YI_cHNkcnakNe5-DYad-PVwMXaKhjgS=
+UAdrdoPeOLImDZoiAAYmsa8yZL1sPnvB8QdcOs4fVI_x6S6lXKRkM1L1Pnyp2Bci1RWYIO7Q0vj=
+_1SeLXRfOEcnjVpJWgLU87Iw7VcO3sVV5tCe2Ag0uz7pOuF0EFRQT5Df4SxuRgbqXM-ptyfSJut=
+CNW8YC05QDQ6qqwiXfXNkY2ngwXrKYOaFZnMZBqo0NOGBv6A3ei4YVEctAWgtmvi0fro0EckA8A=
+AsQedhn6bm4rSNcljZ4tif8ti2z8oiNePh9OIhZ9z97iMl3gzP7tsumws3kbl9iijl_xCInkei_=
+aQNF8E-CpfgCEMrUfOzIVEc8SbQOFAwkJWmay8RnR2-zyK5f0q_nbQapwqy9upN5S9uC44MjifP=
+tLz12JRhHtc9DlBUM7z2JByIEhOP7ogqlZasUHQmqSVb9UU84-2WvA2vFqySRchhhnqP4s1xDAM=
+1kwMbZTUBL79R6VXVufWLiqXVXHZ8GWYJkKpszZRD1m5gmU35q08txvc%3D" target=3D"_bla=
+nk"> <img src=3D"https://platform.cstatic-images.com/in/v2/45f7fbe1-47ba-5e=
+76-9293-0267d7c92b96/bed0f61d-12b3-408a-933d-22c3887867df/57YHOL5K0tSxYJzTY=
+OrvzRyvc30.jpg" alt=3D"2024 GMC Terrain SLT" width=3D"188" style=3D"display=
+: block; width: 100%; max-width: 100%; height: auto; border-radius: 10px; m=
+ax-height: 141px; object-fit: cover" class=3D"car-image"> </a> </td> <!-- C=
+ontent Column --> <td class=3D"mobile-stack" style=3D"vertical-align: top; =
+padding-left: 24px"> <table role=3D"presentation" cellspacing=3D"0" cellpad=
+ding=3D"0" border=3D"0" width=3D"100%" style=3D"width: 100%"> <!-- Vehicle =
+Title --> <tr> <td style=3D"padding-bottom: 8px"> <a href=3D"https://emaill=
+inks.cars.com/u/click=3F_t=3D47f16e37803d44c8a302ee7782c80abb&_m=3D562a2dcd=
+f0f1499982ebeb0faff6a973&_e=3DMzWOU_wsT-MNeuhoe_tgvahOFiiaMHyFuIGv3CrQBd4Aa=
+qN_VM5jBy3v8nWj0QhIBozJCTewIvlpuO-J4-YI_cHNkcnakNe5-DYad-PVwMXaKhjgSUAdrdoP=
+eOLImDZoiAAYmsa8yZL1sPnvB8QdcOs4fVI_x6S6lXKRkM1L1Pnyp2Bci1RWYIO7Q0vj_1SeLXR=
+fOEcnjVpJWgLU87Iw7VcO3sVV5tCe2Ag0uz7pOuF0EFRQT5Df4SxuRgbqXM-ptyfSJutCNW8YC0=
+5QDQ6qqwiXfXNkY2ngwXrKYOaFZnMZBqo0NOGBv6A3ei4YVEctAWgtmvi0fro0EckA8AAsQedhn=
+6bm4rSNcljZ4tif8ti2z8oiNePh9OIhZ9z97iMl3gzP7tsumws3kbl9iijl_xCInkei_aQNF8E-=
+CpfgCEMrUfOzIVEc8SbQOFAwkJWmay8RnR2-zyK5f0q_nbQapw5w2e1kjzPSv8APfrqQmGfIbW7=
+wa7ChNyG-n-So22w_rvc0tKn_wg4eyGP7FmUBxUYmGsKk2YBBym8Yg_XOY5HXihPmAOg2xGvSDA=
+eZL_HQ50F9umLu-pcQT480u1Vf7oGTczHZQ2zQdkP4VOHk7Fo%3D" target=3D"_blank" sty=
+le=3D" font-family: 'DM Sans', Arial, sans-serif; font-size: 16px; font-wei=
+ght: 700; line-height: 24px; color: #212121; margin: 0; text-decoration: no=
+ne; " class=3D"link-hover"> 2024 GMC Terrain SLT </a> </td> </tr> <!-- Pric=
+e --> <tr> <td style=3D"padding-bottom: 8px"> <p style=3D"font-family: 'DM =
+Sans', Arial, sans-serif; font-size: 20px; font-weight: 700; line-height: 2=
+7px; color: #212121; margin: 0"> $24,349 </p> </td> </tr> <!-- Miles --> <!=
+-- --> <tr> <td style=3D"padding-bottom: 8px"> <table role=3D"presentation"=
+ cellspacing=3D"0" cellpadding=3D"0" border=3D"0"> <tr> <td style=3D"paddin=
+g-right: 4px"> <img src=3D"https://img.carsdn.co/image/upload/v1727901232/s=
+peedometer.png" alt width=3D"14" height=3D"14" style=3D"display: block"> </=
+td> <td style=3D"font-family: 'DM Sans', Arial, sans-serif; font-size: 12px=
+; font-weight: 400; line-height: 18px; color: #212121"> 49,456 mi. </td> </=
+tr> </table> </td> </tr> <!-- --> <!-- Location --> <tr> <td style=3D"paddi=
+ng-bottom: 8px"> <table role=3D"presentation" cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0"> <tr> <td style=3D"padding-right: 4px"> <img src=3D"htt=
+ps://img.carsdn.co/image/upload/v1719419084/map_marker_2.png" alt width=3D"=
+14" height=3D"14" style=3D"display: block"> </td> <td style=3D"font-family:=
+ 'DM Sans', Arial, sans-serif; font-size: 12px; font-weight: 400; line-heig=
+ht: 18px; color: #212121"> Donovan Auto &amp; Truck Center </td> </tr> </ta=
+ble> </td> </tr> <!-- Button --> <tr> <td> <!--[if mso]><v:roundrect xmlns:=
+v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schemas-microsoft-com:of=
+fice:word" href=3D"https://emaillinks.cars.com/u/click=3F_t=3D47f16e37803d4=
+4c8a302ee7782c80abb&_m=3D562a2dcdf0f1499982ebeb0faff6a973&_e=3DMzWOU_wsT-MN=
+euhoe_tgvahOFiiaMHyFuIGv3CrQBd4AaqN_VM5jBy3v8nWj0QhIBozJCTewIvlpuO-J4-YI_cH=
+NkcnakNe5-DYad-PVwMXaKhjgSUAdrdoPeOLImDZoiAAYmsa8yZL1sPnvB8QdcOs4fVI_x6S6lX=
+KRkM1L1Pnyp2Bci1RWYIO7Q0vj_1SeLXRfOEcnjVpJWgLU87Iw7VcO3sVV5tCe2Ag0uz7pOuF0E=
+FRQT5Df4SxuRgbqXM-ptyfSJutCNW8YC05QDQ6qqwiXfXNkY2ngwXrKYOaFZnMZBqo0NOGBv6A3=
+ei4YVEctAWgtmvi0fro0EckA8AAsQedhn6bm4rSNcljZ4tif8ti2z8oiNePh9OIhZ9z97iMl3gz=
+P7tsumws3kbl9iijl_xCInkei_aQNF8E-CpfgCEMrUfOzIVEc8SbQOFAwkJWmay8RnR2-zyK5f0=
+q_nbQap5CAcTT_S-mkWwr2qRc5Jw8sITqmzHUyJxXDgiYSydsmB8Qi9SqwSlLps8oKIOQzmHSUb=
+5E1dbX5-GVbQhLCniknYyjxzf_Gb7glcNJQCCzd-QfUOa75qoZyPEv1jSwMN051NaEUJlZjrsSx=
+cqQcNlQ%3D" style=3D"height: 32px; v-text-anchor: middle; width: 200px" arc=
+size=3D"50000%" fillcolor=3D"#9754e6" stroke=3D"false"> <w:anchorlock/> <ce=
+nter style=3D"color: #ffffff; font-family: 'DM Sans', Arial, sans-serif; fo=
+nt-size: 14px; font-weight: 700">View details</center> </v:roundrect><![end=
+if]--> <!--[if !mso]><!--> <table role=3D"presentation" cellspacing=3D"0" c=
+ellpadding=3D"0" border=3D"0" class=3D"button-full-width" style=3D"width: 1=
+00%; max-width: 200px"> <tr> <td> <table role=3D"presentation" cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" style=3D"width: 100%">=
+ <tr> <td style=3D"background-color: #9754e6; border-radius: 999px" class=
+=3D"purple-button-hover"> <table role=3D"presentation" cellspacing=3D"0" ce=
+llpadding=3D"0" border=3D"0" width=3D"100%" style=3D"width: 100%"> <tr> <td=
+ align=3D"center"> <a class=3D"btn-pd" href=3D"https://emaillinks.cars.com/=
+u/click=3F_t=3D47f16e37803d44c8a302ee7782c80abb&_m=3D562a2dcdf0f1499982ebeb=
+0faff6a973&_e=3DMzWOU_wsT-MNeuhoe_tgvahOFiiaMHyFuIGv3CrQBd4AaqN_VM5jBy3v8nW=
+j0QhIBozJCTewIvlpuO-J4-YI_cHNkcnakNe5-DYad-PVwMXaKhjgSUAdrdoPeOLImDZoiAAYms=
+a8yZL1sPnvB8QdcOs4fVI_x6S6lXKRkM1L1Pnyp2Bci1RWYIO7Q0vj_1SeLXRfOEcnjVpJWgLU8=
+7Iw7VcO3sVV5tCe2Ag0uz7pOuF0EFRQT5Df4SxuRgbqXM-ptyfSJutCNW8YC05QDQ6qqwiXfXNk=
+Y2ngwXrKYOaFZnMZBqo0NOGBv6A3ei4YVEctAWgtmvi0fro0EckA8AAsQedhn6bm4rSNcljZ4ti=
+f8ti2z8oiNePh9OIhZ9z97iMl3gzP7tsumws3kbl9iijl_xCInkei_aQNF8E-CpfgCEMrUfOzIV=
+Ec8SbQOFAwkJWmay8RnR2-zyK5f0q_nbQapxwuonao2fxugKiW2_fS39rJYa4QR11owNnd5a5eM=
+PGKIBybaoKeWbyNYqm3x6ZNStP2HlLcsDj0lIciS4ydwtadAoumyTbJDawrcFiza2YDg6hQb6Zi=
+2Y_OAq3TJn4pm6BjOJc0DHNEMVVW0p4r7R8%3D" target=3D"_blank" style=3D" display=
+: block; padding: 4px 20px; color: #ffffff; font-family: 'DM Sans', Arial, =
+sans-serif; font-size: 14px; font-weight: 700; line-height: 21px; text-deco=
+ration: none; ">View details</a> </td> </tr> </table> </td> </tr> </table> =
+</td> </tr> </table> <!--<![endif]--> </td> </tr> </table> </td> </tr> </ta=
+ble> </td> </tr> <!----> <!-- Keep looking module --> <tr> <td class=3D"mob=
+ile-stack pt-24" style=3D"padding: 24px 0px 24px 0px; border-top: 1px solid=
+ #e0e4e3"> <table role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0"=
+ border=3D"0" width=3D"100%" style=3D"width: 100%"> <tr> <!-- Image Column =
+--> <td class=3D"mobile-stack" width=3D"167" style=3D"vertical-align: top; =
+padding-left: 24px"> <a href=3D"https://emaillinks.cars.com/u/click=3F_t=3D=
+47f16e37803d44c8a302ee7782c80abb&_m=3D562a2dcdf0f1499982ebeb0faff6a973&_e=
+=3DMzWOU_wsT-MNeuhoe_tgvWNPjp3nq09btFZu6T8HKX-ki_Y0pdCrQFlC5JHxtGMcqgnOYFbv=
+VoNn4HguH_stKsITIsyL128A3dEd5Cpav0GfbaXUoLAa7_vogjRceDQaYgRdsQaauSi7ZoBeFnW=
+xYxe70KToJM8ZiJW7lcSf6Wnc4JyAMBevTZUGz08nKgyPWDtH5j8d3DmqkAFWoI1XqoEWcBDTkc=
+95t6p4v7JZ4Xom00v4RVJEhuzmQjFPKyoihINqYGupnQ8XU4NszqmAf_aj0hAbWU4x2FzvfxuDG=
+4KI44IJpIHLwPSr7Ilhg5VWMFBjeWBe_5BN2BaXJdEMlqyqDDQVrORfIpcZwa0v6YCRylFmOgT6=
+A8MGCWYdwb5xJxkSAnZb3lrcQqZUVKTbpUV1Ji0ZF5US95OookyZkaWzlKPIGBtekgtrOQJw17r=
+dD_jlMLDEqKsb8ZinVwZmyBEIMhvVEPQKdktXF2Yr4z-tzN1pC_Vs_8H19pDS9rMFJCFBdsHirX=
+Aq_ri8h4LJ-cPhVAWHlgarJFL6lCn0pAE%3D" target=3D"_blank"> <img src=3D"https:=
+//img.carsdn.co/image/upload/v1751061121/SRP_Keep_Searching2x.png" alt=3D"W=
+ant to keep the search going=3F" width=3D"167" style=3D"display: block; wid=
+th: 100%; max-width: 100%; height: auto; border-radius: 10px; max-height: 1=
+41px; object-fit: cover" class=3D"module-image"> </a> </td> <!-- Content Co=
+lumn --> <td class=3D"mobile-stack" style=3D"vertical-align: top; padding-l=
+eft: 24px"> <table role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0=
+" border=3D"0" width=3D"100%" style=3D"width: 100%"> <!-- Title --> <tr> <t=
+d style=3D"padding-bottom: 12px" class=3D"text-center"> <a href=3D"https://=
+emaillinks.cars.com/u/click=3F_t=3D47f16e37803d44c8a302ee7782c80abb&_m=3D56=
+2a2dcdf0f1499982ebeb0faff6a973&_e=3DMzWOU_wsT-MNeuhoe_tgvWNPjp3nq09btFZu6T8=
+HKX-ki_Y0pdCrQFlC5JHxtGMcqgnOYFbvVoNn4HguH_stKsITIsyL128A3dEd5Cpav0GfbaXUoL=
+Aa7_vogjRceDQaYgRdsQaauSi7ZoBeFnWxYxe70KToJM8ZiJW7lcSf6Wnc4JyAMBevTZUGz08nK=
+gyPWDtH5j8d3DmqkAFWoI1XqoEWcBDTkc95t6p4v7JZ4Xom00v4RVJEhuzmQjFPKyoihINqYGup=
+nQ8XU4NszqmAf_aj0hAbWU4x2FzvfxuDG4KI44IJpIHLwPSr7Ilhg5VWMFBjeWBe_5BN2BaXJdE=
+MlqyqDDQVrORfIpcZwa0v6YCRylFmOgT6A8MGCWYdwb5xJxkSAnZb3lrcQqZUVKTbpVre48IhAp=
+3FabvcIYfyIPdCvyqTipJ7x3gE2r_U1ngadj6Wp6ROPJiI9rdOTaB8220gtMV4l9uzkPwZ5fZM5=
+7mv9NBUKbzkbzL_5DdQBui-uNwAATCXZbqCFYoptWn15BUglkdxWYTi8VXDClysZTo%3D" targ=
+et=3D"_blank" style=3D" font-family: 'DM Sans', Arial, sans-serif; font-siz=
+e: 26px; font-weight: 700; line-height: 32px; color: #212121; margin: 0; te=
+xt-decoration: none; " class=3D"h2-mobile link-hover"> Want to keep the sea=
+rch going=3F </a> </td> </tr> <!-- Button --> <tr> <td> <!--[if mso]><v:rou=
+ndrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schemas-mic=
+rosoft-com:office:word" href=3D"https://emaillinks.cars.com/u/click=3F_t=3D=
+47f16e37803d44c8a302ee7782c80abb&_m=3D562a2dcdf0f1499982ebeb0faff6a973&_e=
+=3DMzWOU_wsT-MNeuhoe_tgvWNPjp3nq09btFZu6T8HKX-ki_Y0pdCrQFlC5JHxtGMcqgnOYFbv=
+VoNn4HguH_stKsITIsyL128A3dEd5Cpav0GfbaXUoLAa7_vogjRceDQaYgRdsQaauSi7ZoBeFnW=
+xYxe70KToJM8ZiJW7lcSf6Wnc4JyAMBevTZUGz08nKgyPWDtH5j8d3DmqkAFWoI1XqoEWcBDTkc=
+95t6p4v7JZ4Xom00v4RVJEhuzmQjFPKyoihINqYGupnQ8XU4NszqmAf_aj0hAbWU4x2FzvfxuDG=
+4KI44IJpIHLwPSr7Ilhg5VWMFBjeWBe_5BN2BaXJdEMlqyqDDQVrORfIpcZwa0v6YCRylFmOgT6=
+A8MGCWYdwb5xJxkSAnZb3lrcQqZUVKTbpT6QLcoX7PEz5YkWQe36vNvF7_MNu3QO7a65CW14m9V=
+tXOHavc3ZSlR3ChvoOFEpk6agv1zjZ_Op4LG0dIkKorZcAsq04ZivKzLIcGEzzglipHBypb6Dwt=
+9nCg7G3mfzbnGzvhcY3193vjKNHMgnDkQ%3D" style=3D"height: 32px; v-text-anchor:=
+ middle; width: 200px" arcsize=3D"50000%" fillcolor=3D"#ffffff" strokecolor=
+=3D"#212121" stroke=3D"true"> <w:anchorlock/> <center style=3D"color: #2121=
+21; font-family: 'DM Sans', Arial, sans-serif; font-size: 14px; font-weight=
+: 700">View more inventory</center> </v:roundrect><![endif]--> <!--[if !mso=
+]><!--> <table role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0" bo=
+rder=3D"0" class=3D"button-full-width" style=3D"width: 100%; max-width: 200=
+px"> <tr> <td> <table role=3D"presentation" cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0" width=3D"100%" style=3D"width: 100%"> <tr> <td style=3D=
+"background-color: #ffffff; border-radius: 999px" class=3D"secondary-button=
+ wht-stroke"> <table role=3D"presentation" cellspacing=3D"0" cellpadding=3D=
+"0" border=3D"0" width=3D"100%" style=3D"width: 100%"> <tr> <td align=3D"ce=
+nter"> <a class=3D"btn-pd" href=3D"https://emaillinks.cars.com/u/click=3F_t=
+=3D47f16e37803d44c8a302ee7782c80abb&_m=3D562a2dcdf0f1499982ebeb0faff6a973&_=
+e=3DMzWOU_wsT-MNeuhoe_tgvWNPjp3nq09btFZu6T8HKX-ki_Y0pdCrQFlC5JHxtGMcqgnOYFb=
+vVoNn4HguH_stKsITIsyL128A3dEd5Cpav0GfbaXUoLAa7_vogjRceDQaYgRdsQaauSi7ZoBeFn=
+WxYxe70KToJM8ZiJW7lcSf6Wnc4JyAMBevTZUGz08nKgyPWDtH5j8d3DmqkAFWoI1XqoEWcBDTk=
+c95t6p4v7JZ4Xom00v4RVJEhuzmQjFPKyoihINqYGupnQ8XU4NszqmAf_aj0hAbWU4x2FzvfxuD=
+G4KI44IJpIHLwPSr7Ilhg5VWMFBjeWBe_5BN2BaXJdEMlqyqDDQVrORfIpcZwa0v6YCRylFmOgT=
+6A8MGCWYdwb5xJxkSAnZb3lrcQqZUVKTbpRO_m12IgVEb4omOAb53-xYOWwlZguyjZU4jU0d4Sz=
+_1b_1deMHCqsOkFxMx64_OjiH0o6IrLS5pRZLW4vVz9Uy-zldjyCNu7ImGrvWLowzo4UOlOqp99=
+UxGeePb1GgE2CWOJYBRAcmYbcdxAe9y0p8%3D" target=3D"_blank" style=3D" display:=
+ block; padding: 4px 20px; color: #212121; border: 1px solid #859391; borde=
+r-radius: 999px; font-family: 'DM Sans', Arial, sans-serif; font-size: 14px=
+; font-weight: 700; line-height: 21px; text-decoration: none; ">View more i=
+nventory</a> </td> </tr> </table> </td> </tr> </table> </td> </tr> </table>=
+ <!--<![endif]--> </td> </tr> </table> </td> </tr> </table> </td> </tr> </t=
+able> <!-- *End of car lists --> </td> </tr> </table> <!--[if mso]></td> </=
+tr> </table><![endif]--> <!-- *Footer --> <table role=3D"presentation" cell=
+spacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" class=3D"footer=
+" style=3D"max-width: 800px; width: 100%; margin: 0 auto; padding: 0px"> <t=
+r> <td align=3D"center"> <table role=3D"presentation" cellspacing=3D"0" cel=
+lpadding=3D"0" border=3D"0" width=3D"100%" class=3D"footer-inner" style=3D"=
+max-width: 600px; width: 100%; margin: 0 auto"> <!-- *icons table --> <tabl=
+e role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" wi=
+dth=3D"100%" class=3D"footer-inner" style=3D"max-width: 600px; margin: 0 au=
+to; background-color: #f0f2f1"> <tr> <!-- Footer Icon 1 --> <td style=3D"te=
+xt-align: center; padding: 16px 0px; width: 33.33%"> <a href=3D"https://ema=
+illinks.cars.com/u/click=3F_t=3D47f16e37803d44c8a302ee7782c80abb&_m=3D562a2=
+dcdf0f1499982ebeb0faff6a973&_e=3DMzWOU_wsT-MNeuhoe_tgvWNPjp3nq09btFZu6T8HKX=
+-WQpBDV35aHE1CCMS5qHwdacpKoL41TNXTkr-7VDpI9o-MJ-dgbv8kPPJbB4hGqNWpIIDUDSTF9=
+9jHXLUqsvfkhiV_gI65NG8x4R1srT97qbfNR3MoU_ZBlZuppTnZ9F_ZpubY_f67khG6f5ndaAl-=
+3BJYsy_Lku9wOTSWOb3c1x9uR1mEyvcRkjzpxhNLptLrxm4nAGvbOlKIZDi4HUCIvcJ5NnKTvpQ=
+TppyBou0zaZIRBz-SfI5QuGtcq4XPA1oLp2aQrNrKNRwwMkT75B0bgvwidT6NDD2Q5-CK9F9F6i=
+p4LSFffzp6XjYk3zDyf53Mk_RkKmJ7x4tKhH6x5mr_1w0EZoPqADql4CjrI_kDiSyuJKQSPe6rU=
+aWbolmoQH-rFZLAjsLl-YFZobTUjPLFiwYG9abNLvxkIF6vAPuSiFoMPS-_XEbfNvigfy9aLp2Y=
+Sk0y2f-Z9A0yjlqZNsb1IR2curMjEPe31ZARGfGv75y7nVzZ6XeV44PJ-0Lug8g6RfOF9R2LX06=
+hWEi1kZn0z-sAfl8xlxv8cDgzrxQm3TU044qEDhUgsHNEMVngyX34QSY7tzVfF2RClKtKNZROM8=
+mdU9ZxNiI54tzeqwYkp9t3vE37ebiHmS2r42Tk8k4%3D" target=3D"_blank"> <img class=
+=3D"footer-icon" src=3D"https://img.carsdn.co/image/upload/v1727453056/crea=
+tion.png" alt=3D"New Cars" width=3D"34" height=3D"34" style=3D" display: bl=
+ock; margin: 0 auto; max-width: 34px; max-width: 100%; height: auto; "/> <p=
+ class=3D"link-hover" style=3D" font-size: 14px; color: #141817; padding-to=
+p: 8px; font-weight: 700; font-family: 'DM Sans', Arial, sans-serif; font-s=
+tyle: normal; text-decoration: underline; margin: 0; "> New Cars </p> </a> =
+</td> <!-- Footer Icon 2 --> <td style=3D"text-align: center; padding: 16px=
+ 0px; width: 33.33%"> <a href=3D"https://emaillinks.cars.com/u/click=3F_t=
+=3D47f16e37803d44c8a302ee7782c80abb&_m=3D562a2dcdf0f1499982ebeb0faff6a973&_=
+e=3DMzWOU_wsT-MNeuhoe_tgvWNPjp3nq09btFZu6T8HKX-WQpBDV35aHE1CCMS5qHwdMBOGS3f=
+arK4kFaKfupibG662TbH47VZwO_PqwFg3Tlo48Cn8EznplHxXptekF4pplgtdwIwFsBWwhvvZp5=
+_8yKG4FcyONcCEYrgoBAMr1CHzIblq5iuRxBMyvbva1dP5AMCJq0LnXkH6zMfqkPxvjTjNbOGgb=
+p9y2VFRx3liUCts5WXMLMOlorSX2i3HvBTWqySbQqnsciZg-yGHKiKxdv2rHdLVKMtVKWTbPEpQ=
+OOHDjtdkOyPWULgH1iamKdrzZRQ5vZ8B8fEf_xYru1E2UOdHFr-VgnrwSfX5r4YHOlIf3Lvc_jr=
+Oxof86ht0k4x8r80WPbzIpCuX_SHETbJwq5qeq0B7K8fxZPmd4DOsoWKfzODebMSYvrPl9qWMO2=
+J6jlbmWyS2oHDeaCd3DojpXylUUWyQq5pnICin60_xahe24ggiGxvU_7NiOdprcPnSnAdlinFXn=
+jgaXgnLOdSHRi1oTGsuBuHDI6tKJ1mLA3pPBEcykv-hEArjfSlcXSW6VqEAmjsWVCUgBi7w_GYj=
+ZDl9JVfmyQOBYmY_r7ncK-oLm5p8KDoSYH8HoqKVxS8Vox03Ifdvk4-oyAQ7nDnYCfQsvi7Gaj_=
+GYST2DVdd298%3D" target=3D"_blank"> <img class=3D"footer-icon" src=3D"https=
+://img.carsdn.co/image/upload/v1727453062/key-variant.png" alt=3D"Used Cars=
+" width=3D"34" height=3D"34" style=3D" display: block; margin: 0 auto; max-=
+width: 34px; max-width: 100%; height: auto; "/> <p class=3D"link-hover" sty=
+le=3D" font-size: 14px; color: #141817; padding-top: 8px; font-weight: 700;=
+ font-family: 'DM Sans', Arial, sans-serif; font-style: normal; text-decora=
+tion: underline; margin: 0; "> Used Cars </p> </a> </td> <!-- Footer Icon 3=
+ --> <td style=3D"text-align: center; padding: 16px 0px; width: 33.33%"> <a=
+ href=3D"https://emaillinks.cars.com/u/click=3F_t=3D47f16e37803d44c8a302ee7=
+782c80abb&_m=3D562a2dcdf0f1499982ebeb0faff6a973&_e=3DMzWOU_wsT-MNeuhoe_tgvR=
+EY8sZfcwWZVS5BgHjJSNpiynkd6QQ4pyw8HWF_kTiooa8GWdwN9ClISXPELFaS2AiJfh4VBUys3=
+MZI0J_8v8wsFTBFpn_nXkh-XYKYwVv5IXavc1KUev_EN96riIuTWYK9dEpxhC2SVy_rL6sJm0HS=
+UDnBLrQBBtlqohH9dN1gVxgCOLOIMgB7VIaqr1kgxfcVP0WaSXXFJ-9Z8KwAXpYEz2JhDM4eDD2=
+BsfA_43BCTzR0ICkpWqpTsIL2IZy3SbvWKqral6XTlu7xZq5XkOeFZOmePswlLHPOJdbVND3g-R=
+eDPp9szQH8IzS0hIWCTZ8V4Il41awQAC4tGQLMSpdGiwaTkgcQx643KUzecY3OmmAQL0QgQyGmx=
+OkdXrbJXQljQyJ-uvlsWEaKpTqqIGnQumhMQrESRBkqfegA4a97yu7_7R7UIdp4VcYxoTGAm1d0=
+ajntS-r0DI86WmmUd1PwXJqh_7IM-TiWkphUC7FbZhu58zUBE4JlskCh2QGPQZq0w4kmX0f2p6g=
+Q-3jSNHI%3D" target=3D"_blank"> <img class=3D"footer-icon" src=3D"https://i=
+mg.carsdn.co/image/upload/v1727453057/currency-usd.png" alt=3D"Sell Your Ca=
+r" width=3D"34" height=3D"34" style=3D" display: block; margin: 0 auto; max=
+-width: 34px; max-width: 100%; height: auto; "/> <p class=3D"link-hover" st=
+yle=3D" font-size: 14px; color: #141817; padding-top: 8px; font-weight: 700=
+; font-family: 'DM Sans', Arial, sans-serif; font-style: normal; text-decor=
+ation: underline; margin: 0; "> Sell Your Car </p> </a> </td> </tr> </table=
+> </table> <table role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0"=
+ border=3D"0" width=3D"100%" class=3D"footer-inner footer-OT" style=3D"max-=
+width: 800px; width: 100%; margin: 0 auto; background-color: #fff"> <!-- Fo=
+oter Logo --> <tr> <td colspan=3D"3" align=3D"center" style=3D"padding: 35p=
+x 0px 24px 0px; border-top: 1px solid #c2c9c8"> <a href=3D"https://emaillin=
+ks.cars.com/u/click=3F_t=3D47f16e37803d44c8a302ee7782c80abb&_m=3D562a2dcdf0=
+f1499982ebeb0faff6a973&_e=3DMzWOU_wsT-MNeuhoe_tgvaPijfyc8MZgRYePcVXFx1X50_k=
+ScnlbsrW9d2pYfNMzmbWFAcaBdW8Fx5Gj206Ia7kh2uGZxxBqKspVfMGTSHC8SgoTzYSDNIZnT1=
+0SqirVMpluDevVpkAE7F6Tl_yJlls8C0mFuPErSk5fU0payjDMjq1F0Wca4JwIIx2tNtSpK2Es4=
+f2zBq3nDjS3CwZ4tnAkLobbJpjC8BuvDSjXUXwk6QF8p72TkeaMMM5q5ql3h1gywg6q3dX8A4lr=
+TbIVFtv4NA0V0nv-fyNH1eoBgwu2-VZHvSBTtvqullFvPSODxUUpE1pdnhieMiuiTRiUY6hlDE9=
+rfjWV0WSRIZ_wHsTa8t1984WyC1KHlkTemG-ePlrgB_SYo44djSYOSl-skSB2rihoQdxOuX7YOs=
+WMNa_X4szj9QG6XBOnHa2ISEGua_wLBF-a4I_pOdGydVnT473pvInxhH_gxLtPMbk9Ol_2qo6ct=
+tqxCoqtFi4TwBQg6lUqgMVI4e6bvu9lNcNtRUBu6xwb3y9o_KGQhNgaGSg%3D" target=3D"_b=
+lank"> <img src=3D"https://img.carsdn.co/image/upload/v1751056523/Fuse_Foot=
+er-logo2x.png" alt=3D"Footer Logo" width=3D"307" height=3D"auto" style=3D" =
+display: block; margin: 0 auto; max-width: 307px; max-width: 100%; height: =
+auto; "/> </a> </td> </tr> <!-- Social Media Icons --> <tr> <td colspan=3D"=
+3" align=3D"center" style=3D"padding: 0px 0px 24px 0px"> <table role=3D"pre=
+sentation" cellspacing=3D"0" cellpadding=3D"0" border=3D"0"> <tr> <!-- Soci=
+al Media Icon 1 --> <td style=3D"padding: 0 5px 0 0"> <a href=3D"https://em=
+aillinks.cars.com/u/click=3F_t=3D47f16e37803d44c8a302ee7782c80abb&_m=3D562a=
+2dcdf0f1499982ebeb0faff6a973&_e=3DMzWOU_wsT-MNeuhoe_tgveTzjroc7UZi0bBIKnDDF=
+zQt_sCZywoyA2TO3FfSK7fMZTm7AaaZ_WaIwSJ8xd8lzsz1AO86kZZGNuAjTaeE654yV2w8-w_t=
+pwCDlGuLP-K6MAdI0S6kLkh3dK2d5IMXmf5iyNcuZsrM5sJ9sDSfkAoivrXHBSsbFA2_Pqdsu20=
+JFZp-j2NE4EUEOf1D0qp6cxzhpccmR9TDiQNYDRbsG6LPaVphCLodsyDrMMCp8dVoM5e36y4H_s=
+ETqnJkvzRDdAMpaCAxjZ0tYOcwl4sf48cwSMWmk6olLrUl7mGgh3GHqsF3D22H1Y0Pkgn9w0s8r=
+2WJw0gWd-8FwLxyoQsQwWiII39ZMk913G-MLbSAlbLLp1Lbqn3bg8sqNTltslV68LxQWD9acUEp=
+oHnNwyCY469WUkQCliYmiko3fw_olmROGV2yMvQUVMvnboyRJX97rqItL_AtY8ZS3g3HzxDnURo=
+pUzo0ysoZNbF8JOfpksk3OLbjfwpfVA_P4sjl4LcBrTokgqn0MteTGclBzkgymT6oDwIS6uDnzp=
+09oBh18dHf" target=3D"_blank"> <img src=3D"https://img.carsdn.co/image/uplo=
+ad/v1751393026/icon-youtube4x.png" alt=3D"YouTube" width=3D"50" height=3D"5=
+0" style=3D" display: block; width: 50px; height: 50px; max-width: 100%; "/=
+> </a> </td> <!-- Social Media Icon 2 --> <td style=3D"padding: 0 5px 0 0">=
+ <a href=3D"https://emaillinks.cars.com/u/click=3F_t=3D47f16e37803d44c8a302=
+ee7782c80abb&_m=3D562a2dcdf0f1499982ebeb0faff6a973&_e=3DMzWOU_wsT-MNeuhoe_t=
+gvfd2DjwPIlQgvzQIRu2iLEXzeouVBTisLOA2wu4_2tqK43MkTK5JUVghC20OhY1CN3Kpg5bky_=
+g1rdEOX9MeAxMaGkDKqwqVgKEGrR3YKiLI24VygbKBg_LFvpVqTeWB1Qn5vLcS2ctp3KET7BRy0=
+J5i3XbOqkInqNpXxMwdVfcHk94CtroUS6v-9imezA0lj8sb_j7otjoNrRWAEuIRDFsSJ8mjOBu8=
+s5dfWbpKV94htqJIQnNE4vgNK5w11hJTa9omPPL6C3Uhoy-SYbsCZCEWQLh4_OWxr4ehZYI7Yd9=
+VrlkT5D9RxPbCBhPRuyqAyMPI2MVFwXKUDtrNJQiBDfDnzZkKPdHIn5696C9DTiMhxx_LCW93J9=
+wht61szH2nz7IqHzG3b3qxZ_g41aSXrS3UcVFz4jzcebKLg2as5tePk2pmBdnu9QkAhG0MZZ5DT=
+DT6WF142gPma7-hPO2ujpdPxBm7IPjXG8W6YN8usv-wi3KfK1R9XuwwJtnOMnpOz52yzrQLHAz-=
+f7TDtzVs1QM%3D" target=3D"_blank"> <img src=3D"https://img.carsdn.co/image/=
+upload/v1751393024/icon-tiktok4x.png" alt=3D"TikTok" width=3D"50" height=3D=
+"50" style=3D" display: block; width: 50px; height: 50px; max-width: 100%; =
+"/> </a> </td> <!-- Social Media Icon 3 --> <td style=3D"padding: 0 5px 0 0=
+"> <a href=3D"https://emaillinks.cars.com/u/click=3F_t=3D47f16e37803d44c8a3=
+02ee7782c80abb&_m=3D562a2dcdf0f1499982ebeb0faff6a973&_e=3DMzWOU_wsT-MNeuhoe=
+_tgvXmSlBCpa1i07hFrMyftGRES06cP-qQbTrVN3eJq6dv2A6DTFjBRgJVqlSKdHBJnQiQmrECs=
+-rBfxRdPfRfqFwSZDXqFaz1N1xGdCgqB-okCh8EKWPItHw7d3P_qVm_PvmUNNP8K2FEbSUzFJOS=
+V3dSQQB1yoT490FjSnriaNnYQp3XmvhDk49ffm23dybL7Kj9KbtBn-GBaQJl0Y-k97lW7UPqM9B=
+rKDpgg_8AIRd1xskeYg6eV7rYlFPTRNe7MFnGQ9TfcvaeoTuSCUS9Y1AIyjZo07ZaKr5x5NV2uN=
+INJGPj18DjzPtCiaS3jpRKoKptldHv33gcE7gnFlbOsDmPekmR4T6By3ZE8KMAHA-Wbjdrkr7tR=
+7a0wS71mHx4TPgiGdNMPZ3RXQZxBE5qH_PYp9qBc5BloMKqhWmYt-8b2NPy8iyn671M9A7VduMn=
+nQ4FlQ-OecCxv5waGjnje454I7ewvxHxELB-8lFdkFpW0EtOT7nkXh_nXQgKOmEGyECy5mVWjRN=
+FOsgpIuHILaAdFsXdM3sAR4tGi4FpL33Ah" target=3D"_blank"> <img src=3D"https://=
+img.carsdn.co/image/upload/v1751393024/icon-facebook4x.png" alt=3D"Facebook=
+" width=3D"50" height=3D"50" style=3D" display: block; width: 50px; height:=
+ 50px; max-width: 100%; "/> </a> </td> <!-- Social Media Icon 4 --> <td sty=
+le=3D"padding: 0 5px 0 0"> <a href=3D"https://emaillinks.cars.com/u/click=
+=3F_t=3D47f16e37803d44c8a302ee7782c80abb&_m=3D562a2dcdf0f1499982ebeb0faff6a=
+973&_e=3DMzWOU_wsT-MNeuhoe_tgvWBfw_sr3BevffxoiDjen2C90Lj3ST0cRFt0R9WFs2gTmM=
+HNJMhLw8ugsOX7s6XIKXaYoDJxLanGxspatTFqjstYhPLe0bOmk4_JajJLh8Dsbk10p9JbtXhKB=
+HRC9IirrVVUhG6mytR9U2M-SdIV5gc0qFVBODJ0jqtmMvfUDMlZZF_SMgUrdvg1IVxlc9aUYxPP=
+AWsU9L4YPoOmUOJLH5qV1PWlbe9v3iVXTNwV0k7BQgAgP16IARs02zO8q2TEMYbrkM5eF06KLnN=
+YCEObTAOooWb3PjXSzUfq22YT4y3jIDTG8gxhRLjkqEvGfEvleJN_hu0ER1PsBv3K0qbEcuQ0C-=
+fB0Yv3joHa017wgsGWLvyL0uWRKEGdEMOrzTds8U3VweLCVE9WrJ8b-x8V9DkJWSSEDdIam-6Ro=
+Gcu0ehTbEzWYMaI4w2Z1OAlAZRTUTBAmKD2WK2_2icqTSZlbLnv1HRj61Rz0Pq-CyBQDTlBFNOY=
+7J-8NUsfMnxOVbJrbpjWvEZD2_Oh6tE8r7BAOP1EpA3NDbChnWlXbWDW65Jj" target=3D"_bl=
+ank"> <img src=3D"https://img.carsdn.co/image/upload/v1751393024/icon-insta=
+gram4x.png" alt=3D"Instagram" width=3D"50" height=3D"50" style=3D" display:=
+ block; width: 50px; height: 50px; max-width: 100%; "/> </a> </td> <!-- Soc=
+ial Media Icon 5 --> <td style=3D"padding: 0px"> <a href=3D"https://emailli=
+nks.cars.com/u/click=3F_t=3D47f16e37803d44c8a302ee7782c80abb&_m=3D562a2dcdf=
+0f1499982ebeb0faff6a973&_e=3DMzWOU_wsT-MNeuhoe_tgvfkmA4TOZREm-4GL0A-0UlniI2=
+gZV4GATXSlfutT_Ao6LDfeRcmcrgN9PZgNvvopdqzejkr6fcTOQocXvP_gKDDHcsM1dK_S1S81I=
+a650xeHBiwKTfclfAng7Nj4XYHjin8SBymVe0UFCBBldDystCDQAvjj8QlP8_vxB3FbAaY_5Gqd=
+qOJj1lM0Y1mc_OYV5kCwdLCnE-zSZUbBjlklETS6hO5aaY6zg-xy68eu0-8qxi63hcACwy_gyY9=
+xNvPh26_UZjaNeYp7eqN9GkHaVgm1gM6_csHKQMuhYWuCZp4HL6t-mizD6VR_PTniuOdFwGZW4V=
+Is6V_GVEFJyzOfSZ19adc9ecQqkUaAuOfEf_5ImKMZwGogBd2W0HFaAZ7zhLfzEj3rHiMs5fXoW=
+M5ZIkaxXT47JkFP4AI5ZZDmjxnoi8hw_4nDrGIh7fWGaE6iJh9gwNKDh9B4Pij_qg9kesi6kj2j=
+TnVwkTmNFfoo4lWf5891y98WZ4YbAqyNLgbNDXP37QsclVzwqNIkdu0ks_eR1fnKyDUK5bqRti7=
+H3Jcw" target=3D"_blank"> <img src=3D"https://img.carsdn.co/image/upload/v1=
+751393024/icon-pinterest4x.png" alt=3D"Pinterest" width=3D"50" height=3D"50=
+" style=3D" display: block; width: 50px; height: 50px; max-width: 100%; "/>=
+ </a> </td> </tr> </table> </td> </tr> <!-- Small Text --> <tr> <td colspan=
+=3D"3" align=3D"center" style=3D"padding: 0px 0px 16px 0px"> <p style=3D" m=
+argin: 0; font-family: 'DM Sans', Arial, sans-serif; font-style: normal; fo=
+nt-size: 16px; font-weight: 700; line-height: 1.5; color: #141817; "> Downl=
+oad our app experience </p> </td> </tr> <!-- App Store Icons --> <tr> <td c=
+olspan=3D"3" align=3D"center" style=3D"padding: 0px 0px 35px 0px"> <table r=
+ole=3D"presentation" cellspacing=3D"0" cellpadding=3D"0" border=3D"0"> <tr>=
+ <!-- App Store Icon 1 --> <td style=3D"padding: 0 5px"> <a href=3D"https:/=
+/emaillinks.cars.com/u/click=3F_t=3D47f16e37803d44c8a302ee7782c80abb&_m=3D5=
+62a2dcdf0f1499982ebeb0faff6a973&_e=3DMzWOU_wsT-MNeuhoe_tgvcl9SnneAQCmW_acSS=
+QKyF3BnZ_CoQW2Yydup0mWKxBB5CWK1e4N4eojn-JZ3c1f2vgOgugwF3e1kz9WWRq7SGX0SjASy=
+pGmAYMvJP1Y5hn7wcn4qa9VpF1ev6wriweW7PAknRERcsm-EqSefGfbH86BBRxUdpVYzcfll1vJ=
+WMT1ON4tBmRB3I5E2W3A1cCBJ6Yh-kOKZ4iFg37OtV8QX6nanM2A3KNMAeBqhL15VOKBUlo_wRh=
+ed0sddUiUfoDm9hJYq7OO9RiVEdXI3uVSHu4rVc3JH_D_j9gVuV1DgUoxEeZQxCvd1WG3owuHcb=
+SfF2vR89JeZa1kz66d31AIXKUhR3JAp0LV0toJDJTNZNkebqY8SDnWIuumNa1COblJSBZunrL3i=
+jLZgVN2ianLf0FifzEF1h5J1wkzEkem_skaq5Piw1d5fV9_kZlJAWO_fFP6H5ZnLr-7QQdr65qs=
+_3GFMdUXZIwT9KSCRwXXdZx_Ejamj5cNtNnb0APAQ92YuTmmJuEOLTFMVbwh9HP_84OMIlxmBAf=
+zW2Pub4knDbOb" target=3D"_blank"> <img src=3D"https://img.carsdn.co/image/u=
+pload/v1689091999/_AppStore-Color.png" alt=3D"App Store" width=3D"144" heig=
+ht=3D"auto" style=3D" display: block; width: 144px; height: auto; max-width=
+: 100%; "/> </a> </td> <!-- Google Play Icon 2 --> <td style=3D"padding: 0 =
+5px"> <a href=3D"https://emaillinks.cars.com/u/click=3F_t=3D47f16e37803d44c=
+8a302ee7782c80abb&_m=3D562a2dcdf0f1499982ebeb0faff6a973&_e=3DMzWOU_wsT-MNeu=
+hoe_tgvcl9SnneAQCmW_acSSQKyF3BnZ_CoQW2Yydup0mWKxBB5CWK1e4N4eojn-JZ3c1f2vgOg=
+ugwF3e1kz9WWRq7SGX0SjASypGmAYMvJP1Y5hn7wcn4qa9VpF1ev6wriweW7PAknRERcsm-EqSe=
+fGfbH86BBRxUdpVYzcfll1vJWMT1ON4tBmRB3I5E2W3A1cCBJ6Yh-kOKZ4iFg37OtV8QX6nanM2=
+A3KNMAeBqhL15VOKBUlo_wRhed0sddUiUfoDm9hJYq7OO9RiVEdXI3uVSHu4rVc3JH_D_j9gVuV=
+1DgUoxEeZQxCvd1WG3owuHcbSfF2vR89JeZa1kz66d31AIXKUhR3JAp0LV0toJDJTNZNkebqY8S=
+DnWIuumNa1COblJSBZunrL3ijLZgVN2ianLf0Fvumx6bhwc_FWO_4q8y_ApIDj-TY1rmo5HEZW5=
+Sq5C_Sx7bn6-h20RsNk007cPTZk05fRW3lwHpmPhWQrSt4WFgHgV54_FnEZ6dPoOImSSYbuH_iS=
+DUQ7qLSu_DF8MGvUU942PAO86LzfKwxSu44Oz" target=3D"_blank"> <img src=3D"https=
+://img.carsdn.co/image/upload/v1689091999/_GooglePlay-Color.png" alt=3D"Goo=
+gle Play" width=3D"160" height=3D"auto" style=3D" display: block; width: 16=
+0px; height: auto; max-width: 100%; "/> </a> </td> </tr> </table> </td> </t=
+r> <!-- Legal Text --> <tr> <td class=3D"pd-legal" colspan=3D"3" align=3D"c=
+enter" style=3D" padding: 40px 10px; border-bottom: none; border-top: 1px s=
+olid #c2c9c8; "> <p style=3D" font-family: 'DM Sans', Arial, sans-serif; fo=
+nt-size: 12px; line-height: 16px; color: #141817; margin: 0; text-align: ce=
+nter; "> This email was sent to <a style=3D"text-decoration: none; color: #=
+141817" href=3D"mailto:mrinix02@gmail.com">mrinix02@gmail.com</a>.<br/> =C2=
+=AE 2025 Cars.com. All rights reserved.<br/> Cars.com, <a style=3D"text-dec=
+oration: none; color: #141817" href=3D"https://emaillinks.cars.com/u/click=
+=3F_t=3D47f16e37803d44c8a302ee7782c80abb&_m=3D562a2dcdf0f1499982ebeb0faff6a=
+973&_e=3DMzWOU_wsT-MNeuhoe_tgvYPBpS-4aP58v3OqxlRsQeh7u-WOC4TFblY7vKawF4IaqQ=
+Lpo6SAGB3wSDSJcdDQ5jNSa4AULVEgnZAPof-NILqhdfsSCEAnqhS2fzeIaBUK4zLLLr4Rjl5XU=
+uAmRWhaSXkKC2F_JqcQgNCbSihS8RoKIZED5kkC_ApP-kyQ1tXIQ4a0tmL9MaObUcLrAs8Z12Di=
+KkskCkWhNwEVWwWxj9NEdSU52DVvy1AFb2ve6IWuMfrPeJX8Bbf1P96VeB1USQ9EYUMtOANfMvq=
+WfIQ2V3Ue2kpyuNz7fAsyuvwlWCHtTS7dJgaQ4aFpXnnxM07aOG0skj2_HngJo9Ld2kCiad0LqG=
+7mBsdvyRiAYWMbT7Ev-KKdoTQvdEIJvXAHJ_PwrZFo7HfO4KYL9xYIXq9mldWWF9dhSUi62mHX_=
+pmqKx50eKdilAd5OvNNbKJpZ3q5009wVLhuhK6LMAnfkMW8WIfLKgGwvjrn9_NH3CuWSUnLq3GD=
+0qcUOs8f-znpZf4QhZS3K6bsamdCvM35Zijrm4rsdp5dgqd9WkMEwRr15wkzQUa3TKDvPS43AUQ=
+nG5rLP_rmY91GOdNvUwMNIV5L-PQ%3D" target=3D"_blank">300 S. Riverside Plaza, =
+Suite 1100, Chicago, IL 60606</a><br/> We value your privacy. <a href=3D"ht=
+tps://emaillinks.cars.com/u/click=3F_t=3D47f16e37803d44c8a302ee7782c80abb&_=
+m=3D562a2dcdf0f1499982ebeb0faff6a973&_e=3DMzWOU_wsT-MNeuhoe_tgvWvU6Nj27RsDv=
+D1tCSNF5fJ-LYlUZGcBlvESHyEyVlbqiMAgILM41uhZInMcnHm5b7AIpylECdpyyqHwyzIUSePv=
+Rqw8VOzlNZzss43rnH7GQ7qbH8jggYD8EXSLqe2yTZp13jZyVMKgCpK9paGnFJHC8hQWetYUwKc=
+ABaYNIGROYySHIO4_k-USfVJET3QO4FyNrWRdZURdkR-jJNiC10d6Oa1hbeHS3yucJ3UiXdw3DN=
+HaXu3nklcHL9JqURx2ggRcr9Xqr2Imhm9l2OGZvgLQ5iVV318Sl2m5r9rJ0FJZ2iy1I7ocLWOeo=
+EOV3k9AwKwX_pM99wBgcfItRiVrfChDfP5QJvsCuS7CTiVPc0WU3zQeig_HkCu5tQCjKEz6VH51=
+8-SSr0rbfJ15r9AuaJ68elXihgddgqwaM7TXqL68-1iH5kdg78QRcZxF12-QCXz-MJPU0xPR4Tf=
+IkdPUa6HH1Wqpvu08wOgeYOJxx7T3AateOGxjHeRZo4axTJnRdfcXdtrjrmILw-1peZy7Q3E_B3=
+nJ85QGYw3okGBc06lv" target=3D"_blank" style=3D"text-decoration: none; color=
+: #141817">Cars.com Privacy Statement</a><br/> <a href=3D"https://emaillink=
+s.cars.com/e/eh=3F_t=3D47f16e37803d44c8a302ee7782c80abb&_m=3D562a2dcdf0f149=
+9982ebeb0faff6a973&_e=3DMzWOU_wsT-MNeuhoe_tgveCTg1uIK2akVeIZ761HkoxHKu-v3NP=
+18cVXodNDjZgyfcW86Iu7sKWGB5oNVxTLzW7-FqzDgQw3EZxMAW-jdZk8bbiGzI4oyjwQnbgNg0=
+AONgURZpQTwGJyafOI3f_UQAgpbqmbMP2XF2MruSdYuMGPrvLHqTOSRziJFTlUr9qnksmsqUi_8=
+6Vei8m_Y8UUCroi73Ng-FPi9BynXsVRO8GYnyQ7hil-JCNEoEE1X9Pw9nxJ8vRY9syJ26w7a3nF=
+jOH3l7XuWd5dvhbhAyPywXzBCYAos-YlPK_yG_MU9DuR5K03PKWmEWR-CiZ4nhjjkD5Uo1ug5qR=
+bKik32zObIeT0c4luaFVqG1XycWaw7MLGXossbMt8LGyZPaDykACgSv3u3GDdFEcre1qOnuF2kz=
+8tq04DrmjloscNwUayeKNmCCztaoZKSn1MjWfLkFIu0kIT7MCoUKVlxaXjdj6UJSGrLLOwy8lrg=
+3XX-vglazAHWqaNPwejlRCxvRO_5GTe6qgrI1yOib5YyhV-wQcgGhhqSz-WOdEiFBu1XxKX8Xq2=
+LiChoyV32z9vP1Bu37cmMTsK87K5eMBuZcov-CBKAIuYwwbde560OcXIizlDx2Kl" target=3D=
+"_blank" style=3D"text-decoration: underline; color: #141817">Unsubscribe</=
+a> <a href=3D"https://emaillinks.cars.com/u/click=3F_t=3D47f16e37803d44c8a3=
+02ee7782c80abb&_m=3D562a2dcdf0f1499982ebeb0faff6a973&_e=3DMzWOU_wsT-MNeuhoe=
+_tgveCTg1uIK2akVeIZ761HkoxHKu-v3NP18cVXodNDjZgyCJM8ifn8YnAcyErYZ---Ld9-Zuar=
+EQc0oWJcAhcq4r5Wk4z5cvhpdA-JgmcVHlJqoEEWcrMY1wV6pAZCIyX3cGEPcAX7weaI6flOGuf=
+g1uL04JrM8lIox0GFiYSPJKD-uIcgZoPV78TZVfLNhx6xDt0gP9ltcsSXwTcS1y3loq_n_xBafF=
+Sq4QLUQ7mqsCEmQNXF7LlBU0BuvIZJoyWWi0s5zr0CtX-UuzGGgQSC5uTb3WayXcBOnrHwA71EM=
+RtjsnCl4E2Ige-0T82w_CdfETZpbjjHxqynzU1_JN1OCxlRLMLfRlN-pk3fmyW-4BwtM5z4LKBN=
+PhujYL_Nr3nJtox7Fyh1S8JpKReE4zxQnecXpYNsJDXBfOFQb7IdKAU7ntq0H8qTnxi0iWQaSWq=
+Rwq2Xg7v_8rO1rRneXx7uOvp40DmKkZgg5HPUsERVJg0SyITjXxToiYkPup-O7EK_DMK0BOQMjg=
+KlMVLcv63c17jXcHY7hamDgqRPtWfRE3Ai" target=3D"_blank" style=3D"text-decorat=
+ion: underline; color: #141817">Manage Preferences</a> </p> </td> </tr> </t=
+able> </td> </tr> </table> </td> </tr> </table> </td> </tr> </table> <!--[i=
+f mso]></td> </tr> </table><![endif]--> </td> </tr> </table> </div> <!-- En=
+d of content area --> <!--[if mso]></td></tr></table><![endif]--> =0D=0A<im=
+g border=3D"0" width=3D"1" height=3D"1" alt=3D"" src=3D"https://post.spmail=
+technolo.com/q/GOy04Ln5psypUj7O2G64BA~~/AAOb_xA~/uJCEBPGupLKJFyNWYzVo09P8Vg=
+C0pxii6to4KpjQ_1Dc-YDvzoOnBgbsf5dFDLjMzg-ga9YYXqMVh5k0c2nF6g~~">=0D=0A</bod=
+y> </html>
+--_----L0SBIdWN44+lg6bGNmydwg===_99/47-29465-9D86FB86--
+

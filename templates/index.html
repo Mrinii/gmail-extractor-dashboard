@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gmail Extractor Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .section { background: white; padding: 20px; margin: 20px 0; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        h2 { color: #333; border-bottom: 2px solid #007bff; padding-bottom: 10px; }
+        input, button { padding: 10px; margin: 5px 0; width: 100%; box-sizing: border-box; }
+        button { background: #007bff; color: white; border: none; cursor: pointer; font-weight: bold; }
+        button:hover { background: #0056b3; }
+        .status { padding: 10px; margin: 10px 0; border-radius: 4px; }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📧 Gmail Extractor Dashboard</h1>
+
+        <!-- Section 1: Extract Inbox -->
+        <div class="section">
+            <h2>📥 Extract All Inbox Emails</h2>
+            <input type="email" id="inbox_email" placeholder="Gmail Address" required>
+            <input type="password" id="inbox_password" placeholder="App Password" required>
+            <input type="number" id="inbox_start" placeholder="Start from email #" min="1" value="1">
+            <input type="number" id="inbox_count" placeholder="Number of emails to extract" min="1" value="5">
+            <button onclick="extractInbox()">Extract Inbox</button>
+            <div id="inbox_status"></div>
+        </div>
+
+        <!-- Section 2: Extract Promotions -->
+        <div class="section">
+            <h2>🛍️ Extract Promotions Tab</h2>
+            <input type="email" id="promo_email" placeholder="Gmail Address" required>
+            <input type="password" id="promo_password" placeholder="App Password" required>
+            <input type="number" id="promo_start" placeholder="Start from email #" min="1" value="1">
+            <input type="number" id="promo_count" placeholder="Number of emails to extract" min="1" value="5">
+            <button onclick="extractPromotions()">Extract Promotions</button>
+            <div id="promo_status"></div>
+        </div>
+
+        <!-- Section 3: Extract IDs -->
+        <div class="section">
+            <h2>🔢 Extract 9-Digit IDs (Starts with 1)</h2>
+            <input type="email" id="id_email" placeholder="Gmail Address" required>
+            <input type="password" id="id_password" placeholder="App Password" required>
+            <input type="number" id="id_start" placeholder="Start from email #" min="1" value="1">
+            <input type="number" id="id_count" placeholder="Number of emails to scan" min="1" value="5">
+            <button onclick="extractIds()">Extract IDs</button>
+            <div id="id_status"></div>
+        </div>
+    </div>
+
+    <script>
+        async function extractInbox() {
+            const data = {
+                email: document.getElementById('inbox_email').value,
+                app_password: document.getElementById('inbox_password').value,
+                start_index: document.getElementById('inbox_start').value,
+                num_emails: document.getElementById('inbox_count').value
+            };
+            const statusDiv = document.getElementById('inbox_status');
+            statusDiv.innerHTML = '<div class="status">⏳ Running... please wait</div>';
+            
+            try {
+                const response = await fetch('/extract_inbox', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                const result = await response.json();
+                if (result.success) {
+                    statusDiv.innerHTML = `<div class="status success">✅ ${result.success}</div>`;
+                } else {
+                    statusDiv.innerHTML = `<div class="status error">❌ ${result.error}</div>`;
+                }
+            } catch (error) {
+                statusDiv.innerHTML = `<div class="status error">❌ Network error</div>`;
+            }
+        }
+
+        async function extractPromotions() {
+            const data = {
+                email: document.getElementById('promo_email').value,
+                app_password: document.getElementById('promo_password').value,
+                start_index: document.getElementById('promo_start').value,
+                num_emails: document.getElementById('promo_count').value
+            };
+            const statusDiv = document.getElementById('promo_status');
+            statusDiv.innerHTML = '<div class="status">⏳ Running... please wait</div>';
+            
+            try {
+                const response = await fetch('/extract_promotions', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                const result = await response.json();
+                if (result.success) {
+                    statusDiv.innerHTML = `<div class="status success">✅ ${result.success}</div>`;
+                } else {
+                    statusDiv.innerHTML = `<div class="status error">❌ ${result.error}</div>`;
+                }
+            } catch (error) {
+                statusDiv.innerHTML = `<div class="status error">❌ Network error</div>`;
+            }
+        }
+
+        async function extractIds() {
+            const data = {
+                email: document.getElementById('id_email').value,
+                app_password: document.getElementById('id_password').value,
+                start_index: document.getElementById('id_start').value,
+                num_emails: document.getElementById('id_count').value
+            };
+            const statusDiv = document.getElementById('id_status');
+            statusDiv.innerHTML = '<div class="status">⏳ Running... please wait</div>';
+            
+            try {
+                const response = await fetch('/extract_ids', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                const result = await response.json();
+                if (result.success) {
+                    statusDiv.innerHTML = `<div class="status success">✅ ${result.success}</div>`;
+                } else {
+                    statusDiv.innerHTML = `<div class="status error">❌ ${result.error}</div>`;
+                }
+            } catch (error) {
+                statusDiv.innerHTML = `<div class="status error">❌ Network error</div>`;
+            }
+        }
+    </script>
+</body>
+</html>

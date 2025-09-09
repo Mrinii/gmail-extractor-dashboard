@@ -1,0 +1,578 @@
+Delivered-To: mrinix02@gmail.com
+Received: by 2002:ac8:5854:0:b0:4b0:8b25:add9 with SMTP id h20csp1506507qth;
+        Mon, 8 Sep 2025 17:06:49 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHVM47HwSta4Wo6D6/TNI6z0CqgU5F6hMU8S/Zd7fKcgI/NLozUrCqQYneL+XdCgPqAsNql
+X-Received: by 2002:a05:622a:59c7:b0:4b5:dadd:cec1 with SMTP id d75a77b69052e-4b5f8452a58mr114617881cf.59.1757376408942;
+        Mon, 08 Sep 2025 17:06:48 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1757376408; cv=none;
+        d=google.com; s=arc-20240605;
+        b=UbjGtssohz5xzChd6uwKF129vW3+3BgfRVeYueh9wYd7MWZ3RtCsoePH1mLU9ir3TE
+         qEqdf/wbjq6Dw7+iPezc6trEaxfDPrcJGbOv3mwY+VBZA02T1Tl+tV5/Qb4Lfzj7/t2r
+         Rv3rtAVOU6Fwebh6j6Q6HK/4NT/40G/LSjIsIH/HBGH1kLGi5pX6Xv6r+0kaFI+pitN4
+         WWu7ZgFMVLlFaqPMk8nTKXi1IgxcShCHaVQs6A0Oi8oyNI7kSlnayK10L4ATxqpY7qmg
+         BNSuddxGGlReRpZsvR2Po1wvayOBXlYoHM95JOhiwP4C9ZUcrOcix0m47atti8IVYRqr
+         v23w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:message-id:subject:mime-version:from:date
+         :content-transfer-encoding:dkim-signature:dkim-signature;
+        bh=XDTeyg13F0srXqPvzIACQPufjqSxOzzj8zxyDbvgMk8=;
+        fh=mm+362Y5dgmvdXLtMtosrUX46nOI2vdazMyMfEsXwlU=;
+        b=UxM8fpt+e4zW0m8gMeAFN7HcXqV/3kpSU8STsg1G14MrKlRR9B/ETDBkz5XBtJPzdd
+         2fWrzr69OC/9bD5aS0qpOJTE6ar1KvWJJ02AXNI1JEnEux9Hxk51hgOnhZzj7JRIPsaP
+         p4PwtfJsqxTaRZ6hWf0la+tAs/hZ4vrS/NQAw5CjFPMec3M1S2Nk+Xmk7QIRn/Fnb14W
+         3Maw3woaHpuYp/1W1uZoyvM8BrM5glRqsMrQA3pE26+5eQTUAPAD0J8DbpvW93PYTSd/
+         KaFC4fo341O4f7nAeKI8jathagutF+0Xs+RHM66mlEGnnleOzo9SU8Phn8Qn3RXYpGR4
+         qjHQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gamerefinery.com header.s=s1 header.b=SMXirx6y;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=T4IfP87r;
+       spf=pass (google.com: domain of bounces+2250453-19b0-mrinix02=gmail.com@em344.gamerefinery.com designates 168.245.30.90 as permitted sender) smtp.mailfrom="bounces+2250453-19b0-mrinix02=gmail.com@em344.gamerefinery.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=gamerefinery.com
+Return-Path: <bounces+2250453-19b0-mrinix02=gmail.com@em344.gamerefinery.com>
+Received: from o1.ptr2567.gamerefinery.com (o1.ptr2567.gamerefinery.com. [168.245.30.90])
+        by mx.google.com with ESMTPS id d75a77b69052e-4b61bbf6fd9si1729681cf.726.2025.09.08.17.06.48
+        for <mrinix02@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 08 Sep 2025 17:06:48 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+2250453-19b0-mrinix02=gmail.com@em344.gamerefinery.com designates 168.245.30.90 as permitted sender) client-ip=168.245.30.90;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gamerefinery.com header.s=s1 header.b=SMXirx6y;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=T4IfP87r;
+       spf=pass (google.com: domain of bounces+2250453-19b0-mrinix02=gmail.com@em344.gamerefinery.com designates 168.245.30.90 as permitted sender) smtp.mailfrom="bounces+2250453-19b0-mrinix02=gmail.com@em344.gamerefinery.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=gamerefinery.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gamerefinery.com;
+	h=content-transfer-encoding:content-type:date:from:mime-version:subject:
+	to:cc:content-type:date:feedback-id:from:subject:to;
+	s=s1; bh=XDTeyg13F0srXqPvzIACQPufjqSxOzzj8zxyDbvgMk8=;
+	b=SMXirx6yz1IVwuWaMtukOUoUBJOFemJPBv6UUegLyAAfoARTtIPT4n9xNnSDouUH2CHK
+	3J53OnpcXGJxCLb+7GONvLcMjjCBTh6juCpcCMAfmJE6D0PoONWxBQvRyREvgDzdC7AzPd
+	pKsNJYh+XgJzedqYjGjsrc0kz02jZ9NDELdEJEdoTvW0cG5nlmzlQ4lPjhsLfn7/V0xJwz
+	KUlkRfThuUXpmZADpm5PBjZoFeMai9q08NlhNyZw9qL6Vj64plTkV3y+FFAXkTEiCJJ41J
+	OXDzuhE7UbQ2oIJuB2qhzqO3mYgqqtTCimPePPcB/xEneEJ7EydBAUO2eF9LsOTw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-transfer-encoding:content-type:date:from:mime-version:subject:
+	to:cc:content-type:date:feedback-id:from:subject:to;
+	s=smtpapi; bh=XDTeyg13F0srXqPvzIACQPufjqSxOzzj8zxyDbvgMk8=;
+	b=T4IfP87rs2j8geyskQl+SLgpK6bgpKjGjg7GF/Wos4l/rqo2/298f/SuARTpNXOoajJ5
+	f1hlgrv2x5wwaDRK+HM1xm1zmx6HcIzUXuBxO7MdfgAQaq6Ns7IXtgZmCnVd+xMN/1CTbZ
+	8lwi7QIAbwYRuLLeNmcyKV2r0BWrRj22A=
+Received: by recvd-769f975875-dffpc with SMTP id recvd-769f975875-dffpc-1-68BF6F98-1A
+	2025-09-09 00:06:48.63266077 +0000 UTC m=+522187.061516180
+Received: from MjI1MDQ1Mw (unknown)
+	by geopod-ismtpd-7 (SG) with HTTP
+	id EZFdL5YhT0irNAYkLN_tdA
+	for <mrinix02@gmail.com>;
+	Tue, 09 Sep 2025 00:06:48.571 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Date: Tue, 09 Sep 2025 00:06:48 +0000 (UTC)
+From: "GameRefinery Ltd." <noreply@gamerefinery.com>
+Mime-Version: 1.0
+Subject: GameRefinery's Daily News Feed Digest 09.09.2025.
+Message-ID: <EZFdL5YhT0irNAYkLN_tdA@geopod-ismtpd-7>
+X-SG-EID: 
+ =?us-ascii?Q?u001=2E9wjWIgN7Iutzcfon1tp5o7jIl82+pimud5k3jEzlrWEMFp6xyLiB39825?=
+ =?us-ascii?Q?j4PdkIDqeG5foTF3gvqdC35adRqE05NLZptsXA5?=
+ =?us-ascii?Q?GRomMUsuqk5xRB55nUu0jmJB1q7r6+t7Sc9VUVN?=
+ =?us-ascii?Q?4Ha0yzn7+2Bdx0oYgNC7hGHyPAjnGPDddGbV2bM?=
+ =?us-ascii?Q?blSUEK1XR=2FR99uGPDDe1AWKfrnHZwQGt1T6RRGB?=
+ =?us-ascii?Q?BtKYiOlaM4srI8zyT=2FBOIMQa2C2HOGHm3DRHzVw?= =?us-ascii?Q?0NZg?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BiEtFbYZ=2FCRPcRXRRx6sn3s9pzSHiju+l30PV?=
+ =?us-ascii?Q?P7Nv5r=2FVjdlVwJVbAxFoja2cNanzmwjVlY0qey5?=
+ =?us-ascii?Q?fgWwwTIuxfo=3D?=
+To: mrinix02@gmail.com
+X-Entity-ID: u001.tE4fe9aYGVIN6UVzLZzx4Q==
+
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv=3D"content-type" content=3D"text/html; charset=3Dutf-8=
+">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1.0;">
+    <meta name=3D"format-detection" content=3D"telephone=3Dno" />
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0px;
+        min-width: 100%;
+        width: 100% !important;
+        height: 100% !important;
+        font-family: "Open Sans", sans-serif;
+        background-color: #eff3f6;
+        color: #273143;
+        font-size: 14px;
+      }
+
+      body,
+      table,
+      td,
+      div,
+      p,
+      a {
+        -webkit-font-smoothing: antialiased;
+        text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+        line-height: 100%;
+      }
+
+      table,
+      td {
+        border-collapse: collapse !important;
+        border-spacing: 0;
+      }
+
+      img {
+        border: 0;
+        line-height: 100%;
+        outline: none;
+        text-decoration: none;
+        -ms-interpolation-mode: bicubic;
+      }
+
+      #outlook a {
+        padding: 0;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      a,
+      a:hover {
+        color: #bd65cf;
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 18px;
+        margin: 0px;
+        padding-top: 14px;
+      }
+
+      #main-table {
+        max-width: 680px;
+        width: 100%;
+      }
+
+      #gr-logo {
+        width: 300px;
+        max-width: 100%;
+      }
+
+      a.button {
+        display: inline-block;
+        border: 0 none;
+        text-transform: uppercase;
+        padding: 10px 16px;
+        background-color: #bd65cf;
+        color: white;
+        font-weight: bold;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 12px;
+        text-align: center;
+      }
+
+      .card-table-wrapper {
+        padding-top: 20px;
+      }
+
+      .card-table {
+        background-color: white;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #d1d6d9 #c9ced2 #adb5bb;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px,
+          rgba(0, 0, 0, 0.14) 0px 1px 1px 0px,
+          rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+      }
+
+      .card-table-inner {
+        padding: 14px 14px 18px;
+      }
+
+      .icon-image {
+        border-radius: 22%;
+      }
+    </style>
+  </head>
+
+  <body style=3D"background-color: #eff3f6;" topmargin=3D"0" rightmargin=3D=
+"0" bottommargin=3D"0" leftmargin=3D"0" marginwidth=3D"0" marginheight=3D"0=
+">
+    <table id=3D"main-table" style=3D"max-width: 680px; width: 100%;" cellp=
+adding=3D"0" cellspacing=3D"0" align=3D"center">
+      <tbody>
+        <tr>
+          <td style=3D"padding: 20px;">
+
+            <!-- HEADER -->
+            <img id=3D"gr-logo" src=3D"https://s3-eu-west-1.amazonaws.com/g=
+rstatic/emails/gr-daily-digest-logo3.png" style=3D"width: 300px; max-width:=
+ 100%;">
+
+            <p style=3D"padding-bottom: 10px">
+              Here are the latest changes, freshly picked from our news fee=
+d and tailored based on your preferences.
+            </p>
+
+            <table cellpadding=3D"0" cellspacing=3D"0">
+              <tbody>
+                <tr>
+                  <td>
+                    <a class=3D"button" href=3D"https://u2250453.ct.sendgri=
+d.net/ls/click?upn=3Du001.uRUy-2BWVTkf5J7WTCZRkRzH1hSNeILLbi36rUYPHUvCp8UcF=
+4XiKidkC0Wrp3Kcwzi5lTDNZ-2BX-2Bf-2BG-2B8uTfL3JA-3D-3DwRzG_5N-2Faqd-2FPqBFvT=
+4NW2RaCPEd0o3NY1rxRIm1Xjig95rBjL-2FR-2FKEpHeJ9Be-2FGsLZ5nBGw1nOJQkbutQZrI4y=
+Me0M4KcCTjHpaY6d03yyHHJDe-2BmwywPz6MV0A1uv-2ByUJ-2BySKRYvWiBUaLWAs6acSFKB22=
+6aRIkep8VS1b4Y-2FSPguFZ9Euwp8rG5ktGYVXZdbwWWmDrfDdGZ-2BuIFZPL7mMLBRoC-2BsDX=
+4DMplw2nPWeB0jYR9Ym1KT96jgF513-2BhY-2Flf">
+                      Go to Daily Insights
+                    </a>
+                  </td>
+                  <td style=3D"padding-left: 10px; font-size: 10px; color: =
+#888">
+                    Edit preferences based on your interests and see all th=
+e news
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <hr style=3D"border: 0 none; border-bottom: 1px solid #DDD; mar=
+gin: 20px 0px 0px;">
+
+            <!-- NEWS CARD -->
+<div class=3D"card-table-wrapper" style=3D"padding-top: 20px;">
+  <div class=3D"card-table">
+        <div class=3D"card-table-inner">
+      <table cellpadding=3D"0" cellspacing=3D"0" style=3D"width: 100%">
+        <tbody>
+          <tr>
+            <td>
+
+              <table cellpadding=3D"0" cellspacing=3D"0" style=3D"width: 10=
+0%">
+                <!-- GAME HEADER -->
+                  <thead>
+                    <tr>
+                      <td style=3D"width: 56px;">
+                        <img class=3D"icon-image" src=3D"https://is1-ssl.mz=
+static.com/image/thumb/Purple221/v4/80/ec/25/80ec255c-5c03-e058-8986-41efd8=
+a544ee/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/100x100bb.jpg" style=3D=
+"width: 46px; height: 46px; border-radius: 22%;">
+                      </td>
+                      <td style=3D"font-size: 13px; color: #888;">
+                        <a href=3D"https://u2250453.ct.sendgrid.net/ls/clic=
+k?upn=3Du001.uRUy-2BWVTkf5J7WTCZRkRzH1hSNeILLbi36rUYPHUvCrhXTfaOxuRJ2A0-2FE=
+gAv8uMgKFnlyUZdpLURImqOIvN-2BgVGvubC-2BzwJZfo3TNYtkNM-3DkA1b_5N-2Faqd-2FPqB=
+FvT4NW2RaCPEd0o3NY1rxRIm1Xjig95rBjL-2FR-2FKEpHeJ9Be-2FGsLZ5nDGtBMZFPK8wy38Z=
+LAIojAx-2BSfAnmfRJ7mkTElc7qf-2Fm-2F4d-2BNFhdtJzatqROsHeAT738x-2FXt-2B9LRyrO=
+ebQLC2H5McpKMlFc-2FnfItL5-2BAtdoGh26tYb-2F36Sfp7pYuTT-2Fbtm4KWJYiB0mbCA0SEP=
+zmxjnRS8DCBwxpdR4Xb6Z5sHW9cRJHGP05Aw-2BAgUxnUf2s3" style=3D"font-weight: bo=
+ld;">Matchcreek Motors: Custom Cars</a>
+                        <br>
+                        <span style=3D"display: inline-block; padding-botto=
+m: 4px; font-size: 10px; font-weight: bold;">
+                          Hutch Games Ltd
+                        </span>
+                          <br>
+                          <span style=3D"display: inline-block; padding: 1p=
+x 5px; background-color: #e5e5e5; border-radius: 20px; color: #888; font-si=
+ze: 9px;">Match3 Puzzle</span>
+
+                      </td>
+                        <td style=3D"text-align: right; color: #888; font-s=
+ize: 12px;">
+                          Top Grossing Rank:
+                          <strong>
+                             500+
+                          </strong>
+                        </td>
+                    </tr>
+
+                    <tr>
+                      <td colspan=3D"3">
+                        <hr style=3D"border: 0 none; border-bottom: 1px sol=
+id #DDD; margin: 10px 0px;">
+                      </td>
+                    </tr>
+                  </thead>
+
+                <tbody>
+                  <!-- NEWS DATE, TITLES AND POWERSCORE -->
+                  <tr>
+                    <td colspan=3D"3">
+                      <table cellpadding=3D"0" cellspacing=3D"0" style=3D"w=
+idth: 100%">
+                        <tbody>
+                          <tr>
+                              <td colspan=3D"2" style=3D"padding-right: 10p=
+x;">
+                              <div style=3D"font-size: 12px; color: #AAA; p=
+adding-bottom: 15px; padding-top: 5px;">
+                                Sep 8, 2025
+                              </div>
+
+                                  <div style=3D"font-size: 18px; font-weigh=
+t: bold; padding-bottom: 4px;">
+                                    New Game in Top Grossing 500 Analyzed t=
+o Database
+                                  </div>
+
+
+                              <!-- LIVE EVENT DURATIONS -->
+
+                              <!-- EDITORIAL CONTENT -->
+                            </td>
+
+                              <td colspan=3D"1" style=3D"border-left: 1px s=
+olid #DDD; width: 90px; text-align: right; text-align: center; padding: 10p=
+x 0px 5px 10px;">
+                                <img style=3D"width: 40px" src=3D"https://s=
+3-eu-west-1.amazonaws.com/grstatic/emails/powerscore-circle-2023_74.jpg" >
+                                <br>
+                                <span style=3D"display: inline-block; paddi=
+ng-top: 5px; font-weight: bold; font-size: 9px; color: #888;">
+                                  POWERSCORE&reg;
+                                </span>
+                              </td>
+
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+
+                  <!-- ANALYSIS COMMENT / LIVE EVENT DESCRIPTION -->
+
+                  <!-- CHANGED FEATURES -->
+
+                  <!-- SCREENSHOTS -->
+                    <tr>
+                      <td colspan=3D"3" style=3D"padding-top: 10px;">
+                        <table cellpadding=3D"0" cellspacing=3D"0" style=3D=
+"width: 100%">
+                          <tbody>
+                            <tr>
+                              <td style=3D"text-align: center; font-size: 1=
+2px; color: #888; padding-bottom: 10px;">
+                                <hr style=3D"border: 0 none; border-bottom:=
+ 1px solid #DDD; margin-bottom: 20px;">
+                                  SCREENSHOTS FROM THE UPDATE
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td style=3D"text-align: center;">
+                                  <img style=3D"display: inline-block; widt=
+h: 180px; padding: 10px; vertical-align: middle;" src=3D"https://saasstatic=
+.gamerefinery.com/screenshots/00-68bca5fba0ddf14bdd31e981-400.jpg">
+                                  <img style=3D"display: inline-block; widt=
+h: 180px; padding: 10px; vertical-align: middle;" src=3D"https://saasstatic=
+.gamerefinery.com/screenshots/01-68bca5fb03f9484d62f97c0c-400.jpg">
+                                  <img style=3D"display: inline-block; widt=
+h: 180px; padding: 10px; vertical-align: middle;" src=3D"https://saasstatic=
+.gamerefinery.com/screenshots/03.1-68bca5fb06c7a04126d455e7-400.jpg">
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+
+                  <!-- ACTION BUTTON -->
+                  <tr>
+                    <td colspan=3D"3" style=3D"padding-top: 20px; text-alig=
+n: center;">
+                      <a class=3D"button" href=3D"https://u2250453.ct.sendg=
+rid.net/ls/click?upn=3Du001.uRUy-2BWVTkf5J7WTCZRkRzH1hSNeILLbi36rUYPHUvCr2-=
+2ByKOiR-2FJJcpxynHUSfarEgyRDHLvCotdNmM-2FGllBYDIdW7HiC0sKa9gFvBanq3A-3DbdA-=
+_5N-2Faqd-2FPqBFvT4NW2RaCPEd0o3NY1rxRIm1Xjig95rBjL-2FR-2FKEpHeJ9Be-2FGsLZ5n=
+AnMbM2EQKJYWuy3AVtaqXHu0-2FCIUZcrD39qiyUIuA0kHOncSzkbPxAuVx-2BliAUf3JAR6jmw=
+7v0bKGzJ10fF0oJeeSoVcIxIqO0Z8rUZK-2Fy9UZ0R9lnqYkHbHIw0qPkIaEjc99uih-2BYTfbn=
+sod35dHfydjFczGMpe-2BJ8ZYqEs1rSydSpqFBIxnTG2okL9sv95">
+                        Open in GameRefinery
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- NEWS CARD -->
+<div class=3D"card-table-wrapper" style=3D"padding-top: 20px;">
+  <div class=3D"card-table">
+        <div class=3D"card-table-inner">
+      <table cellpadding=3D"0" cellspacing=3D"0" style=3D"width: 100%">
+        <tbody>
+          <tr>
+            <td>
+
+              <table cellpadding=3D"0" cellspacing=3D"0" style=3D"width: 10=
+0%">
+                <!-- GAME HEADER -->
+                  <thead>
+                    <tr>
+                      <td style=3D"width: 56px;">
+                        <img class=3D"icon-image" src=3D"https://is1-ssl.mz=
+static.com/image/thumb/Purple211/v4/68/e1/b3/68e1b36a-356d-eb8c-1132-508d56=
+80d527/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg" style=
+=3D"width: 46px; height: 46px; border-radius: 22%;">
+                      </td>
+                      <td style=3D"font-size: 13px; color: #888;">
+                        <a href=3D"https://u2250453.ct.sendgrid.net/ls/clic=
+k?upn=3Du001.uRUy-2BWVTkf5J7WTCZRkRzH1hSNeILLbi36rUYPHUvCqLy6mWUMQ2ygri2ctB=
+6-2BxaOagrDmEJbYzxLoGTt0rJMDsr1GwrSKHiblE8bY3gxks-3DmM3U_5N-2Faqd-2FPqBFvT4=
+NW2RaCPEd0o3NY1rxRIm1Xjig95rBjL-2FR-2FKEpHeJ9Be-2FGsLZ5nFpc-2FceXnSGF7I-2Fw=
+TkAkhaq71aeOvuPucJjDUQE1DjiE0bCGH7ZIAG7LuahIAwNtAQ0Nlc-2BkJWHjapKbw76mWDIOh=
+QjCNGkIdC-2Ff8MUjRUhRgterSFE5ZbKsI6vrLUITOru4NQt-2FqkveQMUqLNstOef71Yu9n715=
+bFc1EJLAcHWs3L3zmYVT4lNAtMME-2BdHPr" style=3D"font-weight: bold;">Drop Away=
+: Color Puzzle</a>
+                        <br>
+                        <span style=3D"display: inline-block; padding-botto=
+m: 4px; font-size: 10px; font-weight: bold;">
+                          Rollic Games
+                        </span>
+                          <br>
+                          <span style=3D"display: inline-block; padding: 1p=
+x 5px; background-color: #e5e5e5; border-radius: 20px; color: #888; font-si=
+ze: 9px;">Other Puzzle</span>
+
+                      </td>
+                        <td style=3D"text-align: right; color: #888; font-s=
+ize: 12px;">
+                          Top Grossing Rank:
+                          <strong>
+                             199
+                          </strong>
+                        </td>
+                    </tr>
+
+                    <tr>
+                      <td colspan=3D"3">
+                        <hr style=3D"border: 0 none; border-bottom: 1px sol=
+id #DDD; margin: 10px 0px;">
+                      </td>
+                    </tr>
+                  </thead>
+
+                <tbody>
+                  <!-- NEWS DATE, TITLES AND POWERSCORE -->
+                  <tr>
+                    <td colspan=3D"3">
+                      <table cellpadding=3D"0" cellspacing=3D"0" style=3D"w=
+idth: 100%">
+                        <tbody>
+                          <tr>
+                              <td colspan=3D"3" style=3D"padding-right: 10p=
+x;">
+                              <div style=3D"font-size: 12px; color: #AAA; p=
+adding-bottom: 15px; padding-top: 5px;">
+                                Sep 8, 2025
+                              </div>
+
+                                  <div style=3D"font-size: 18px; font-weigh=
+t: bold; padding-bottom: 4px;">
+                                    First Appearance in the Top Grossing 20=
+0
+                                  </div>
+
+
+                              <!-- LIVE EVENT DURATIONS -->
+
+                              <!-- EDITORIAL CONTENT -->
+                            </td>
+
+
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+
+                  <!-- ANALYSIS COMMENT / LIVE EVENT DESCRIPTION -->
+
+                  <!-- CHANGED FEATURES -->
+
+                  <!-- SCREENSHOTS -->
+
+                  <!-- ACTION BUTTON -->
+                  <tr>
+                    <td colspan=3D"3" style=3D"padding-top: 20px; text-alig=
+n: center;">
+                      <a class=3D"button" href=3D"https://u2250453.ct.sendg=
+rid.net/ls/click?upn=3Du001.uRUy-2BWVTkf5J7WTCZRkRzH1hSNeILLbi36rUYPHUvCr2-=
+2ByKOiR-2FJJcpxynHUSfarcukJFC3AcIzCNMVcIkzlxt-2FkV6pdK3Arhrczt6JRnVE-3DEBf5=
+_5N-2Faqd-2FPqBFvT4NW2RaCPEd0o3NY1rxRIm1Xjig95rBjL-2FR-2FKEpHeJ9Be-2FGsLZ5n=
+mHFasP8re-2FDc8Z6DTmh0SoH3Lx4yf7J1H8QKanNBVenKHLPwdPnADPnFgQxJQy5-2BOSzx2PB=
+gRUaN0RyhpoleDUieuxVaxB-2FUxFQKZaogUWvbPUIyQXziSR005655xwESFWPTtlZf8Fj-2BtH=
+JseqMTmFd-2Bc7uvh-2B2dVO5ZgVN-2Fob8wyvo7KAsmgBxWEHwOx-2Bdl">
+                        Open in GameRefinery
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+            <!-- FOOTER -->
+            <table cellpadding=3D"0" cellspacing=3D"0" style=3D"width: 100%=
+">
+              <tbody>
+                <tr>
+                  <td style=3D"text-align: center; padding: 30px 0px; font-=
+size: 12px;">
+                    <a href=3D"https://u2250453.ct.sendgrid.net/ls/click?up=
+n=3Du001.ZpYLYoZjWKGeSqDJPv0zkKtoyZEInszBTIoeU48ZA7EaWB3medwciAQ7k2ZNcQ5iM3=
+Gcuq-2FBINP7hPIwxSfB2g-3D-3DbJjP_5N-2Faqd-2FPqBFvT4NW2RaCPEd0o3NY1rxRIm1Xji=
+g95rBjL-2FR-2FKEpHeJ9Be-2FGsLZ5nQPS5gJiH1IDVEkwNvQkeIG5UnKvg-2BmOA9JyGhWbXp=
+x5ewIeOLaaP4rCII3-2BiV-2B4CQXr-2FNtceeT6BYnJHVdtHeLaGwJ-2BYUDNzu3u8ianiGepS=
+ZidKo-2BbSlxzgRNHy3RNqBJjK-2BdDA342uZ59YjpP4l-2B2fMDqKOWLewts87QqdpBXS44vl2=
+61UqantbuRMmJrq" style=3D"padding: 20px">Privacy Policy</a>
+                    <a href=3D"https://u2250453.ct.sendgrid.net/ls/click?up=
+n=3Du001.uRUy-2BWVTkf5J7WTCZRkRzH1hSNeILLbi36rUYPHUvCpVF0yTfe101lqwZa-2F5V-=
+2BskhnLYGqjQW2Oce8FNvHN-2B0YTGlOFjxOcwHcFF8svtXtdWgwCguLmFvWY-2BwugWtzPlg1u=
+ose3rdRvRAelJEK1mWg-3D-3DW9Km_5N-2Faqd-2FPqBFvT4NW2RaCPEd0o3NY1rxRIm1Xjig95=
+rBjL-2FR-2FKEpHeJ9Be-2FGsLZ5nt3Sm-2FJCLZAhdaMTUdMnof9S4L4TBvpUSaCfq6UcWnoL7=
+nYgG7mr9-2BZ4XLdooAVk6zpViET8NAfnB0p95i32RBeytyh-2BD9JG1eGYlHZDKweb3iGH1Sj-=
+2FbDGryiBQmWbJbPcL7qsJso1jKpGzUC2-2B-2B8hSg0W8qk7IIoFx7sZaQSlSQkgX2Y3hl2Lov=
+d6TCi9Vt" style=3D"padding: 20px">Unsubscribe</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  <img src=3D"https://u2250453.ct.sendgrid.net/wf/open?upn=3Du001.HFagiKwRP=
+UywTFVeIHu7gqCxbQIUsG-2BXBOW6OcipykqJAX29fVLcj6IDe59V1-2Fkff4iu4GTGUbHEwc3Y=
+56w9cTVPHJaqQ6QD2YnohrWAOqqCv-2FLiPtPf9nMHqhTehg-2FxYxyD91XlzhvxJeELO5os5-2=
+FMCfE3tKx5C0qRYtoyVmGvAUsuE-2BaYfqQaVZOhdxs0wtin-2FVXcR7aXd-2FSmzOYkmof9I6P=
+AHCm9mtYD-2BaJCv0PhrJQFvHw2OLHcpaqb34ddg0uAqRZBZAvc57lM91tqJnQ-3D-3D" alt=
+=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !important;=
+width:1px !important;border-width:0 !important;margin-top:0 !important;marg=
+in-bottom:0 !important;margin-right:0 !important;margin-left:0 !important;p=
+adding-top:0 !important;padding-bottom:0 !important;padding-right:0 !import=
+ant;padding-left:0 !important;"/></body>
+</html>
